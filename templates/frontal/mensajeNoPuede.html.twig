@@ -1,0 +1,32 @@
+{# Plantilla de nuestra aplicación#}
+{%extends 'frontal/base.html.twig'%}
+
+{#TITULO#}
+{% block titulo %}Valoración trabajos{% endblock %}
+{#Contenido#}
+{% block contenido %}
+<!-- Page Content -->
+
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <div style="margin-top:75px">
+    <h1 class=" mt-4 mb-3">Mantenimiento ETSIDI
+
+    </h1>
+  </div>
+
+
+  <!-- Intro Content -->
+  <div style="margin-bottom:250px">
+    <h3 style="font-style:italic"><br /><small>Lo sentimos. Estos trabajos ya han sido valorados previamente. No se permite valorar dos veces la misma intervención.</small>
+    </h3>
+
+  </div>
+
+</div>
+
+<!-- /.row -->
+
+
+{% endblock %}

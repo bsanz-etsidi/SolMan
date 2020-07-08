@@ -1,0 +1,101 @@
+{% extends 'frontal/base.html.twig' %}
+{% block titulo %}Solicitudes{% endblock %}
+{% block contenido %}
+<div class="container">
+  <div style="margin-top:50px">
+    <h1 class=" mt-4 mb-3">Solicitudes Anuladas</<h1>
+  </div>
+
+  <div class="row">
+
+
+    <div class="col-md-12">
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+
+            <th scope="col">
+              <h6>Id</h6>
+            </th>
+            <th scope="col">
+              <h6>Fecha</h6>
+            </th>
+            <th scope="col">
+              <h6>Estancia</h6>
+            </th>
+            <th scope="col">
+              <h6>Solicitante</h6>
+            </th>
+            <th scope="col">
+              <h6>Destino</h6>
+            </th>
+            <th scope="col">
+              <h6>Extensión</h6>
+            </th>
+            <th scope="col">
+              <h6>Incidencia</h6>
+            </th>
+            <th scope="col">
+              <h6>Reactivar</h6>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for solicitud in solicitudes %}
+
+          <tr>
+
+            <td>
+              <h5><a href="{{path('solicitud',{'id':solicitud.id})}}">{{solicitud.id}}
+                </a></h5>
+            </td>
+
+
+            <td>
+              <h6><small>{{solicitud.fecha|date('d/m/Y')}}</small></h6>
+            </td>
+
+
+            <td>
+              <h6>
+                <small>{{solicitud.estancia}}</small>
+              </h6>
+            </td>
+
+
+            <td>
+              <h6><small>{{solicitud.solicitante}}</small></h6>
+            </td>
+
+            <td>
+              <h6><small>{{solicitud.destino}}</small></h6>
+            </td>
+
+            <td>
+              <h6><small>{{solicitud.extension}}</small></h6>
+            </td>
+
+            <td>
+              <h6><small>{{solicitud.descripcionIncidencia}}</small></h6>
+            </td>
+
+            <td>
+              <h7><a href="{{path('reactivarSolicitudAnulada',{'id':solicitud.id})}}"><small>Reactivar</small></a></h7>
+            </td>
+
+
+            {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
+<div style="margin-bottom:200px">
+</div>
+</div>
+{% endblock %}

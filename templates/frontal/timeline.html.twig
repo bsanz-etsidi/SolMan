@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block titulo %}Cronograma{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link href="{{ asset('css/timeline.css')}}" rel="stylesheet">
+  </head>
+
+  <body>
+    {% block contenido %}
+
+    <div style="margin-top:40px">
+      <font color="white">
+        <h1>&nbsp&nbspCronograma de la solicitud&nbsp{{id}}<br />
+      </font>
+      <a href="javascript:history.back(-1);" style="text-decoration:none;color:white;font-size:15px;font-style:italic">&nbsp&nbsp&nbsp&nbsp&nbsp&lt;&lt;&nbspVolver</a></h1>
+
+    </div>
+    <div style="margin-bottom:60px">
+    </div>
+    {% set i = 1 %}
+    {% for evento in eventos %}
+    {% if i is odd %}
+    <div class="timeline">
+      <div class="container left">
+        <div class="content">
+          <h2>{{evento.tipo}}</h2>
+          <h4 style="font-style:italic">{{evento.causa}}</h4>
+          <p>{{evento.fecha|date('d/m/Y')}}</p>
+        </div>
+      </div>
+      {% else %}
+      <div class=" container right">
+        <div class="content">
+          <h2>{{evento.tipo}}
+            <h4 style="font-style:italic">{{evento.causa}}</h4>
+            <p>{{evento.fecha|date('d/m/Y')}}</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% set i = i + 1 %}
+    {% endfor %}
+    {% endblock %}
+
+  </body>
+
+</html>

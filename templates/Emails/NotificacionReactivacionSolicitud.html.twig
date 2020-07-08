@@ -1,0 +1,35 @@
+{# Plantilla de nuestra aplicación#}
+{#Contenido#}
+{% block contenido %}
+<!-- Page Content -->
+<div class="container">
+  <div style="margin-top:10px">
+
+    <!-- Page Heading/Breadcrumbs -->
+
+    <!-- Portfolio Item Row -->
+    <div id="content">
+      <div class="row">
+
+        <div class="col-lg-20">
+
+          <h2 class="mt-4 mb-3">Notificación de la reactivación de la solicitud: {{solicitud.id}} </h2>
+          <h4 class="my-3"> El servicio de mantenimiento de la ETSIDI le comunica la reactivación de su solicitud formulada con fecha {{solicitud.fecha|date('d/m/Y')}}</h4>
+          <h4 class="my-3">
+            <pre>     </pre>Descripción Incidencia: <small>{{solicitud.descripcionIncidencia}}</small></h4>
+          <h4 class="my-3">
+            <pre></pre>Lugar Incidencia: <small>{{solicitud.estancia}}</small></h4>
+          <h4 class="my-3">
+            <pre></pre>Los motivos que causaron la suspensión ya han sido solventados. Le seguiremos informando sobre la evolución de los trabajos para ateneder su solicitud.</h4>
+        </div>
+        <!-- /.row -->
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top:100px">
+  <hr color="green" size=1>
+  <h4 class="my-3"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
+</div>
+
+{% endblock %}

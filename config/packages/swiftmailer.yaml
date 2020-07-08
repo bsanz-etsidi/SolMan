@@ -1,0 +1,12 @@
+swiftmailer:
+    url: '%env(MAILER_URL)%'
+  #  spool: { type: 'memory' }
+  #  transport: smtp
+  #  host: smtp.upm.es
+  #  port: 587
+  #  encryption: tls
+  #  username: mariabelen.sanz@upm.es
+  #  password: Retruecano2019
+  #  auth-mode: login
+
+    #secret: ThisTokenIsNotSoSecretChangeIt

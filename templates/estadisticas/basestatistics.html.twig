@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block titulo %}Estadísticas{% endblock %}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('css/modern-business.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/all.css')}}" rel="stylesheet">
+    <!--load all styles -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+  </head>
+
+  <body>
+    <!--MENÚ DE NAVEGACIÓN-->
+
+    <nav class="navbar navbar-dark bg-info  fixed-top navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand"><img src="{{asset('img/Logo.png')}}" height="60" alt=""></a>
+        {% if app.user %}
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" style="color:white" ; data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <pre>                     </pre>
+            </li>
+
+            <li class="nav-item">
+              <pre>               </pre>
+            </li>
+
+            <li class="nav-item">
+              <pre>               </pre>
+            </li>
+
+            <li class="nav-item">
+              <pre>                   </pre>
+            </li>
+
+            <li class="nav-item">
+              <a href="{{path('solicitudes')}}" class="btn bg-info"
+                style="margin-top:12px;color:DARKSLATEGRAY;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3EB7CF), color-stop(100%,#399BAE));height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px"
+                role="button">Gestión</a>
+            </li>
+
+            <li class="nav-item">
+            </li>
+
+
+            <li class="nav-item">
+              <pre>       </pre>
+            </li>
+
+
+            <li class="nav-item">
+              <a href="{{path('app_logout')}}" class="btn "
+                style="margin-top:12px;color:DARKSLATEGRAY;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3EB7CF), color-stop(100%,#399BAE));height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px"
+                role="button">Salir</a>
+            </li>
+
+
+            <li class="nav-item">
+              <pre>         </pre>
+            </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="">{{app.user.username}}</a>
+            </li>
+
+
+
+            <li class="nav-item">
+              <pre>                             </pre>
+            </li>
+
+
+            {% else %}
+
+            <ul class="navbar-nav ml-auto">
+
+              <li class="nav-item">
+                <a class="nav-link " href="javascript:history.back(-1);" style=" color: #FFCDD2;font-size:20px;font-weight: 600;">Salir</a>
+              </li>
+
+              <li class="nav-item">
+              </li>
+
+            </ul>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+      </div>
+    </nav>
+
+    {% block contenido %}
+
+    {% endblock %}
+
+    <footer class="page-footer bg-info">
+      <div class="footer-copyright text-center py-3">
+        <img src="{{asset('img/upm.png')}}" style="margin-bottom: 0" height="100" alt="">
+      </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- /.container -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{asset('js/exportacion.js')}}"></script>
+    <script src="{{asset('js/genPDF.js')}}"></script>
+    <script src="{{asset('js/downloadCanvas.js')}}"></script>
+    <script src="{{asset('js/html2canvas.js')}}"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/jspdf.min.js')}}"></script>
+    <link href="{{ asset('js/bootstrap-datepicker.min.js')}}" rel="stylesheet">
+    <link href="{{ asset('js/bootstrap-datepicker.es.min.js')}}" rel="stylesheet">
+    <script src="{{ asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    {% block javascripts %}
+    {% endblock %}
+  </body>
+
+</html>

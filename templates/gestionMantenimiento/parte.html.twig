@@ -1,0 +1,76 @@
+{# Plantilla de nuestra aplicación#}
+{%extends 'frontal/base.html.twig'%}
+{#TITULO#}
+{% block titulo %}
+Parte
+{% endblock %}
+
+{#Contenido#}
+{% block contenido %}
+<!-- Page Content -->
+<div class="container">
+  <div style="margin-top:75px">
+
+    <!-- Page Heading/Breadcrumbs -->
+
+    <!-- Portfolio Item Row -->
+    <div id="content">
+      <div class="row">
+
+        <div class="col-lg-20">
+          <h1 class="mt-4 mb-3">Parte de Trabajo {{parte.id}} </h1>
+
+          <h3 class="my-3">localización: <small> {{parte.localizacion}}</small></h3>
+
+          <h3 class="my-3">Fecha de inicio: <small>{{parte.fechainicio|date('Y/m/d')}}</small></h3>
+          <h3 class="my-3">Fecha de finalización: <small>{{parte.fechafin|date('Y/m/d')}}</small></h3>
+          <h3 class="my-3">intervención realizada por:</h3>
+          {% for trabajador in parte.solicitud.trabajadores %}
+          <h3 class="my-3"><small>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{trabajador.nombre}}</small></h3>
+          {% endfor %}
+          <h3 class="my-3">Trabajos realizados: <small>{{parte.descripcion}}</small></h3>
+          <h3 class="my-3">Solicitud que genera el parte: <small>{{parte.solicitud.id}}</small></h3>
+          <h3 class="my-3">Solicitante de la intervención: <small>{{parte.solicitud.solicitante}}</small></h3>
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+    </div>
+    <div id="editor" style="margin-top:20px"></div>
+
+    <button id="cmd">Generar PDF</button>
+
+
+  </div>
+  <div style="margin-bottom:75px">
+  </div>
+
+
+</div>
+
+{% endblock %}
+{% block javascripts %}
+
+<script>
+  var doc = new jsPDF();
+  var specialElementHandlers = {
+    '#editor': function(element, renderer) {
+      return true;
+    }
+  };
+
+  $('#cmd').click(function() {
+    doc.fromHTML($('#content').html(), 15, 15, {
+      'width': 170,
+      'elementHandlers': specialElementHandlers
+    });
+    doc.save('Parte.pdf');
+  });
+
+  // This code is collected but useful, click below to jsfiddle link.
+</script>
+
+
+
+{% endblock %}

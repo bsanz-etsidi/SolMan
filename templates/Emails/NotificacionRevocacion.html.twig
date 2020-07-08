@@ -1,0 +1,34 @@
+{# Plantilla de nuestra aplicación#}
+{#Contenido#}
+{% block contenido %}
+<!-- Page Content -->
+<div class="container">
+  <div style="margin-top:10px">
+
+    <!-- Page Heading/Breadcrumbs -->
+
+    <!-- Portfolio Item Row -->
+    <div id="content">
+      <div class="row">
+
+        <div class="col-lg-20">
+          <h4 class="mt-4 mb-3">Ha sido revocada su asignación a la solicitud del servicio de Mantenimiento con identificador {{solicitud.id}} </h4>
+          <h4 class="my-3">Solicitante: <small> {{solicitud.solicitante}}</small></h4>
+          <h4 class="my-3">Unidad de destino: <small> {{solicitud.destino}}</small></h4>
+          <h4 class="my-3">Fecha: <small>{{solicitud.fecha|date('Y/m/d')}}</small></h4>
+          <h4 class="my-3">Extensión: <small>{{solicitud.extension}}</small></h4>
+          <h4 class="my-3">Email: <small>{{solicitud.email}}</small></h4>
+          <h4 class="my-3">Descripción Incidencia: <small>{{solicitud.descripcionIncidencia}}</small></h4>
+          <h4 class="my-3">Lugar Incidencia: <small>{{solicitud.estancia}}</small></h4>
+        </div>
+        <!-- /.row -->
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top:90px">
+  <hr color="green" size=1>
+  <h4 class="my-3"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
+</div>
+
+{% endblock %}

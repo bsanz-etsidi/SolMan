@@ -1,0 +1,300 @@
+{% extends 'frontal/base.html.twig' %}
+{% block titulo %}Solicitudes{% endblock %}
+{% block contenido %}
+<div class="container">
+  <div style="margin-top:50px">
+    <h1 class=" mt-4 mb-3">Solicitudes</<h1>
+  </div>
+
+  <div class="row">
+
+
+    <div class="col-md-12">
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+
+            <th scope="col">
+              <h6>Id</h6>
+            </th>
+            <th scope="col">
+              <h6><i class="far fa-hourglass"></i></h6>
+            </th>
+            <th scope="col">
+              <h6>Fecha</h6>
+            </th>
+            <th scope="col">
+              <h6>Estancia</h6>
+            </th>
+            <th scope="col">
+              <h6>Solicitante</h6>
+            </th>
+            <th scope="col">
+              <h6>Trabajador<br /> asignado</h6>
+            </th>
+            <th scope="col">
+              <h6>Asignar<br />trabajador</h6>
+            </th>
+            <th scope="col">
+              <h6>Generar<br /> Parte</h6>
+            </th>
+            <th scope="col">
+              <h6>Anular<br />Suspender<br />Priorizar</h6>
+            </th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for solicitud in solicitudes %}
+          {% if solicitud.estado!=3 %}
+
+          <tr>
+
+            <td>
+              {% if solicitud.prioritaria==1 and solicitud.estado==1 %}
+              <h5><a href="{{path('solicitud',{'id':solicitud.id})}}" style="color: red;">{{solicitud.id}}</a></h5>
+              {% endif %}
+              {% if solicitud.prioritaria==1 and solicitud.estado==0 %}
+              <h5><a href="{{path('solicitud',{'id':solicitud.id})}}" style="color: red;">{{solicitud.id}}</a></h5>
+              {% endif %}
+              {% if solicitud.prioritaria==1 and solicitud.estado==4 %}
+              <h5><a href="{{path('solicitud',{'id':solicitud.id})}}" style="color: red;">{{solicitud.id}}</a></h5>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==1 %}
+              <h5><a href="{{path('solicitud',{'id':solicitud.id})}}">{{solicitud.id}}</a></h5>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==0 %}
+              <h5><a href="{{path('solicitud',{'id':solicitud.id})}}">{{solicitud.id}}</a></h5>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==4 %}
+              <h5><a href="{{path('solicitud',{'id':solicitud.id})}}" style="color: fuchsia;">{{solicitud.id}}</a></h5>
+              {% endif %}
+              {% if solicitud.estado==2 %}
+              <h5><a href="{{path('solicitud',{'id':solicitud.id})}}">{{solicitud.id}}</a></h5>
+              {% endif %}
+            </td>
+
+            <td>
+              {% if solicitud.prioritaria==1 and solicitud.estado==1 %}
+              <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}" style="color: red;"><small><i class="far fa-hourglass"></i></small></a></h5>
+              {% endif %}
+              {% if solicitud.prioritaria==1 and solicitud.estado==0 %}
+              <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}" style="color: red;"><small><i class="far fa-hourglass"></i></small></a></h5>
+              {% endif %}
+              {% if solicitud.prioritaria==1 and solicitud.estado==4 %}
+              <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}" style="color: red;"><small><i class="far fa-hourglass"></i></small></a></h5>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==1 %}
+              <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}"><small><i class="far fa-hourglass"></i></small></a></h5>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==0 %}
+              <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}"><small><i class="far fa-hourglass"></i></small></a></h5>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==4 %}
+              <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}" style="color: fuchsia;"><small><i class="far fa-hourglass"></i></small></a></h5>
+              {% endif %}
+              {% if solicitud.estado==2 %}
+              <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}"><small><i class="far fa-hourglass"></i></small></a></h5>
+              {% endif %}
+            </td>
+
+            <td>
+              {% if solicitud.prioritaria==1 and solicitud.estado==1 %}
+              <font color="red">
+                <h6><small>{{solicitud.fecha|date('d/m/Y')}}</small></h6>
+              </font>
+              {% endif %}
+              {% if solicitud.prioritaria==1 and solicitud.estado==0 %}
+              <font color="red">
+                <h6><small>{{solicitud.fecha|date('d/m/Y')}}</small></h6>
+              </font>
+              {% endif %}
+              {% if solicitud.prioritaria==1 and solicitud.estado==4 %}
+              <font color="red">
+                <h6><small>{{solicitud.fecha|date('d/m/Y')}}</small></h6>
+              </font>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==1 %}
+              <h6><small>{{solicitud.fecha|date('d/m/Y')}}</small></h6>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==0 %}
+              <h6><small>{{solicitud.fecha|date('d/m/Y')}}</small></h6>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==4 %}
+              <font color="fuchsia">
+                <h6><small>{{solicitud.fecha|date('d/m/Y')}}</small></h6>
+              </font>
+              {% endif %}
+              {% if solicitud.estado==2 %}
+              <h6><small>{{solicitud.fecha|date('d/m/Y')}}</small></h6>
+              {% endif %}
+            </td>
+
+
+            <td>
+              {% if solicitud.prioritaria==1 and solicitud.estado==1 %}
+              <font color="red">
+                <h6><small>{{solicitud.estancia}}</small></h6>
+              </font>
+              {% endif %}
+              {% if solicitud.prioritaria==1 and solicitud.estado==0 %}
+              <font color="red">
+                <h6><small>{{solicitud.estancia}}</small></h6>
+              </font>
+              {% endif %}
+              {% if solicitud.prioritaria==1 and solicitud.estado==4 %}
+              <font color="red">
+                <h6><small>{{solicitud.estancia}}</small></h6>
+              </font>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==1 %}
+              <h6><small>{{solicitud.estancia}}</small></h6>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==0 %}
+              <h6><small>{{solicitud.estancia}}</small></h6>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==4 %}
+              <font color="fuchsia">
+                <h6><small>{{solicitud.estancia}}</small></h6>
+              </font>
+              {% endif %}
+              {% if solicitud.estado==2 %}
+              <h6><small>{{solicitud.estancia}}</small></h6>
+              {% endif %}
+            </td>
+
+
+            <td>
+              {% if solicitud.prioritaria==1 and solicitud.estado==1%}
+              <font color="red">
+                <h6><small>{{solicitud.solicitante}}</small></h6>
+              </font>
+              {% endif %}
+              {% if solicitud.prioritaria==1 and solicitud.estado==0%}
+              <font color="red">
+                <h6><small>{{solicitud.solicitante}}</small></h6>
+              </font>
+              {% endif %}
+              {% if solicitud.prioritaria==1 and solicitud.estado==4%}
+              <font color="red">
+                <h6><small>{{solicitud.solicitante}}</small></h6>
+              </font>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==1%}
+              <h6><small>{{solicitud.solicitante}}</small></h6>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==0%}
+              <h6><small>{{solicitud.solicitante}}</small></h6>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==4 %}
+              <font color="fuchsia">
+                <h6><small>{{solicitud.solicitante}}</small></h6>
+              </font>
+              {% endif %}
+              {% if solicitud.estado==2 %}
+              <h6><small>{{solicitud.solicitante}}</small></h6>
+              {% endif %}
+            </td>
+
+
+            <td>
+              {% for trabajador in solicitud.trabajadores %}
+              {% if solicitud.estado==2 %}
+              <h7><small>{{trabajador.nombre}}<br /></small></h7>
+              {% endif %}
+              {% if solicitud.estado==4 and solicitud.prioritaria==1 %}
+              <h7><a href="" style="color: red;"><small>{{trabajador.nombre}}</small><br /></a></h7>
+              {% endif %}
+              {% if solicitud.estado==4 and solicitud.prioritaria==0 %}
+              <h7><a href="" style="color: fuchsia;"><small>{{trabajador.nombre}}</small><br /></a></h7>
+              {% endif %}
+              {% if solicitud.estado==1 and solicitud.prioritaria==1 %}
+              <h7><a href="{{path('borrarAsignacion',{'id':solicitud.id, 'idTrabajador':trabajador.id})}}" style=" color: red;"><small>{{trabajador.nombre}}
+                    <small><i class="far fa-trash-alt"></i></small></small><br /></a></h7>
+              {% endif %}
+              {% if solicitud.estado==1 and solicitud.prioritaria==0 %}
+              <h7><a href="{{path('borrarAsignacion',{'id':solicitud.id, 'idTrabajador':trabajador.id})}}"><small>{{trabajador.nombre}}
+                    <small><i class="far fa-trash-alt"></i></small></small><br /></a></h7>
+              {% endif %}
+              {% endfor %}
+            </td>
+
+
+            <th scope="row">
+              {% if solicitud.estado==2 or solicitud.estado==4 %}
+              <h5><a href=""></a></h5>
+              {% else %}
+              {% if solicitud.prioritaria==1 %}
+              <h7><a href="{{ path('asignarSolicitud',{'id':solicitud.id}) }}" style=" color: red;"><small><small><i class="fas fa-plus"></i></small></small><small> Trabajador</small></a></h7>
+              {% endif %}
+              {% if solicitud.prioritaria==0 %}
+              <h7><a href="{{ path('asignarSolicitud',{'id':solicitud.id}) }}"><small><small><i class="fas fa-plus"></i></small></small><small> Trabajador</small></a></h7>
+              {% endif %}
+              {% endif %}
+
+            </th>
+
+            <th scope="row">
+              {% if solicitud.estado==1 and solicitud.prioritaria==0 %}
+              <h6><a href="{{path('nuevoParte',{'id':solicitud.id})}}"><small><small><i class="fas fa-plus"></i></small></small><small> Parte</small></a></h6>
+              {% endif %}
+              {% if solicitud.estado==1 and solicitud.prioritaria==1 %}
+              <h6><a href="{{path('nuevoParte',{'id':solicitud.id})}}" style=" color: red;"><small><small><i class="fas fa-plus"></i></small></small><small> Parte</small></a></h6>
+              {% endif %}
+              {% if solicitud.estado==0  %}
+              <h6><a href=""></a></h6>
+              {% endif %}
+              {% if solicitud.estado==4 and solicitud.prioritaria==1 %}
+              <h6><a href=""></a></h6>
+              {% endif %}
+
+            </th>
+
+            <td>
+              {% if solicitud.prioritaria==0 and solicitud.estado==0 %}
+              <h7><a href="{{path('anularSolicitud',{'id':solicitud.id})}}"><small>Anular<br /> </small> </a> </h7>
+              <h7><a href="{{path('suspenderSolicitud',{'id':solicitud.id})}}"><small>Suspender<br /></small></a></h7>
+              <h7><a href="{{path('priorizarSolicitud',{'id':solicitud.id})}}"><small>Priorizar</small></a></h7>
+              {% endif %}
+              {% if solicitud.prioritaria==1 and solicitud.estado==0 %}
+              <h7><a href="{{path('anularSolicitud',{'id':solicitud.id})}}" style=" color: red;"><small>Anular<br /> </small> </a> </h7>
+              <h7><a href="{{path('suspenderSolicitud',{'id':solicitud.id})}}" style=" color: red;"><small>Suspender<br /></small></a></h7>
+              <h7><a href="{{path('desPriorizarSolicitud',{'id':solicitud.id})}}" style=" color: red;"><small>Despriorizar</small></a></h7>
+              {% endif %}
+              {% if solicitud.prioritaria==0 and solicitud.estado==1 %}
+              <h7><a href="{{path('anularSolicitud',{'id':solicitud.id})}}"><small>Anular<br /> </small> </a> </h7>
+              <h7><a href="{{path('suspenderSolicitud',{'id':solicitud.id})}}"><small>Suspender<br /></small></a></h7>
+              <h7><a href="{{path('priorizarSolicitud',{'id':solicitud.id})}}"><small>Priorizar</small></a></h7>
+              {% endif %}
+              {% if solicitud.prioritaria==1 and solicitud.estado==1 %}
+              <h7><a href="{{path('anularSolicitud',{'id':solicitud.id})}}" style=" color: red;"><small>Anular<br /> </small> </a> </h7>
+              <h7><a href="{{path('suspenderSolicitud',{'id':solicitud.id})}}" style=" color: red;"><small>Suspender<br /></small></a></h7>
+              <h7><a href="{{path('desPriorizarSolicitud',{'id':solicitud.id})}}" style=" color: red;"><small>Despriorizar</small></a></h7>
+              {% endif %}
+              {% if solicitud.estado==4 and solicitud.prioritaria==0 %}
+              <h7><a href="{{path('reactivarSolicitudSuspendida',{'id':solicitud.id})}}" style="color: fuchsia;"><small>Reactivar</small></a></h7>
+              {% endif %}
+              {% if solicitud.estado==4 and solicitud.prioritaria==1 %}
+              <h7><a href="{{path('reactivarSolicitudSuspendida',{'id':solicitud.id})}}" style="color: red;"><small>Reactivar<br /></small></a></h7>
+              <h7><a href="{{path('desPriorizarSolicitud',{'id':solicitud.id})}}" style="color: red;"><small>Despriorizar</small></a></h7>
+              {% endif %}
+            </td>
+
+          </tr>
+          {% endif %}
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
+<div style="margin-bottom:200px">
+</div>
+</div>
+{% endblock %}
