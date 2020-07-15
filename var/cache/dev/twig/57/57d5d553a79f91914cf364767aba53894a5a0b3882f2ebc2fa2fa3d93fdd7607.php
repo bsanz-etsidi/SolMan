@@ -93,7 +93,7 @@ class __TwigTemplate_102918b85450d38ff590fab58d1750f9ec8270afdb862d005b7af30d39e
 <div class=\"container\">
 
   <!-- Page Heading/Breadcrumbs -->
-  <div style=\"margin-top:75px\">
+  <div style=\"margin-top:75px;margin-bottom:23px\">
     <h1 class=\" mt-4 mb-3\">Mantenimiento ETSIDI
 
     </h1>
@@ -168,7 +168,7 @@ class __TwigTemplate_102918b85450d38ff590fab58d1750f9ec8270afdb862d005b7af30d39e
 <div class=\"container\">
 
   <!-- Page Heading/Breadcrumbs -->
-  <div style=\"margin-top:75px\">
+  <div style=\"margin-top:75px;margin-bottom:23px\">
     <h1 class=\" mt-4 mb-3\">Mantenimiento ETSIDI
 
     </h1>

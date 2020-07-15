@@ -42,7 +42,6 @@ class DefaultController extends Controller
      */
      public function homeAction(Request $request, AuthenticationUtils $authenticationUtils, EventDispatcherInterface $dispatcher)
    {
-
      $key = 'mqtrf2010';
      $encrypt = new Encrypter();
      $mensaje = null;
@@ -100,16 +99,7 @@ class DefaultController extends Controller
         return $this->render('frontal/timeline.html.twig', array('eventos' => $eventos, 'id'=>$id));
       }
 
-      /**
-       * @Route("/cronogramaGestion/{id}", name="cronogramaGestion")
-       */
-      public function cronogramaGestionAction(Request $request, $id)
-      {
-        $repository = $this->getDoctrine()->getRepository(Solicitud::class);
-        $solicitud = $repository->find($id);
-        $eventos = $solicitud->getEventos();
-        return $this->render('frontal/timeline.html.twig', array('eventos' => $eventos, 'id'=>$id));
-      }
+
 
   /**
    * @Route("/nuevaSolicitud/{email}", name="nuevaSolicitud")
@@ -121,6 +111,8 @@ class DefaultController extends Controller
      $solicitud = new Solicitud();//Crea un Entity  llamado solicitud
      $evento = new Evento();
      $emaildecrypt = $encrypt->decrypt($email,$key);
+     $cadena = '@upm.es';
+     $esUpm = strpos($emaildecrypt, $cadena);
 
      $form = $this->createForm(SolicitudType::class, $solicitud);
 
@@ -131,8 +123,12 @@ class DefaultController extends Controller
           if($this->getUser()){
             $solicitud->setEmail($email);
           }else{
+             if ($esUpm){
             $solicitud->setEmail($emaildecrypt);
-            }
+          }else{
+            return $this->redirectToRoute('home');
+           }
+         }
           $solicitud->setPrioritaria('0');
           $solicitud->setFecha();
 
@@ -172,7 +168,9 @@ class DefaultController extends Controller
           return $this->redirectToRoute('mensaje',array('emailcrypt' => $email ));
           }
       return $this->render('frontal/nuevaSolicitud.html.twig',array("form" => $form->createView(),'email' => $email));
-     }
+
+   }
+
 
 
   /**

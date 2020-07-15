@@ -22,7 +22,7 @@ class UsuarioType extends AbstractType
               'first_options'  => ['label' => 'Contraseña'],
               'second_options' => ['label' => 'Repetir Contraseña'],
             ])
-          ->add('roles', ChoiceType::class, ['choices'  => ['ROLE_USER' => 'ROLE_USER', 'ROLE_ADMIN' => 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN' => 'ROLE_ADMIN',],], array('label' => 'Roles '))
+          ->add('roles', ChoiceType::class, ['choices'  => ['ROLE_USER' => 'ROLE_USER', 'ROLE_ADMIN' => 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN' => 'ROLE_SUPER_ADMIN',],], array('label' => 'Roles '))
           ->add('Registrar', SubmitType::class, array('label' => 'Registrar'))
 
           ;

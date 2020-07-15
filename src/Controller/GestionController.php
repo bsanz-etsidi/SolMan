@@ -35,36 +35,7 @@ use App\Service\Encrypter;
 
 class GestionController extends AbstractController
 {
-    /**
-     * @Route("/registro", name="registro")
-     */
-     public function registroAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
-     {
-        $usuario = new Usuario();//Crea un Entity Usuario llamado usuario
-        //Construyendo el formulario
-        $form = $this->createForm(UsuarioType::class, $usuario);
-
-        //Recogemos la información de un submit
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-          // Rellenar el Entity Usuario
-          $password = $passwordEncoder->encodePassword($usuario, $usuario->getPlainPassword());
-          $usuario->setPassword($password);
-          // 3b) $username=$email
-          $usuario->setUsername($usuario->getEmail());
-          $roles = $usuario->getRoles();
-          //3c) $roles
-          $usuario->setRoles(array($roles));
-
-          //Almacenar nuevo Usuario
-          $em = $this->getDoctrine()->getManager();
-          $em->persist($usuario);
-          $em->flush();
-          return $this->redirectToRoute('registro');
-      }
-        return $this->render('gestionMantenimiento/registroUsuario.html.twig',array("form" => $form->createView()));
-      }
-
+  
 
       /**
        * @Route("/nuevoTrabajador", name="nuevoTrabajador")
@@ -220,6 +191,17 @@ class GestionController extends AbstractController
                $solicitudes = $repository->findByPrioritaria('1');
                return $this->render('gestionMantenimiento/pendientes.html.twig',array("solicitudes" => $solicitudes));
               }
+
+          /**
+           * @Route("/cronogramaGestion/{id}", name="cronogramaGestion")
+           */
+          public function cronogramaGestionAction(Request $request, $id)
+          {
+            $repository = $this->getDoctrine()->getRepository(Solicitud::class);
+            $solicitud = $repository->find($id);
+            $eventos = $solicitud->getEventos();
+            return $this->render('frontal/timeline.html.twig', array('eventos' => $eventos, 'id'=>$id));
+          }
 
         /**
          * @Route("/anularSolicitud/{id}", name="anularSolicitud")

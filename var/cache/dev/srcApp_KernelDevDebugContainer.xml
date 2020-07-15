@@ -340,6 +340,13 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\GestionController"/>
       </call>
     </service>
+    <service id="App\Controller\RegistroController" class="App\Controller\RegistroController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\RegistroController"/>
+      </call>
+    </service>
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -4012,6 +4019,13 @@
         </argument>
         <argument>null</argument>
       </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.6vaPDdU"/>
+        <argument type="collection">
+          <argument>ROLE_SUPER_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <tag name="monolog.logger" channel="security"/>
@@ -4439,6 +4453,9 @@
     </service>
     <service id=".security.request_matcher.yrCqkLY" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/gestionMantenimiento</argument>
+    </service>
+    <service id=".security.request_matcher.6vaPDdU" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/registroUsuarios</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
@@ -4900,6 +4917,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GestionController" class="App\Controller\GestionController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GestionController" class="App\Controller\GestionController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\GestionController" class="App\Controller\GestionController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistroController" class="App\Controller\RegistroController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistroController" class="App\Controller\RegistroController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\RegistroController" class="App\Controller\RegistroController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5153,7 +5173,7 @@
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
-    <service id=".service_locator.yJXw9QX" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.GMpiWVR" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\DefaultController::homeAction" type="service" id=".service_locator.qQexSk3"/>
@@ -5166,8 +5186,8 @@
         <argument key="App\Controller\GestionController::nuevoParteAction" type="service" id=".service_locator.8ZuNAXa"/>
         <argument key="App\Controller\GestionController::reactivarSolicitudAnuladaAction" type="service" id=".service_locator.8ZuNAXa"/>
         <argument key="App\Controller\GestionController::reactivarSolicitudSuspendidaAction" type="service" id=".service_locator.8ZuNAXa"/>
-        <argument key="App\Controller\GestionController::registroAction" type="service" id=".service_locator.ccM2MGC"/>
         <argument key="App\Controller\GestionController::suspenderSolicitudAction" type="service" id=".service_locator.8ZuNAXa"/>
+        <argument key="App\Controller\RegistroController::registroAction" type="service" id=".service_locator.ccM2MGC"/>
         <argument key="App\Controller\DefaultController:homeAction" type="service" id=".service_locator.qQexSk3"/>
         <argument key="App\Controller\DefaultController:loginAction" type="service" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\DefaultController:nuevaSolicitudAction" type="service" id=".service_locator.8ZuNAXa"/>
@@ -5178,8 +5198,8 @@
         <argument key="App\Controller\GestionController:nuevoParteAction" type="service" id=".service_locator.8ZuNAXa"/>
         <argument key="App\Controller\GestionController:reactivarSolicitudAnuladaAction" type="service" id=".service_locator.8ZuNAXa"/>
         <argument key="App\Controller\GestionController:reactivarSolicitudSuspendidaAction" type="service" id=".service_locator.8ZuNAXa"/>
-        <argument key="App\Controller\GestionController:registroAction" type="service" id=".service_locator.ccM2MGC"/>
         <argument key="App\Controller\GestionController:suspenderSolicitudAction" type="service" id=".service_locator.8ZuNAXa"/>
+        <argument key="App\Controller\RegistroController:registroAction" type="service" id=".service_locator.ccM2MGC"/>
       </argument>
     </service>
     <service id=".service_locator.Y7gDuDN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5473,6 +5493,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\RegistroController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\RegistroController"/>
+      <argument>App\Controller\RegistroController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
     <service id=".service_locator.vdmMuyE.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
@@ -5628,12 +5654,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.yJXw9QX"/>
+      <argument type="service" id=".service_locator.GMpiWVR"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.yJXw9QX"/>
+      <argument type="service" id=".service_locator.GMpiWVR"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6024,7 +6050,7 @@
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.dynamic" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.yJXw9QX"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.GMpiWVR"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

@@ -17,7 +17,6 @@ return [
         '/mensajeNoPuede' => [[['_route' => 'mensajeNoPuede', '_controller' => 'App\\Controller\\DefaultController::mensajeNoPuedeAction'], null, null, null, false, false, null]],
         '/solicitudesTrabajador' => [[['_route' => 'solicitudesTrabajador', '_controller' => 'App\\Controller\\DefaultController::solicitudesTrabajadorAction'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\DefaultController::loginAction'], null, null, null, false, false, null]],
-        '/gestionMantenimiento/registro' => [[['_route' => 'registro', '_controller' => 'App\\Controller\\GestionController::registroAction'], null, null, null, false, false, null]],
         '/gestionMantenimiento/nuevoTrabajador' => [[['_route' => 'nuevoTrabajador', '_controller' => 'App\\Controller\\GestionController::nuevoTrabajadorAction'], null, null, null, false, false, null]],
         '/gestionMantenimiento/asignadas' => [[['_route' => 'asignadas', '_controller' => 'App\\Controller\\GestionController::asignadasAction'], null, null, null, false, false, null]],
         '/gestionMantenimiento/pendientesDeAsignar' => [[['_route' => 'pendientesDeAsignar', '_controller' => 'App\\Controller\\GestionController::pendientesDeAsignarAction'], null, null, null, false, false, null]],
@@ -30,6 +29,7 @@ return [
         '/gestionMantenimiento/partes' => [[['_route' => 'partes', '_controller' => 'App\\Controller\\GestionController::partesAction'], null, null, null, false, false, null]],
         '/gestionMantenimiento/seleccionaPartes' => [[['_route' => 'seleccionaPartes', '_controller' => 'App\\Controller\\GestionController::seleccionaPartesAction'], null, null, null, false, false, null]],
         '/gestionMantenimiento/seleccionaSolicitudes' => [[['_route' => 'seleccionaSolicitudes', '_controller' => 'App\\Controller\\GestionController::seleccionaSolicitudesAction'], null, null, null, false, false, null]],
+        '/registroUsuarios/registro' => [[['_route' => 'registro', '_controller' => 'App\\Controller\\RegistroController::registroAction'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, ['GET' => 0], null, false, false, null]],
         '/statistics/estadisticas' => [[['_route' => 'estadisticas', '_controller' => 'App\\Controller\\StatisticsController::estadisticasAction'], null, null, null, false, false, null]],
         '/statistics/conteoPrioritarias' => [[['_route' => 'conteoPrioritarias', '_controller' => 'App\\Controller\\StatisticsController::conteoPrioritariasAction'], null, null, null, false, false, null]],
@@ -54,39 +54,37 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/cronograma(?'
-                    .'|/([^/]++)(*:192)'
-                    .'|Gestion/([^/]++)(*:216)'
-                .')'
-                .'|/nuevaSolicitud/([^/]++)(*:249)'
-                .'|/mensaje/([^/]++)(*:274)'
-                .'|/rellenarSatisfaccion/([^/]++)/([^/]++)(*:321)'
+                .'|/cronograma/([^/]++)(*:189)'
+                .'|/nuevaSolicitud/([^/]++)(*:221)'
+                .'|/mensaje/([^/]++)(*:246)'
+                .'|/rellenarSatisfaccion/([^/]++)/([^/]++)(*:293)'
                 .'|/gestionMantenimiento/(?'
-                    .'|nuevoParte/([^/]++)(*:373)'
-                    .'|editarParte/([^/]++)(*:401)'
+                    .'|nuevoParte/([^/]++)(*:345)'
+                    .'|editarParte/([^/]++)(*:373)'
+                    .'|cronogramaGestion/([^/]++)(*:407)'
                     .'|a(?'
-                        .'|nularSolicitud/([^/]++)(*:436)'
-                        .'|signarSolicitud/([^/]++)(*:468)'
+                        .'|nularSolicitud/([^/]++)(*:442)'
+                        .'|signarSolicitud/([^/]++)(*:474)'
                     .')'
                     .'|s(?'
-                        .'|uspenderSolicitud/([^/]++)(*:507)'
-                        .'|olicitud(?:/([^/]++))?(*:537)'
+                        .'|uspenderSolicitud/([^/]++)(*:513)'
+                        .'|olicitud(?:/([^/]++))?(*:543)'
                     .')'
                     .'|reactivarSolicitud(?'
-                        .'|Suspendida/([^/]++)(*:586)'
-                        .'|Anulada/([^/]++)(*:610)'
+                        .'|Suspendida/([^/]++)(*:592)'
+                        .'|Anulada/([^/]++)(*:616)'
                     .')'
                     .'|p(?'
-                        .'|arte(?:/([^/]++))?(*:641)'
-                        .'|riorizarSolicitud/([^/]++)(*:675)'
+                        .'|arte(?:/([^/]++))?(*:647)'
+                        .'|riorizarSolicitud/([^/]++)(*:681)'
                     .')'
-                    .'|desPriorizarSolicitud/([^/]++)(*:714)'
+                    .'|desPriorizarSolicitud/([^/]++)(*:720)'
                     .'|borrar(?'
-                        .'|Asignacion/([^/]++)/([^/]++)(*:759)'
-                        .'|Parte(?:/([^/]++))?(*:786)'
+                        .'|Asignacion/([^/]++)/([^/]++)(*:765)'
+                        .'|Parte(?:/([^/]++))?(*:792)'
                     .')'
                 .')'
-                .'|/statistics/conteoSolicitudes(?:/([^/]++))?(*:839)'
+                .'|/statistics/conteoSolicitudes(?:/([^/]++))?(*:845)'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -97,25 +95,25 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        192 => [[['_route' => 'cronograma', '_controller' => 'App\\Controller\\DefaultController::cronogramaAction'], ['idcrypt'], null, null, false, true, null]],
-        216 => [[['_route' => 'cronogramaGestion', '_controller' => 'App\\Controller\\DefaultController::cronogramaGestionAction'], ['id'], null, null, false, true, null]],
-        249 => [[['_route' => 'nuevaSolicitud', '_controller' => 'App\\Controller\\DefaultController::nuevaSolicitudAction'], ['email'], null, null, false, true, null]],
-        274 => [[['_route' => 'mensaje', '_controller' => 'App\\Controller\\DefaultController::mensajeAction'], ['emailcrypt'], null, null, false, true, null]],
-        321 => [[['_route' => 'rellenarSatisfaccion', '_controller' => 'App\\Controller\\DefaultController::rellenarSatisfaccionAction'], ['id', 'emailcrypt'], null, null, false, true, null]],
-        373 => [[['_route' => 'nuevoParte', '_controller' => 'App\\Controller\\GestionController::nuevoParteAction'], ['id'], null, null, false, true, null]],
-        401 => [[['_route' => 'editarParte', '_controller' => 'App\\Controller\\GestionController::editarParteAction'], ['id'], null, null, false, true, null]],
-        436 => [[['_route' => 'anularSolicitud', '_controller' => 'App\\Controller\\GestionController::anularSolicitudAction'], ['id'], null, null, false, true, null]],
-        468 => [[['_route' => 'asignarSolicitud', '_controller' => 'App\\Controller\\GestionController::asignarSolicitudAction'], ['id'], null, null, false, true, null]],
-        507 => [[['_route' => 'suspenderSolicitud', '_controller' => 'App\\Controller\\GestionController::suspenderSolicitudAction'], ['id'], null, null, false, true, null]],
-        537 => [[['_route' => 'solicitud', 'id' => null, '_controller' => 'App\\Controller\\GestionController::solicitudAction'], ['id'], null, null, false, true, null]],
-        586 => [[['_route' => 'reactivarSolicitudSuspendida', '_controller' => 'App\\Controller\\GestionController::reactivarSolicitudSuspendidaAction'], ['id'], null, null, false, true, null]],
-        610 => [[['_route' => 'reactivarSolicitudAnulada', '_controller' => 'App\\Controller\\GestionController::reactivarSolicitudAnuladaAction'], ['id'], null, null, false, true, null]],
-        641 => [[['_route' => 'parte', 'id' => null, '_controller' => 'App\\Controller\\GestionController::parteAction'], ['id'], null, null, false, true, null]],
-        675 => [[['_route' => 'priorizarSolicitud', '_controller' => 'App\\Controller\\GestionController::priorizarSolicitudAction'], ['id'], null, null, false, true, null]],
-        714 => [[['_route' => 'desPriorizarSolicitud', '_controller' => 'App\\Controller\\GestionController::desPriorizarSolicitudAction'], ['id'], null, null, false, true, null]],
-        759 => [[['_route' => 'borrarAsignacion', '_controller' => 'App\\Controller\\GestionController::borrarAsignacionAction'], ['id', 'idTrabajador'], null, null, false, true, null]],
-        786 => [[['_route' => 'borrarParte', 'id' => null, '_controller' => 'App\\Controller\\GestionController::borrarParteAction'], ['id'], null, null, false, true, null]],
-        839 => [
+        189 => [[['_route' => 'cronograma', '_controller' => 'App\\Controller\\DefaultController::cronogramaAction'], ['idcrypt'], null, null, false, true, null]],
+        221 => [[['_route' => 'nuevaSolicitud', '_controller' => 'App\\Controller\\DefaultController::nuevaSolicitudAction'], ['email'], null, null, false, true, null]],
+        246 => [[['_route' => 'mensaje', '_controller' => 'App\\Controller\\DefaultController::mensajeAction'], ['emailcrypt'], null, null, false, true, null]],
+        293 => [[['_route' => 'rellenarSatisfaccion', '_controller' => 'App\\Controller\\DefaultController::rellenarSatisfaccionAction'], ['id', 'emailcrypt'], null, null, false, true, null]],
+        345 => [[['_route' => 'nuevoParte', '_controller' => 'App\\Controller\\GestionController::nuevoParteAction'], ['id'], null, null, false, true, null]],
+        373 => [[['_route' => 'editarParte', '_controller' => 'App\\Controller\\GestionController::editarParteAction'], ['id'], null, null, false, true, null]],
+        407 => [[['_route' => 'cronogramaGestion', '_controller' => 'App\\Controller\\GestionController::cronogramaGestionAction'], ['id'], null, null, false, true, null]],
+        442 => [[['_route' => 'anularSolicitud', '_controller' => 'App\\Controller\\GestionController::anularSolicitudAction'], ['id'], null, null, false, true, null]],
+        474 => [[['_route' => 'asignarSolicitud', '_controller' => 'App\\Controller\\GestionController::asignarSolicitudAction'], ['id'], null, null, false, true, null]],
+        513 => [[['_route' => 'suspenderSolicitud', '_controller' => 'App\\Controller\\GestionController::suspenderSolicitudAction'], ['id'], null, null, false, true, null]],
+        543 => [[['_route' => 'solicitud', 'id' => null, '_controller' => 'App\\Controller\\GestionController::solicitudAction'], ['id'], null, null, false, true, null]],
+        592 => [[['_route' => 'reactivarSolicitudSuspendida', '_controller' => 'App\\Controller\\GestionController::reactivarSolicitudSuspendidaAction'], ['id'], null, null, false, true, null]],
+        616 => [[['_route' => 'reactivarSolicitudAnulada', '_controller' => 'App\\Controller\\GestionController::reactivarSolicitudAnuladaAction'], ['id'], null, null, false, true, null]],
+        647 => [[['_route' => 'parte', 'id' => null, '_controller' => 'App\\Controller\\GestionController::parteAction'], ['id'], null, null, false, true, null]],
+        681 => [[['_route' => 'priorizarSolicitud', '_controller' => 'App\\Controller\\GestionController::priorizarSolicitudAction'], ['id'], null, null, false, true, null]],
+        720 => [[['_route' => 'desPriorizarSolicitud', '_controller' => 'App\\Controller\\GestionController::desPriorizarSolicitudAction'], ['id'], null, null, false, true, null]],
+        765 => [[['_route' => 'borrarAsignacion', '_controller' => 'App\\Controller\\GestionController::borrarAsignacionAction'], ['id', 'idTrabajador'], null, null, false, true, null]],
+        792 => [[['_route' => 'borrarParte', 'id' => null, '_controller' => 'App\\Controller\\GestionController::borrarParteAction'], ['id'], null, null, false, true, null]],
+        845 => [
             [['_route' => 'conteoSolicitudes', 'estado' => null, '_controller' => 'App\\Controller\\StatisticsController::conteoSolicitudesAction'], ['estado'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

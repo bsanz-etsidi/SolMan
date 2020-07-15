@@ -88,12 +88,13 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
         </button>
         <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">
           <ul class=\"navbar-nav ml-auto\">
+
             ";
-        // line 28
+        // line 29
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 29
+            // line 30
             echo "            <li class=\"nav-item\">
-              <pre>                 </pre>
+              <pre>                         </pre>
             </li>
             <li class=\"nav-item dropdown\">
               <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
@@ -101,43 +102,43 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
               </a>
               <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
                 <a class=\"dropdown-item\" href=\"";
-            // line 37
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevaSolicitud", ["email" => (isset($context["email"]) || array_key_exists("email", $context) ? $context["email"] : (function () { throw new RuntimeError('Variable "email" does not exist.', 37, $this->source); })())]), "html", null, true);
+            // line 38
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevaSolicitud", ["email" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 38, $this->source); })()), "user", [], "any", false, false, false, 38), "username", [], "any", false, false, false, 38)]), "html", null, true);
             echo "\">Nueva</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 38
+            // line 39
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("asignadas");
             echo "\">Asignadas</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 39
+            // line 40
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pendientesDeAsignar");
             echo "\">Sin Asignar</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 40
+            // line 41
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("despachadas");
             echo "\">Despachadas</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 41
+            // line 42
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudes");
             echo "\">Todas</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 42
+            // line 43
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("anuladas");
             echo "\">Anuladas</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 43
+            // line 44
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("suspendidas");
             echo "\">Suspendidas</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 44
+            // line 45
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("prioritarias");
             echo "\">Prioritarias</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 45
+            // line 46
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("seleccionaSolicitudes");
             echo "\">Por fecha</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 46
+            // line 47
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudesTrabajadorGestion");
             echo "\">Por trabajador</a>
               </div>
@@ -154,11 +155,11 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
               <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
                 <a class=\"dropdown-item\" href=\"\"></a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 60
+            // line 61
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("seleccionaPartes");
             echo "\">Selección por fecha</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 61
+            // line 62
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("partes");
             echo "\">Todos</a>
 
@@ -171,35 +172,47 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
             <li class=\"nav-item\">
               <a class=\"nav-link text-white\" href=\"";
-            // line 71
+            // line 72
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevoTrabajador");
             echo "\">Nuevo Trabajador</a>
             </li>
 
             <li class=\"nav-item\">
-              <pre>    </pre>
+              <pre>  </pre>
             </li>
-
+            ";
+            // line 78
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_SUPER_ADMIN")) {
+                // line 79
+                echo "            <li class=\"nav-item\">
+              <pre></pre>
+            </li>
             <li class=\"nav-item\">
               <a class=\"nav-link text-white\" href=\"";
-            // line 79
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("registro");
-            echo "\">Nuevo Usuario</a>
+                // line 83
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("registro");
+                echo "\">Nuevo Usuario</a>
             </li>
-
             <li class=\"nav-item\">
-              <pre>     </pre>
+              <pre></pre>
+            </li>
+            ";
+            }
+            // line 89
+            echo "
+            <li class=\"nav-item\">
+              <pre>  </pre>
             </li>
 
             <li class=\"nav-item\">
               <h2><a class=\"nav-link text-white\" href=\"";
-            // line 87
+            // line 95
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("estadisticas");
             echo "\"><i class=\"fas fa-chart-bar\"></i></a></h2>
             </li>
 
             <li class=\"nav-item\">
-              <pre>    </pre>
+              <pre>  </pre>
             </li>
 
 
@@ -210,7 +223,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
             <li class=\"nav-item\">
               <a href=\"";
-            // line 101
+            // line 109
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\" class=\"btn bg-danger\"
                 style=\"border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:lightgrey;height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px\"
@@ -225,8 +238,8 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
             <li class=\"nav-item\">
               <a class=\"nav-link text-warning\" href=\"\">";
-            // line 113
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 113, $this->source); })()), "user", [], "any", false, false, false, 113), "username", [], "any", false, false, false, 113), "html", null, true);
+            // line 121
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 121, $this->source); })()), "user", [], "any", false, false, false, 121), "username", [], "any", false, false, false, 121), "html", null, true);
             echo "</a>
             </li>
 
@@ -238,13 +251,13 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
             ";
         } else {
-            // line 123
+            // line 131
             echo "
             <ul class=\"navbar-nav ml-auto\">
 
               <li class=\"nav-item\">
                 <a href=\"";
-            // line 127
+            // line 135
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\" class=\"btn bg-danger\"
                   style=\"border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:lightgrey;height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px\"
@@ -256,7 +269,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
             </ul>
             ";
         }
-        // line 136
+        // line 144
         echo "          </ul>
         </div>
       </div>
@@ -264,15 +277,15 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
     </nav>
     <!--FIN MENÚ DE NAVEGACIÓN-->
     ";
-        // line 142
+        // line 150
         $this->displayBlock('contenido', $context, $blocks);
-        // line 206
+        // line 213
         echo "
     <!-- Footer -->
     <footer class=\"page-footer  bg-danger\">
       <div class=\"footer-copyright text-center py-3\">
         <img src=\"";
-        // line 210
+        // line 217
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/upm.png"), "html", null, true);
         echo "\" style=\"margin-bottom: 0\" height=\"100\" alt=\"\">
       </div>
@@ -281,51 +294,51 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
     <!-- Bootstrap core JavaScript -->
     <script src=\"";
-        // line 216
+        // line 223
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/exportacion.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 217
+        // line 224
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/genPDF.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 218
+        // line 225
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/downloadCanvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 219
+        // line 226
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/html2canvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 220
+        // line 227
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 221
+        // line 228
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jspdf.min.js"), "html", null, true);
         echo "\"></script>
     <link href=\"";
-        // line 222
+        // line 229
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 223
+        // line 230
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap-datepicker.es.min.js"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <script src=\"";
-        // line 224
+        // line 231
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 225
+        // line 232
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script>
     <script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script>
     ";
-        // line 228
+        // line 235
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 230
+        // line 237
         echo "  </body>
 
 </html>";
@@ -356,7 +369,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
     }
 
-    // line 142
+    // line 150
     public function block_contenido($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -366,14 +379,14 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenido"));
 
-        // line 143
+        // line 151
         echo "    <div class=\"container\">
       <div style=\"margin-top:50px\">
 
         ";
-        // line 146
+        // line 154
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 147
+            // line 155
             echo "        <h1 class=\"mt-4 mb-3\">Mantenimiento ETSIDI
           <small>Trabajadores</small>
         </h1>
@@ -382,12 +395,12 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
         </ol>
         ";
         }
-        // line 154
+        // line 162
         echo "
         ";
-        // line 155
+        // line 163
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 156
+            // line 164
             echo "        <h1 class=\"mt-4 mb-3\">Mantenimiento ETSIDI
           <small>Gestión</small>
         </h1>
@@ -396,7 +409,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
         </ol>
         ";
         }
-        // line 163
+        // line 171
         echo "
         <!-- Content Row -->
         <div class=\"row\">
@@ -404,96 +417,92 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
           <div class=\"col-lg-3 mb-4 bg-light\">
             <div class=\"list-group \">
               ";
-        // line 169
+        // line 177
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 170
+            // line 178
             echo "              <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudesTrabajador");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes asignadas</a>
               <a href=\"";
-            // line 171
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevaSolicitud", ["email" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 171, $this->source); })()), "user", [], "any", false, false, false, 171), "username", [], "any", false, false, false, 171)]), "html", null, true);
+            // line 179
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevaSolicitud", ["email" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 179, $this->source); })()), "user", [], "any", false, false, false, 179), "username", [], "any", false, false, false, 179)]), "html", null, true);
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Nueva Solicitud</a>
               <a href=\"";
-            // line 172
+            // line 180
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Salir</a>
               ";
         }
-        // line 174
+        // line 182
         echo "
               ";
-        // line 175
+        // line 183
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 176
+            // line 184
             echo "              <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevaSolicitud", ["email" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 176, $this->source); })()), "user", [], "any", false, false, false, 176), "username", [], "any", false, false, false, 176)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevaSolicitud", ["email" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 184, $this->source); })()), "user", [], "any", false, false, false, 184), "username", [], "any", false, false, false, 184)]), "html", null, true);
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Nueva Solicitud</a>
               <a href=\"";
-            // line 177
+            // line 185
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudes");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Todas las solicitudes</a>
               <a href=\"";
-            // line 178
+            // line 186
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("asignadas");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes asignadas</a>
               <a href=\"";
-            // line 179
+            // line 187
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pendientesDeAsignar");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes sin asignar</a>
               <a href=\"";
-            // line 180
+            // line 188
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("despachadas");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes despachadas</a>
               <a href=\"";
-            // line 181
+            // line 189
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("anuladas");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes anuladas</a>
               <a href=\"";
-            // line 182
+            // line 190
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("suspendidas");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes suspendidas</a>
               <a href=\"";
-            // line 183
+            // line 191
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("prioritarias");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes prioritarias</a>
               <a href=\"";
-            // line 184
+            // line 192
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("seleccionaSolicitudes");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes por fecha</a>
               <a href=\"";
-            // line 185
+            // line 193
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudesTrabajadorGestion");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes por trabajador</a>
               <a href=\"";
-            // line 186
+            // line 194
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("partes");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Todos los partes</a>
               <a href=\"";
-            // line 187
+            // line 195
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("seleccionaPartes");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Partes por fecha</a>
               <a href=\"";
-            // line 188
+            // line 196
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevoTrabajador");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Nuevo trabajador</a>
               <a href=\"";
-            // line 189
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("registro");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Nuevo usuario</a>
-              <a href=\"";
-            // line 190
+            // line 197
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("estadisticas");
             echo "\" class=\"list-group-item\" style=\" color: grey;\">Estadísticas</a>
               ";
         }
-        // line 192
+        // line 199
         echo "            </div>
           </div>
           <!-- Content Column -->
           <div class=\"col-lg-9 mb-4\">
             <img src=\"";
-        // line 196
+        // line 203
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/mantenimiento.jpg"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"Responsive image\">
           </div>
@@ -513,7 +522,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
     }
 
-    // line 228
+    // line 235
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -523,7 +532,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 229
+        // line 236
         echo "    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -545,7 +554,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
     public function getDebugInfo()
     {
-        return array (  527 => 229,  517 => 228,  497 => 196,  491 => 192,  486 => 190,  482 => 189,  478 => 188,  474 => 187,  470 => 186,  466 => 185,  462 => 184,  458 => 183,  454 => 182,  450 => 181,  446 => 180,  442 => 179,  438 => 178,  434 => 177,  429 => 176,  427 => 175,  424 => 174,  419 => 172,  415 => 171,  410 => 170,  408 => 169,  400 => 163,  391 => 156,  389 => 155,  386 => 154,  377 => 147,  375 => 146,  370 => 143,  360 => 142,  341 => 6,  329 => 230,  327 => 228,  321 => 225,  317 => 224,  313 => 223,  309 => 222,  305 => 221,  301 => 220,  297 => 219,  293 => 218,  289 => 217,  285 => 216,  276 => 210,  270 => 206,  268 => 142,  260 => 136,  248 => 127,  242 => 123,  229 => 113,  214 => 101,  197 => 87,  186 => 79,  175 => 71,  162 => 61,  158 => 60,  141 => 46,  137 => 45,  133 => 44,  129 => 43,  125 => 42,  121 => 41,  117 => 40,  113 => 39,  109 => 38,  105 => 37,  95 => 29,  93 => 28,  83 => 21,  72 => 13,  67 => 11,  63 => 10,  58 => 8,  53 => 6,  46 => 1,);
+        return array (  536 => 236,  526 => 235,  506 => 203,  500 => 199,  495 => 197,  491 => 196,  487 => 195,  483 => 194,  479 => 193,  475 => 192,  471 => 191,  467 => 190,  463 => 189,  459 => 188,  455 => 187,  451 => 186,  447 => 185,  442 => 184,  440 => 183,  437 => 182,  432 => 180,  428 => 179,  423 => 178,  421 => 177,  413 => 171,  404 => 164,  402 => 163,  399 => 162,  390 => 155,  388 => 154,  383 => 151,  373 => 150,  354 => 6,  342 => 237,  340 => 235,  334 => 232,  330 => 231,  326 => 230,  322 => 229,  318 => 228,  314 => 227,  310 => 226,  306 => 225,  302 => 224,  298 => 223,  289 => 217,  283 => 213,  281 => 150,  273 => 144,  261 => 135,  255 => 131,  242 => 121,  227 => 109,  210 => 95,  202 => 89,  193 => 83,  187 => 79,  185 => 78,  176 => 72,  163 => 62,  159 => 61,  142 => 47,  138 => 46,  134 => 45,  130 => 44,  126 => 43,  122 => 42,  118 => 41,  114 => 40,  110 => 39,  106 => 38,  96 => 30,  94 => 29,  83 => 21,  72 => 13,  67 => 11,  63 => 10,  58 => 8,  53 => 6,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -577,16 +586,17 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
         </button>
         <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">
           <ul class=\"navbar-nav ml-auto\">
+
             {% if is_granted('ROLE_ADMIN') %}
             <li class=\"nav-item\">
-              <pre>                 </pre>
+              <pre>                         </pre>
             </li>
             <li class=\"nav-item dropdown\">
               <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                 Solicitudes
               </a>
               <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
-                <a class=\"dropdown-item\" href=\"{{ path('nuevaSolicitud',{'email':email}) }}\">Nueva</a>
+                <a class=\"dropdown-item\" href=\"{{ path('nuevaSolicitud',{'email': app.user.username}) }}\">Nueva</a>
                 <a class=\"dropdown-item\" href=\"{{ path('asignadas') }}\">Asignadas</a>
                 <a class=\"dropdown-item\" href=\"{{ path('pendientesDeAsignar') }}\">Sin Asignar</a>
                 <a class=\"dropdown-item\" href=\"{{ path('despachadas') }}\">Despachadas</a>
@@ -624,15 +634,22 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
             </li>
 
             <li class=\"nav-item\">
-              <pre>    </pre>
+              <pre>  </pre>
             </li>
-
+            {% if is_granted('ROLE_SUPER_ADMIN')%}
+            <li class=\"nav-item\">
+              <pre></pre>
+            </li>
             <li class=\"nav-item\">
               <a class=\"nav-link text-white\" href=\"{{ path('registro') }}\">Nuevo Usuario</a>
             </li>
+            <li class=\"nav-item\">
+              <pre></pre>
+            </li>
+            {% endif %}
 
             <li class=\"nav-item\">
-              <pre>     </pre>
+              <pre>  </pre>
             </li>
 
             <li class=\"nav-item\">
@@ -640,7 +657,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
             </li>
 
             <li class=\"nav-item\">
-              <pre>    </pre>
+              <pre>  </pre>
             </li>
 
 
@@ -738,7 +755,6 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
               <a href=\"{{ path('partes') }}\" class=\"list-group-item\" style=\" color: grey;\">Todos los partes</a>
               <a href=\"{{ path('seleccionaPartes') }}\" class=\"list-group-item\" style=\" color: grey;\">Partes por fecha</a>
               <a href=\"{{ path('nuevoTrabajador') }}\" class=\"list-group-item\" style=\" color: grey;\">Nuevo trabajador</a>
-              <a href=\"{{ path('registro') }}\" class=\"list-group-item\" style=\" color: grey;\">Nuevo usuario</a>
               <a href=\"{{ path('estadisticas') }}\" class=\"list-group-item\" style=\" color: grey;\">Estadísticas</a>
               {% endif %}
             </div>
