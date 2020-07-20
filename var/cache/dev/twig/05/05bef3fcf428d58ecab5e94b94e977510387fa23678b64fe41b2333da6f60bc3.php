@@ -200,22 +200,19 @@ class __TwigTemplate_fdc6359399e55b21c8fc5e4c139272d7025ef5a3a1fe3bfe40fb749c42e
             echo "</h6>
                 </td>
                 <td>
-
                   <h7><a href=\"";
-            // line 81
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("borrarParte", ["id" => twig_get_attribute($this->env, $this->source, $context["parte"], "id", [], "any", false, false, false, 81)]), "html", null, true);
+            // line 80
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("borrarParte", ["id" => twig_get_attribute($this->env, $this->source, $context["parte"], "id", [], "any", false, false, false, 80)]), "html", null, true);
             echo "\">
                       <i class=\"far fa-trash-alt\"></i></a></h7>
                 </td>
-
-
               </tr>
               ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['parte'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 88
+        // line 85
         echo "            </tbody>
           </table>
         </div>
@@ -240,7 +237,7 @@ class __TwigTemplate_fdc6359399e55b21c8fc5e4c139272d7025ef5a3a1fe3bfe40fb749c42e
 
     }
 
-    // line 104
+    // line 101
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -250,12 +247,12 @@ class __TwigTemplate_fdc6359399e55b21c8fc5e4c139272d7025ef5a3a1fe3bfe40fb749c42e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 105
+        // line 102
         echo "<script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/sweetalert.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 106
+        // line 103
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/controlBorrado.js"), "html", null, true);
         echo "\"></script>
 
@@ -280,7 +277,7 @@ class __TwigTemplate_fdc6359399e55b21c8fc5e4c139272d7025ef5a3a1fe3bfe40fb749c42e
 
     public function getDebugInfo()
     {
-        return array (  259 => 106,  254 => 105,  244 => 104,  219 => 88,  206 => 81,  199 => 77,  193 => 74,  187 => 71,  183 => 69,  173 => 66,  169 => 65,  163 => 62,  155 => 57,  151 => 56,  144 => 52,  140 => 50,  136 => 49,  89 => 4,  79 => 3,  60 => 2,  37 => 1,);
+        return array (  256 => 103,  251 => 102,  241 => 101,  216 => 85,  205 => 80,  199 => 77,  193 => 74,  187 => 71,  183 => 69,  173 => 66,  169 => 65,  163 => 62,  155 => 57,  151 => 56,  144 => 52,  140 => 50,  136 => 49,  89 => 4,  79 => 3,  60 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -364,12 +361,9 @@ class __TwigTemplate_fdc6359399e55b21c8fc5e4c139272d7025ef5a3a1fe3bfe40fb749c42e
                   <h6>{{parte.solicitud.id}}</h6>
                 </td>
                 <td>
-
                   <h7><a href=\"{{path('borrarParte',{'id':parte.id})}}\">
                       <i class=\"far fa-trash-alt\"></i></a></h7>
                 </td>
-
-
               </tr>
               {% endfor %}
             </tbody>

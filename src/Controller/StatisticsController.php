@@ -37,6 +37,15 @@ class StatisticsController extends AbstractController
 {
 
 
+  /**
+  * @Route("/basestat", name="basestat")
+  */
+    public function basestatAction(Request $request)
+    {
+      return $this->render('estadisticas/estadisticaInicio.html.twig');
+    }
+
+
     /**
      * @Route("/estadisticas", name="estadisticas")
      */

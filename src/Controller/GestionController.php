@@ -35,7 +35,13 @@ use App\Service\Encrypter;
 
 class GestionController extends AbstractController
 {
-  
+    /**
+    * @Route("/base", name="base")
+    */
+      public function baseAction(Request $request)
+      {
+        return $this->render('frontal/baseGestion.html.twig');
+      }  
 
       /**
        * @Route("/nuevoTrabajador", name="nuevoTrabajador")

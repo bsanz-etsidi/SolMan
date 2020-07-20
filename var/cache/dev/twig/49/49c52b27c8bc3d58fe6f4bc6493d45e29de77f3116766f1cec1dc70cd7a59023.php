@@ -92,9 +92,7 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
         </button>
         <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">
           <ul class=\"navbar-nav ml-auto\">
-            <li class=\"nav-item\">
-              <pre>                     </pre>
-            </li>
+
 
             <li class=\"nav-item\">
               <pre>               </pre>
@@ -107,10 +105,19 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
             <li class=\"nav-item\">
               <pre>                   </pre>
             </li>
+            <li class=\"nav-item\">
+              <h5><a class=\"nav-link text-black\" href=\"";
+            // line 43
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("basestat");
+            echo "\" style=\"color: #09515E;\"><small><i class=\"fas fa-home\"></i></small></a></h5>
+            </li>
+            <li class=\"nav-item\">
+              <pre>         </pre>
+            </li>
 
             <li class=\"nav-item\">
               <a href=\"";
-            // line 46
+            // line 50
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudes");
             echo "\" class=\"btn bg-info\"
                 style=\"margin-top:12px;color:DARKSLATEGRAY;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3EB7CF), color-stop(100%,#399BAE));height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px\"
@@ -128,7 +135,7 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
 
             <li class=\"nav-item\">
               <a href=\"";
-            // line 61
+            // line 65
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\" class=\"btn \"
                 style=\"margin-top:12px;color:DARKSLATEGRAY;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3EB7CF), color-stop(100%,#399BAE));height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px\"
@@ -143,8 +150,8 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
 
             <li class=\"nav-item\">
               <a class=\"nav-link text-warning\" href=\"\">";
-            // line 73
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 73, $this->source); })()), "user", [], "any", false, false, false, 73), "username", [], "any", false, false, false, 73), "html", null, true);
+            // line 77
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 77, $this->source); })()), "user", [], "any", false, false, false, 77), "username", [], "any", false, false, false, 77), "html", null, true);
             echo "</a>
             </li>
 
@@ -157,7 +164,7 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
 
             ";
         } else {
-            // line 84
+            // line 88
             echo "
             <ul class=\"navbar-nav ml-auto\">
 
@@ -171,7 +178,7 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
             </ul>
             ";
         }
-        // line 96
+        // line 100
         echo "          </ul>
         </div>
       </div>
@@ -179,15 +186,15 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
     </nav>
     <!--FIN MENÚ DE NAVEGACIÓN-->
     ";
-        // line 102
+        // line 106
         $this->displayBlock('contenido', $context, $blocks);
-        // line 145
+        // line 151
         echo "
     <!-- Footer -->
     <footer class=\"page-footer  bg-info\">
       <div class=\"footer-copyright text-center py-3\">
         <img src=\"";
-        // line 149
+        // line 155
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/upm.png"), "html", null, true);
         echo "\" style=\"margin-bottom: 0\" height=\"100\" alt=\"\">
       </div>
@@ -196,51 +203,51 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
 
     <!-- Bootstrap core JavaScript -->
     <script src=\"";
-        // line 155
+        // line 161
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/exportacion.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 156
+        // line 162
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/genPDF.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 157
+        // line 163
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/downloadCanvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 158
+        // line 164
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/html2canvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 159
+        // line 165
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 160
+        // line 166
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jspdf.min.js"), "html", null, true);
         echo "\"></script>
     <link href=\"";
-        // line 161
+        // line 167
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 162
+        // line 168
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap-datepicker.es.min.js"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <script src=\"";
-        // line 163
+        // line 169
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 164
+        // line 170
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script>
     <script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script>
     ";
-        // line 167
+        // line 173
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 169
+        // line 175
         echo "  </body>
 
 </html>";
@@ -271,7 +278,7 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
 
     }
 
-    // line 102
+    // line 106
     public function block_contenido($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -281,7 +288,7 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenido"));
 
-        // line 103
+        // line 107
         echo "    <div class=\"container\">
       <div style=\"margin-top:50px\">
 
@@ -298,44 +305,46 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
           <!-- Sidebar Column -->
           <div class=\"col-lg-3 mb-4 bg-light\">
             <div class=\"list-group \">
+              <a href=\"\" class=\"list-group-item\" style=\" color: black;font-size:20px;font-weight:bold\">Conteos:</a>
               <a href=\"";
-        // line 119
+        // line 124
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoSolicitudes");
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes</a>
               <a href=\"";
-        // line 120
+        // line 125
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoSolicitudes", ["estado" => 0]);
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes sin asignar</a>
               <a href=\"";
-        // line 121
+        // line 126
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoSolicitudes", ["estado" => 1]);
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes asignadas</a>
               <a href=\"";
-        // line 122
+        // line 127
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoSolicitudes", ["estado" => 2]);
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes despachadas</a>
               <a href=\"";
-        // line 123
+        // line 128
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoSolicitudes", ["estado" => 3]);
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes anuladas</a>
               <a href=\"";
-        // line 124
+        // line 129
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoSolicitudes", ["estado" => 4]);
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes suspendidas</a>
               <a href=\"";
-        // line 125
+        // line 130
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoPrioritarias");
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes prioritarias</a>
+              <a href=\"\" class=\"list-group-item\" style=\" color: black;font-size:20px;font-weight:bold\">Medias:</a>
               <a href=\"";
-        // line 126
+        // line 132
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mediaSolicitudes");
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Tasa mensual de solicitudes</a>
               <a href=\"";
-        // line 127
+        // line 133
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tiempoMedioSuspension");
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Período medio de suspensión</a>
               <a href=\"";
-        // line 128
+        // line 134
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoSolicitudesTrabajador");
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes por trabajador</a>
             </div>
@@ -344,8 +353,8 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
           <div class=\"col-lg-9 mb-4\">
             <h2 class=\"mt-4 mb-3\">El resultado de la consulta realizada es:
               <h3><small>";
-        // line 134
-        echo twig_escape_filter($this->env, (isset($context["tiempoMedioSuspension"]) || array_key_exists("tiempoMedioSuspension", $context) ? $context["tiempoMedioSuspension"] : (function () { throw new RuntimeError('Variable "tiempoMedioSuspension" does not exist.', 134, $this->source); })()), "html", null, true);
+        // line 140
+        echo twig_escape_filter($this->env, (isset($context["tiempoMedioSuspension"]) || array_key_exists("tiempoMedioSuspension", $context) ? $context["tiempoMedioSuspension"] : (function () { throw new RuntimeError('Variable "tiempoMedioSuspension" does not exist.', 140, $this->source); })()), "html", null, true);
         echo "&nbspes el tiempo medio de suspensión por solicitud en el periodo seleccionado</small></h3>
             </h2>
           </div>
@@ -365,7 +374,7 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
 
     }
 
-    // line 167
+    // line 173
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -375,7 +384,7 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 168
+        // line 174
         echo "    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -397,7 +406,7 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
 
     public function getDebugInfo()
     {
-        return array (  379 => 168,  369 => 167,  348 => 134,  339 => 128,  335 => 127,  331 => 126,  327 => 125,  323 => 124,  319 => 123,  315 => 122,  311 => 121,  307 => 120,  303 => 119,  285 => 103,  275 => 102,  256 => 6,  244 => 169,  242 => 167,  236 => 164,  232 => 163,  228 => 162,  224 => 161,  220 => 160,  216 => 159,  212 => 158,  208 => 157,  204 => 156,  200 => 155,  191 => 149,  185 => 145,  183 => 102,  175 => 96,  161 => 84,  147 => 73,  132 => 61,  114 => 46,  89 => 23,  87 => 22,  83 => 21,  72 => 13,  67 => 11,  63 => 10,  58 => 8,  53 => 6,  46 => 1,);
+        return array (  388 => 174,  378 => 173,  357 => 140,  348 => 134,  344 => 133,  340 => 132,  335 => 130,  331 => 129,  327 => 128,  323 => 127,  319 => 126,  315 => 125,  311 => 124,  292 => 107,  282 => 106,  263 => 6,  251 => 175,  249 => 173,  243 => 170,  239 => 169,  235 => 168,  231 => 167,  227 => 166,  223 => 165,  219 => 164,  215 => 163,  211 => 162,  207 => 161,  198 => 155,  192 => 151,  190 => 106,  182 => 100,  168 => 88,  154 => 77,  139 => 65,  121 => 50,  111 => 43,  89 => 23,  87 => 22,  83 => 21,  72 => 13,  67 => 11,  63 => 10,  58 => 8,  53 => 6,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -430,9 +439,7 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
         </button>
         <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">
           <ul class=\"navbar-nav ml-auto\">
-            <li class=\"nav-item\">
-              <pre>                     </pre>
-            </li>
+
 
             <li class=\"nav-item\">
               <pre>               </pre>
@@ -444,6 +451,12 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
 
             <li class=\"nav-item\">
               <pre>                   </pre>
+            </li>
+            <li class=\"nav-item\">
+              <h5><a class=\"nav-link text-black\" href=\"{{ path('basestat') }}\" style=\"color: #09515E;\"><small><i class=\"fas fa-home\"></i></small></a></h5>
+            </li>
+            <li class=\"nav-item\">
+              <pre>         </pre>
             </li>
 
             <li class=\"nav-item\">
@@ -520,6 +533,7 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
           <!-- Sidebar Column -->
           <div class=\"col-lg-3 mb-4 bg-light\">
             <div class=\"list-group \">
+              <a href=\"\" class=\"list-group-item\" style=\" color: black;font-size:20px;font-weight:bold\">Conteos:</a>
               <a href=\"{{ path('conteoSolicitudes') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes</a>
               <a href=\"{{ path('conteoSolicitudes',{'estado': 0}) }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes sin asignar</a>
               <a href=\"{{ path('conteoSolicitudes',{'estado': 1}) }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes asignadas</a>
@@ -527,6 +541,7 @@ class __TwigTemplate_fae0d266d6f6376c91d3810dd221c940d167c29ac8c7cafc26642ed8de5
               <a href=\"{{ path('conteoSolicitudes',{'estado': 3}) }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes anuladas</a>
               <a href=\"{{ path('conteoSolicitudes',{'estado': 4}) }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes suspendidas</a>
               <a href=\"{{ path('conteoPrioritarias') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes prioritarias</a>
+              <a href=\"\" class=\"list-group-item\" style=\" color: black;font-size:20px;font-weight:bold\">Medias:</a>
               <a href=\"{{ path('mediaSolicitudes') }}\" class=\"list-group-item\" style=\" color: grey;\">Tasa mensual de solicitudes</a>
               <a href=\"{{ path('tiempoMedioSuspension') }}\" class=\"list-group-item\" style=\" color: grey;\">Período medio de suspensión</a>
               <a href=\"{{ path('conteoSolicitudesTrabajador') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes por trabajador</a>
