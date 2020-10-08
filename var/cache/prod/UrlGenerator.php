@@ -46,6 +46,7 @@ return [
     'completarInstruccion' => [['instruccionId'], ['_controller' => 'App\\Controller\\GestionController::completarInstruccionAction'], [], [['variable', '/', '[^/]++', 'instruccionId'], ['text', '/gestionMantenimiento/completarInstruccion']], [], []],
     'instruccionesCompletadas' => [[], ['_controller' => 'App\\Controller\\GestionController::instruccionesCompletadasAction'], [], [['text', '/gestionMantenimiento/instruccionesCompletadas']], [], []],
     'desactivarTrabajador' => [[], ['_controller' => 'App\\Controller\\GestionController::desactivarTrabajadorAction'], [], [['text', '/gestionMantenimiento/desactivarTrabajador']], [], []],
+    'reactivarTrabajador' => [[], ['_controller' => 'App\\Controller\\GestionController::reactivarTrabajadorAction'], [], [['text', '/gestionMantenimiento/reactivarTrabajador']], [], []],
     'registro' => [[], ['_controller' => 'App\\Controller\\RegistroController::registroAction'], [], [['text', '/registroUsuarios/registro']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
     'basestat' => [[], ['_controller' => 'App\\Controller\\StatisticsController::basestatAction'], [], [['text', '/statistics/basestat']], [], []],

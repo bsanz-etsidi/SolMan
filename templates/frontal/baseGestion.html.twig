@@ -86,6 +86,7 @@
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
                 <a class="dropdown-item" href="{{ path('nuevoTrabajador') }}">Nuevo Trabajador</a>
                 <a class="dropdown-item" href="{{ path('desactivarTrabajador') }}">Desactivar Trabajador</a>
+                <a class="dropdown-item" href="{{ path('reactivarTrabajador') }}">Reactivar Trabajador</a>
               </div>
             </li>
 
@@ -213,6 +214,7 @@
               <a href="{{ path('seleccionaPartes') }}" class="list-group-item" style=" color: grey;">Partes por fecha</a>
               <a href="{{ path('nuevoTrabajador') }}" class="list-group-item" style=" color: grey;">Nuevo trabajador</a>
               <a href="{{ path('desactivarTrabajador') }}" class="list-group-item" style=" color: grey;">Desactivar Trabajador</a>
+              <a href="{{ path('reactivarTrabajador') }}" class="list-group-item" style=" color: grey;">Reactivar Trabajador</a>
               <a href="{{ path('estadisticas') }}" class="list-group-item" style=" color: grey;">Estadísticas</a>
               {% endif %}
             </div>

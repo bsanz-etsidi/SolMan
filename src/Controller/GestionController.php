@@ -969,6 +969,37 @@ public function instruccionesCompletadasAction(Request $request)
 
 }
 
+/**
+* @Route("/reactivarTrabajador", name="reactivarTrabajador")
+*/
+public function reactivarTrabajadorAction(Request $request)
+{
+  $trabajadorRepository = $this->getDoctrine()->getRepository(Trabajador::class);
+  $trabajadoresinactivos = $trabajadorRepository->findByActivo('0');
+  $form = $this->createFormBuilder($trabajadoresinactivos)
+    ->add('Nombre', EntityType::class, ['class' => Trabajador::class, 'choice_label' => 'nombre', 'choices' =>$trabajadoresinactivos],)
+    ->add('Reactivar', SubmitType::class, array('label' => 'Reactivar'))
+    ->getForm();
+
+  $form->handleRequest($request);
+  $data = $form->getData();
+  $trabajador = new Trabajador();
+
+  if ($form->isSubmitted() && $form->isValid()) {
+  $trabajador = $data['Nombre'];
+  $trabajadorId = $trabajador->getId();
+  $trabajador = $trabajadorRepository->find($trabajadorId);
+  $trabajador -> setActivo('1');
+
+  $em = $this->getDoctrine()->getManager();
+  $em->persist($trabajador);
+  $em->flush();
+
+  return $this->redirectToRoute('solicitudes');
+}
+return $this->render('gestionMantenimiento/reactivarTrabajador.html.twig',array("form" => $form->createView(),"trabajador" => $trabajador));
+
+}
 
 
   }
