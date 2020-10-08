@@ -37,6 +37,13 @@ Solicitud
           {% if solicitud.estado==2 %}
           <h3 class="my-3"> Solicitud despachada</h3>
           {% endif %}
+          {% for trabajador in solicitud.trabajadores %}
+          {% for instruccion in trabajador.instrucciones %}
+          {% if instruccion.solicitud.id==solicitud.id %}
+          <h3 class="my-3">Instrucciones para {{trabajador.nombre}}: <small>{{instruccion.descripcionInstruccion}}</small></h3>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
 
         </div>
         <!-- /.row -->

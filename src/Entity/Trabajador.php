@@ -44,14 +44,29 @@ class Trabajador
     private $especialidad;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="Activo", type="integer", nullable=true)
+     */
+    private $activo;
+
+    /**
      * Many trabajadores have Many solicitudes.
      * @ORM\ManyToMany(targetEntity="App\Entity\Solicitud", mappedBy="trabajadores")
      */
     private $solicitudes;
 
-    public function __construct()
+    /**
+     * Un trabajador tiene muchas instrucciones
+     * @ORM\OneToMany(targetEntity="App\Entity\Instruccion", mappedBy="trabajador")
+     */
+     private $instrucciones;
+
+      public function __construct()
     {
         $this->solicitudes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->instrucciones = new \Doctrine\Common\Collections\ArrayCollection();
+
     }
 
     /**
@@ -151,5 +166,63 @@ class Trabajador
     {
         return $this->solicitudes;
     }
+
+    /**
+     * Add Instruccion
+     *
+     * @param \App\Entity\Instruccion $instruccion
+     *
+     * @return Trabajador
+     */
+    public function addInstruccion(\App\Entity\Instruccion $instruccion)
+      {
+          $this->instrucciones[] = $instruccion;
+      }
+
+     /**
+      * Remove Instruccion
+      *
+      * @param \App\Entity\Instruccion $instruccion
+      */
+      public function removeInstruccion(\App\Entity\Instruccion $instruccion)
+        {
+            $this->instrucciones->removeElement($instruccion);
+        }
+
+    /**
+     * @return Collection|Instruccion[]
+     */
+    public function getInstrucciones(): Collection
+    {
+        return $this->instrucciones;
+    }
+
+    /**
+      * Get activo
+      *
+      * @return int
+      */
+     public function getActivo()
+     {
+         return $this->activo;
+     }
+
+     /**
+      * Set activo
+      *
+      * @param int $activo
+      *
+      * @return Trabajador
+      */
+     public function setActivo($activo)
+     {
+         $this->activo = $activo;
+         return $this;
+     }
+
+     public function __toString()
+     {
+       return $this->id;
+     }
 
 }

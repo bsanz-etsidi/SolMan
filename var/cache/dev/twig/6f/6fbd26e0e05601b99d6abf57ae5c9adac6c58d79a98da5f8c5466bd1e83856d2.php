@@ -196,6 +196,6 @@ class __TwigTemplate_1a822d1656cbd41a6160b2291d91f404c608af7c8f7a445a7039dce3e0f
 
 
 {% endblock %}
-", "gestionMantenimiento/nuevoTrabajador.html.twig", "C:\\symfony4\\SolMan\\templates\\gestionMantenimiento\\nuevoTrabajador.html.twig");
+", "gestionMantenimiento/nuevoTrabajador.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\nuevoTrabajador.html.twig");
     }
 }

@@ -164,6 +164,6 @@ class __TwigTemplate_c846153a1b6614cda37ba8905706371cd8cf95d0794733ca00f62e26e8b
 <!-- /.row -->
 
 
-{% endblock %}", "frontal/mensajeValoracion.html.twig", "C:\\symfony4\\SolMan\\templates\\frontal\\mensajeValoracion.html.twig");
+{% endblock %}", "frontal/mensajeValoracion.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\frontal\\mensajeValoracion.html.twig");
     }
 }

@@ -185,6 +185,6 @@ class __TwigTemplate_c6235b65f9c83419e69c8fcc214956cf8492f7678c0da0fa2abce4ecb9a
 </div>
 
 <!-- /.row -->
-{% endblock %}", "estadisticas/seleccionaFechas.html.twig", "C:\\symfony4\\SolMan\\templates\\estadisticas\\seleccionaFechas.html.twig");
+{% endblock %}", "estadisticas/seleccionaFechas.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\estadisticas\\seleccionaFechas.html.twig");
     }
 }

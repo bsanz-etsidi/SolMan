@@ -195,6 +195,6 @@ class __TwigTemplate_d11fa8d2aebef32330a00606a9657a559b271fcefffaaf41ccea37353c3
 </div>
 
 <!-- /.row -->
-{% endblock %}", "gestionMantenimiento/seleccionaPartes.html.twig", "C:\\symfony4\\SolMan\\templates\\gestionMantenimiento\\seleccionaPartes.html.twig");
+{% endblock %}", "gestionMantenimiento/seleccionaPartes.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\seleccionaPartes.html.twig");
     }
 }

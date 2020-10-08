@@ -189,13 +189,13 @@ class __TwigTemplate_c3c8f6f90210e0bb44d7b933ffd7f9e01a3db19392214bffa2cb4cd4763
     ";
         // line 107
         $this->displayBlock('contenido', $context, $blocks);
-        // line 150
+        // line 152
         echo "
     <!-- Footer -->
     <footer class=\"page-footer  bg-info\">
       <div class=\"footer-copyright text-center py-3\">
         <img src=\"";
-        // line 154
+        // line 156
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/upm.png"), "html", null, true);
         echo "\" style=\"margin-bottom: 0\" height=\"100\" alt=\"\">
       </div>
@@ -204,51 +204,51 @@ class __TwigTemplate_c3c8f6f90210e0bb44d7b933ffd7f9e01a3db19392214bffa2cb4cd4763
 
     <!-- Bootstrap core JavaScript -->
     <script src=\"";
-        // line 160
+        // line 162
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/exportacion.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 161
+        // line 163
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/genPDF.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 162
+        // line 164
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/downloadCanvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 163
+        // line 165
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/html2canvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 164
+        // line 166
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 165
+        // line 167
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jspdf.min.js"), "html", null, true);
         echo "\"></script>
     <link href=\"";
-        // line 166
+        // line 168
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 167
+        // line 169
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap-datepicker.es.min.js"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <script src=\"";
-        // line 168
+        // line 170
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 169
+        // line 171
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script>
     <script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script>
     ";
-        // line 172
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 174
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 176
         echo "  </body>
 
 </html>";
@@ -335,25 +335,30 @@ class __TwigTemplate_c3c8f6f90210e0bb44d7b933ffd7f9e01a3db19392214bffa2cb4cd4763
         // line 131
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoPrioritarias");
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes prioritarias</a>
+              <a href=\"";
+        // line 132
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoPartesEspecialidad");
+        echo "\" class=\"list-group-item\" style=\" color: grey;\">Partes por especialidad</a>
               <a href=\"\" class=\"list-group-item\" style=\" color: black;font-size:20px;font-weight:bold\">Medias:</a>
               <a href=\"";
-        // line 133
+        // line 134
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mediaSolicitudes");
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Tasa mensual de solicitudes</a>
               <a href=\"";
-        // line 134
+        // line 135
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tiempoMedioSuspension");
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Período medio de suspensión</a>
               <a href=\"";
-        // line 135
+        // line 136
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoSolicitudesTrabajador");
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes por trabajador</a>
             </div>
           </div>
           <!-- Content Column -->
           <div class=\"col-lg-9 mb-4\">
+            <h1><br /><br /><br /><br /></h1>
             <img src=\"";
-        // line 140
+        // line 142
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/estadistica1.png"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"Responsive image\">
           </div>
@@ -373,7 +378,7 @@ class __TwigTemplate_c3c8f6f90210e0bb44d7b933ffd7f9e01a3db19392214bffa2cb4cd4763
 
     }
 
-    // line 172
+    // line 174
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -383,7 +388,7 @@ class __TwigTemplate_c3c8f6f90210e0bb44d7b933ffd7f9e01a3db19392214bffa2cb4cd4763
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 173
+        // line 175
         echo "    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -405,7 +410,7 @@ class __TwigTemplate_c3c8f6f90210e0bb44d7b933ffd7f9e01a3db19392214bffa2cb4cd4763
 
     public function getDebugInfo()
     {
-        return array (  387 => 173,  377 => 172,  357 => 140,  349 => 135,  345 => 134,  341 => 133,  336 => 131,  332 => 130,  328 => 129,  324 => 128,  320 => 127,  316 => 126,  312 => 125,  293 => 108,  283 => 107,  264 => 6,  252 => 174,  250 => 172,  244 => 169,  240 => 168,  236 => 167,  232 => 166,  228 => 165,  224 => 164,  220 => 163,  216 => 162,  212 => 161,  208 => 160,  199 => 154,  193 => 150,  191 => 107,  183 => 101,  169 => 89,  156 => 79,  141 => 67,  123 => 52,  113 => 45,  89 => 23,  87 => 22,  83 => 21,  72 => 13,  67 => 11,  63 => 10,  58 => 8,  53 => 6,  46 => 1,);
+        return array (  392 => 175,  382 => 174,  362 => 142,  353 => 136,  349 => 135,  345 => 134,  340 => 132,  336 => 131,  332 => 130,  328 => 129,  324 => 128,  320 => 127,  316 => 126,  312 => 125,  293 => 108,  283 => 107,  264 => 6,  252 => 176,  250 => 174,  244 => 171,  240 => 170,  236 => 169,  232 => 168,  228 => 167,  224 => 166,  220 => 165,  216 => 164,  212 => 163,  208 => 162,  199 => 156,  193 => 152,  191 => 107,  183 => 101,  169 => 89,  156 => 79,  141 => 67,  123 => 52,  113 => 45,  89 => 23,  87 => 22,  83 => 21,  72 => 13,  67 => 11,  63 => 10,  58 => 8,  53 => 6,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -541,6 +546,7 @@ class __TwigTemplate_c3c8f6f90210e0bb44d7b933ffd7f9e01a3db19392214bffa2cb4cd4763
               <a href=\"{{ path('conteoSolicitudes',{'estado': 3}) }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes anuladas</a>
               <a href=\"{{ path('conteoSolicitudes',{'estado': 4}) }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes suspendidas</a>
               <a href=\"{{ path('conteoPrioritarias') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes prioritarias</a>
+              <a href=\"{{ path('conteoPartesEspecialidad') }}\" class=\"list-group-item\" style=\" color: grey;\">Partes por especialidad</a>
               <a href=\"\" class=\"list-group-item\" style=\" color: black;font-size:20px;font-weight:bold\">Medias:</a>
               <a href=\"{{ path('mediaSolicitudes') }}\" class=\"list-group-item\" style=\" color: grey;\">Tasa mensual de solicitudes</a>
               <a href=\"{{ path('tiempoMedioSuspension') }}\" class=\"list-group-item\" style=\" color: grey;\">Período medio de suspensión</a>
@@ -549,6 +555,7 @@ class __TwigTemplate_c3c8f6f90210e0bb44d7b933ffd7f9e01a3db19392214bffa2cb4cd4763
           </div>
           <!-- Content Column -->
           <div class=\"col-lg-9 mb-4\">
+            <h1><br /><br /><br /><br /></h1>
             <img src=\"{{asset('img/estadistica1.png')}}\" class=\"img-fluid\" alt=\"Responsive image\">
           </div>
         </div>
@@ -585,6 +592,6 @@ class __TwigTemplate_c3c8f6f90210e0bb44d7b933ffd7f9e01a3db19392214bffa2cb4cd4763
     {% endblock %}
   </body>
 
-</html>", "estadisticas/estadisticaInicio.html.twig", "C:\\symfony4\\SolMan\\templates\\estadisticas\\estadisticaInicio.html.twig");
+</html>", "estadisticas/estadisticaInicio.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\estadisticas\\estadisticaInicio.html.twig");
     }
 }

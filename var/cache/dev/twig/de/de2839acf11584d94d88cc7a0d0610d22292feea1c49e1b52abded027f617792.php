@@ -103,6 +103,7 @@ class __TwigTemplate_66d95910db6148e47c53bf52f402dacb0fb4e7698a390188670d04e2be2
         // line 22
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["solicitud"]) || array_key_exists("solicitud", $context) ? $context["solicitud"] : (function () { throw new RuntimeError('Variable "solicitud" does not exist.', 22, $this->source); })()), "estancia", [], "any", false, false, false, 22), "html", null, true);
         echo "</small></h4>
+
         </div>
         <!-- /.row -->
       </div>
@@ -157,6 +158,7 @@ class __TwigTemplate_66d95910db6148e47c53bf52f402dacb0fb4e7698a390188670d04e2be2
           <h4 class=\"my-3\">Email: <small>{{solicitud.email}}</small></h4>
           <h4 class=\"my-3\">Descripción Incidencia: <small>{{solicitud.descripcionIncidencia}}</small></h4>
           <h4 class=\"my-3\">Lugar Incidencia: <small>{{solicitud.estancia}}</small></h4>
+
         </div>
         <!-- /.row -->
       </div>
@@ -168,7 +170,6 @@ class __TwigTemplate_66d95910db6148e47c53bf52f402dacb0fb4e7698a390188670d04e2be2
   <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
 </div>
 
-{% endblock %}
-", "Emails/NotificacionSolicitud.html.twig", "C:\\symfony4\\SolMan\\templates\\Emails\\NotificacionSolicitud.html.twig");
+{% endblock %}", "Emails/NotificacionSolicitud.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\Emails\\NotificacionSolicitud.html.twig");
     }
 }

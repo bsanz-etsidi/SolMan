@@ -165,6 +165,39 @@ class __TwigTemplate_02110abe69302ec1457d000cee29fb36fc8dc28faa69ba227a8534b3e57
           ";
         }
         // line 40
+        echo "          ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["solicitud"]) || array_key_exists("solicitud", $context) ? $context["solicitud"] : (function () { throw new RuntimeError('Variable "solicitud" does not exist.', 40, $this->source); })()), "trabajadores", [], "any", false, false, false, 40));
+        foreach ($context['_seq'] as $context["_key"] => $context["trabajador"]) {
+            // line 41
+            echo "          ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["trabajador"], "instrucciones", [], "any", false, false, false, 41));
+            foreach ($context['_seq'] as $context["_key"] => $context["instruccion"]) {
+                // line 42
+                echo "          ";
+                if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["instruccion"], "solicitud", [], "any", false, false, false, 42), "id", [], "any", false, false, false, 42), twig_get_attribute($this->env, $this->source, (isset($context["solicitud"]) || array_key_exists("solicitud", $context) ? $context["solicitud"] : (function () { throw new RuntimeError('Variable "solicitud" does not exist.', 42, $this->source); })()), "id", [], "any", false, false, false, 42))) {
+                    // line 43
+                    echo "          <h3 class=\"my-3\">Instrucciones para ";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trabajador"], "nombre", [], "any", false, false, false, 43), "html", null, true);
+                    echo ": <small>";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["instruccion"], "descripcionInstruccion", [], "any", false, false, false, 43), "html", null, true);
+                    echo "</small></h3>
+          ";
+                }
+                // line 45
+                echo "          ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['instruccion'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 46
+            echo "          ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['trabajador'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 47
         echo "
         </div>
         <!-- /.row -->
@@ -197,7 +230,7 @@ class __TwigTemplate_02110abe69302ec1457d000cee29fb36fc8dc28faa69ba227a8534b3e57
 
     }
 
-    // line 64
+    // line 71
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -207,7 +240,7 @@ class __TwigTemplate_02110abe69302ec1457d000cee29fb36fc8dc28faa69ba227a8534b3e57
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 65
+        // line 72
         echo "
 <script>
   var doc = new jsPDF();
@@ -248,7 +281,7 @@ class __TwigTemplate_02110abe69302ec1457d000cee29fb36fc8dc28faa69ba227a8534b3e57
 
     public function getDebugInfo()
     {
-        return array (  211 => 65,  201 => 64,  168 => 40,  164 => 38,  161 => 37,  157 => 35,  154 => 34,  145 => 32,  141 => 31,  138 => 30,  136 => 29,  132 => 28,  128 => 27,  124 => 26,  120 => 25,  116 => 24,  112 => 23,  108 => 22,  104 => 21,  91 => 10,  81 => 9,  70 => 5,  60 => 4,  37 => 2,);
+        return array (  244 => 72,  234 => 71,  201 => 47,  195 => 46,  189 => 45,  181 => 43,  178 => 42,  173 => 41,  168 => 40,  164 => 38,  161 => 37,  157 => 35,  154 => 34,  145 => 32,  141 => 31,  138 => 30,  136 => 29,  132 => 28,  128 => 27,  124 => 26,  120 => 25,  116 => 24,  112 => 23,  108 => 22,  104 => 21,  91 => 10,  81 => 9,  70 => 5,  60 => 4,  37 => 2,);
     }
 
     public function getSourceContext()
@@ -292,6 +325,13 @@ Solicitud
           {% if solicitud.estado==2 %}
           <h3 class=\"my-3\"> Solicitud despachada</h3>
           {% endif %}
+          {% for trabajador in solicitud.trabajadores %}
+          {% for instruccion in trabajador.instrucciones %}
+          {% if instruccion.solicitud.id==solicitud.id %}
+          <h3 class=\"my-3\">Instrucciones para {{trabajador.nombre}}: <small>{{instruccion.descripcionInstruccion}}</small></h3>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
 
         </div>
         <!-- /.row -->
@@ -336,6 +376,7 @@ Solicitud
 
   // This code is collected but useful, click below to jsfiddle link.
 </script>
-{% endblock %}", "gestionMantenimiento/solicitud.html.twig", "C:\\symfony4\\SolMan\\templates\\gestionMantenimiento\\solicitud.html.twig");
+{% endblock %}
+", "gestionMantenimiento/solicitud.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\solicitud.html.twig");
     }
 }

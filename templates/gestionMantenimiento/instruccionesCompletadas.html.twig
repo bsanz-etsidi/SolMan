@@ -1,0 +1,62 @@
+{% extends 'frontal/base.html.twig' %}
+{% block titulo %}Solicitudes{% endblock %}
+{% block contenido %}
+<div class="container-fluid">
+  <div style="margin-top:50px">
+    <h1 class=" mt-4 mb-3">Solicitudes</<h1>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="table-responsive-lg">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">
+                <h6>Fecha</h6>
+              </th>
+
+              <th scope="col">
+                <h6>Solicitud</h6>
+              </th>
+
+              <th scope="col">
+                <h6>Descripcion</h6>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+
+            {% for instruccion in instrucciones|sort((a, b) => b.fechaFinalizacion <=> a.fechaFinalizacion) %}
+            <tr>
+
+
+              <td>
+                <h6><small>{{instruccion.fechaFinalizacion|date('d/m/Y')}}</small></h6>
+              </td>
+
+
+              <td>
+                <h5><a href="{{path('solicitud',{'id':instruccion.solicitud.id})}}">{{instruccion.solicitud.id}}</a></h5>
+              </td>
+
+
+              <td>
+                <h6><small>{{instruccion.descripcionInstruccion}}</small></h6>
+              </td>
+
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom:200px">
+  </div>
+</div>
+{% endblock %}

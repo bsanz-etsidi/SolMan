@@ -214,6 +214,6 @@ class __TwigTemplate_a4cffaf377b779b3e0c0b97a7a8c54d1188e3a6f31c502b26c2b3555f22
 
 
 {% endblock %}
-", "gestionMantenimiento/suspenderSolicitud.html.twig", "C:\\symfony4\\SolMan\\templates\\gestionMantenimiento\\suspenderSolicitud.html.twig");
+", "gestionMantenimiento/suspenderSolicitud.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\suspenderSolicitud.html.twig");
     }
 }

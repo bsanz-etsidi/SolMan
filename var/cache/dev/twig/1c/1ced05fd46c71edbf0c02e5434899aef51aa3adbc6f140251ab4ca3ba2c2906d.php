@@ -65,7 +65,7 @@ class __TwigTemplate_6954dc821d2ef74da973156eb0424843ee3a14b7112437d7b7a24142ae8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "titulo"));
 
-        echo "Valoración solicitud";
+        echo "Valoración trabajos";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -139,7 +139,7 @@ class __TwigTemplate_6954dc821d2ef74da973156eb0424843ee3a14b7112437d7b7a24142ae8
 {%extends 'frontal/base.html.twig'%}
 
 {#TITULO#}
-{% block titulo %}Valoración solicitud{% endblock %}
+{% block titulo %}Valoración trabajos{% endblock %}
 {#Contenido#}
 {% block contenido %}
 <!-- Page Content -->
@@ -167,6 +167,6 @@ class __TwigTemplate_6954dc821d2ef74da973156eb0424843ee3a14b7112437d7b7a24142ae8
 
 
 {% endblock %}
-", "frontal/mensajeNoCorresponde.html.twig", "C:\\symfony4\\SolMan\\templates\\frontal\\mensajeNoCorresponde.html.twig");
+", "frontal/mensajeNoCorresponde.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\frontal\\mensajeNoCorresponde.html.twig");
     }
 }

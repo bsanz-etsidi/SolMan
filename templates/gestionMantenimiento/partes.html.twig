@@ -3,87 +3,98 @@
 {% block contenido %}
 <div id="imagen">
   <div id="content">
-    <div class="container">
+    <div class="container-fluid">
       <div style="margin-top:50px">
         <h1 class=" mt-4 mb-3">Partes de Trabajo</<h1>
       </div>
 
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-lg-12">
+          <div class="table-responsive-lg">
 
+            <table class="table">
+              <thead class="thead-dark">
+                <small>
+                  <tr>
+                    <th scope="col">
+                      <h6>Editar</h6>
+                    </th>
 
-          <table class="table">
-            <thead class="thead-dark">
-              <small>
+                    <th scope="col">
+                      <h6>Referencia</h6>
+                    </th>
+                    <th scope="col">
+                      <h6>localización</h6>
+                    </th>
+
+                    <th scope="col">
+                      <h6>Trabajador</h6>
+                    </th>
+                    <th scope="col">
+                      <h6>Especialidades</h6>
+                    </th>
+                    <th scope="col">
+                      <h6>Fecha inicio</h6>
+                    </th>
+                    <th scope="col">
+                      <h6>Fecha fin</h6>
+                    </th>
+                    <th scope="col">
+                      <h6>Solicitud</h6>
+                    </th>
+                    <th scope="col">
+                      <h6>Eliminar</h6>
+                    </th>
+
+                  </tr>
+              </thead>
+              <tbody>
+                {% for parte in partes %}
                 <tr>
-                  <th scope="col">
-                    <h6>Editar</h6>
+                  <th scope="row">
+                    <h5><a href="{{path('editarParte',{'id':parte.id})}}"><i class="fas fa-edit"></i>
+                      </a></h5>
+                  </th>
+                  <th scope="row">
+                    <h5><a href="{{path('parte',{'id':parte.id})}}">
+                        <h6>{{parte.id}}</h6>
+                      </a></h5>
                   </th>
 
-                  <th scope="col">
-                    <h6>Referencia</h6>
-                  </th>
-                  <th scope="col">
-                    <h6>localización</h6>
-                  </th>
-
-                  <th scope="col">
-                    <h6>Trabajador</h6>
-                  </th>
-                  <th scope="col">
-                    <h6>Fecha inicio</h6>
-                  </th>
-                  <th scope="col">
-                    <h6>Fecha fin</h6>
-                  </th>
-                  <th scope="col">
-                    <h6>Solicitud</h6>
-                  </th>
-                  <th scope="col">
-                    <h6>Eliminar</h6>
-                  </th>
-
+                  <td>
+                    <h6>{{parte.localizacion}}</h6>
+                  </td>
+                  <td>
+                    {% for trabajador in parte.solicitud.trabajadores %}
+                    <h5><small>{{trabajador.nombre}}
+                    </h5>
+                    {% endfor %}
+                  </td>
+                  <td>
+                    {% for especialidad in parte.especialidades %}
+                    <h7><a href="{{path('borrarEspecialidad',{'especialidadId':especialidad.id, 'parteId':parte.id})}}"><small>{{especialidad.tipo}}
+                          <small><i class="far fa-trash-alt"></i></small></small><br /></a>
+                      {% endfor %}
+                      <h7><a href="{{ path('asignarEspecialidad',{'parteId':parte.id}) }}"><small><small><i class="fas fa-plus"></i></small>Especialidad</small></a></h7>
+                  </td>
+                  <td>
+                    <h6>{{parte.fechainicio|date('d/m/Y')}}</h6>
+                  </td>
+                  <td>
+                    <h6>{{parte.fechafin|date('d/m/Y')}}</h6>
+                  </td>
+                  <td>
+                    <h6>{{parte.solicitud.id}}</h6>
+                  </td>
+                  <td>
+                    <h7><a href="{{path('borrarParte',{'id':parte.id})}}">
+                        <i class="far fa-trash-alt"></i></a></h7>
+                  </td>
                 </tr>
-            </thead>
-            <tbody>
-              {% for parte in partes %}
-              <tr>
-                <th scope="row">
-                  <h5><a href="{{path('editarParte',{'id':parte.id})}}"><i class="fas fa-edit"></i>
-                    </a></h5>
-                </th>
-                <th scope="row">
-                  <h5><a href="{{path('parte',{'id':parte.id})}}">
-                      <h6>{{parte.id}}</h6>
-                    </a></h5>
-                </th>
-
-                <td>
-                  <h6>{{parte.localizacion}}</h6>
-                </td>
-                <td>
-                  {% for trabajador in parte.solicitud.trabajadores %}
-                  <h5><small>{{trabajador.nombre}}
-                  </h5>
-                  {% endfor %}
-                </td>
-                <td>
-                  <h6>{{parte.fechainicio|date('d/m/Y')}}</h6>
-                </td>
-                <td>
-                  <h6>{{parte.fechafin|date('d/m/Y')}}</h6>
-                </td>
-                <td>
-                  <h6>{{parte.solicitud.id}}</h6>
-                </td>
-                <td>
-                  <h7><a href="{{path('borrarParte',{'id':parte.id})}}">
-                      <i class="far fa-trash-alt"></i></a></h7>
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

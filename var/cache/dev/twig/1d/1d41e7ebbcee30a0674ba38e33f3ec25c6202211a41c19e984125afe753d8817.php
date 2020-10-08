@@ -198,6 +198,6 @@ class __TwigTemplate_b09696a26018b152c977ed033e9c8498a43f3947afec481aa9a66ff205f
 
 
 {% endblock %}
-", "gestionMantenimiento/registroUsuario.html.twig", "C:\\symfony4\\SolMan\\templates\\gestionMantenimiento\\registroUsuario.html.twig");
+", "gestionMantenimiento/registroUsuario.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\registroUsuario.html.twig");
     }
 }

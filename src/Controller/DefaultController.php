@@ -78,7 +78,9 @@ class DefaultController extends Controller
                }else{
                  return $this->redirectToRoute('nuevaSolicitud', array('email' => $email));
                 }
-           }
+           }else{
+             return $this->render('frontal/invalidCredentials.html.twig');
+      }
     }
 
        return $this->render('frontal/index.html.twig', array("form" => $form->createView()));
@@ -146,6 +148,7 @@ class DefaultController extends Controller
           $message = (new \Swift_Message('Nueva Solicitud para el servicio de Mantenimiento ETSIDI'))
             ->setFrom('gestion.partes.etsidi@upm.es')
             ->setTo('fernando.elena@upm.es')
+            //->setTo('mariabelen.sanz@upm.es')
             ->setBody(
                  $this->renderView('Emails/NotificacionSolicitud.html.twig', ['solicitud'=>$solicitud]),'text/html');
           $mailer->send($message);
@@ -153,6 +156,7 @@ class DefaultController extends Controller
           $message = (new \Swift_Message('Mantenimiento ETSIDI-Registro de su solicitud'))
             ->setFrom('gestion.partes.etsidi@upm.es')
             ->setTo($email)
+            //->setTo('mariabelen.sanz@upm.es')
             ->setBody(
                  $this->renderView('Emails/NotificacionRegistroSolicitud.html.twig', ['solicitud'=>$solicitud, 'idcrypt'=>$idcrypt]),'text/html');
           $mailer->send($message);
@@ -160,6 +164,7 @@ class DefaultController extends Controller
           $message = (new \Swift_Message('Mantenimiento ETSIDI-Registro de su solicitud'))
             ->setFrom('gestion.partes.etsidi@upm.es')
             ->setTo($emaildecrypt)
+            //->setTo('mariabelen.sanz@upm.es')
             ->setBody(
                  $this->renderView('Emails/NotificacionRegistroSolicitud.html.twig', ['solicitud'=>$solicitud, 'idcrypt'=>$idcrypt]),'text/html');
           $mailer->send($message);
@@ -212,6 +217,24 @@ class DefaultController extends Controller
         }
         return $this->render('gestionMantenimiento/solicitudesTrabajador.html.twig',array("solicitudes" => $collection, "nombreTrabajador" => $nombreTrabajador));
       }
+
+
+          /**
+           * @Route("/solicitudTrabajador/{id}", name="solicitudTrabajador")
+           */
+              public function solicitudTrabajadorAction(Request $request,$id=null)
+              {
+                $this->denyAccessUnlessGranted('ROLE_USER');
+                if($id!=null){
+                  //Capturar el repositorio de la Tabla contra la DB
+                  $solicitudRepository = $this->getDoctrine()->getRepository(Solicitud::class);
+                  $solicitudes = $solicitudRepository->findAll();
+                  $solicitud = $solicitudRepository->find($id);
+                  return $this->render('gestionMantenimiento/solicitud.html.twig',array("solicitud"=>$solicitud));
+                }else{
+                  return $this->redirectToRoute('solicitudes');
+                }
+              }
 
 
   /**

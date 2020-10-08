@@ -207,6 +207,6 @@ class __TwigTemplate_a78026f8731f2bd8a4da748e461b8acd8350e4000d0c1ab36327665f1ce
 
 
 {% endblock %}
-", "frontal/nuevaSolicitud.html.twig", "C:\\symfony4\\SolMan\\templates\\frontal\\nuevaSolicitud.html.twig");
+", "frontal/nuevaSolicitud.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\frontal\\nuevaSolicitud.html.twig");
     }
 }

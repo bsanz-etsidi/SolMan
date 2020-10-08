@@ -192,6 +192,56 @@ class StatisticsController extends AbstractController
           return $this->render('estadisticas/seleccionaFechas.html.twig',array("form" => $form->createView()));
           }
 
+          /**
+           * @Route("/conteoPartesEspecialidad", name="conteoPartesEspecialidad")
+           */
+           public function conteoPartesEspecialidadAction(Request $request)
+           {
+                $data = array('desde' => null, 'hasta' => null);
+                $form = $this->createFormBuilder($data)
+                ->add('desde', DateType::class, array('label' => 'Desde','widget' => 'single_text'))
+                ->add('hasta', DateType::class, array('label' => 'Hasta','widget' => 'single_text'))
+                ->add('especialidad', ChoiceType::class, ['choices'  => ['Fontanería' => 'Fontanería', 'Electricidad' => 'Electricidad', 'Medios Audiovisuales' => 'Ausiovisuales', 'Pintura' => 'Pintura', 'Albañilería' => 'Albañilería','Carpintería'=>'Carpintería'],], array('label' => 'Especialidad'))
+                ->add('Aceptar', SubmitType::class, array('label' => 'Aceptar'))
+                ->getForm();
+
+                 $form->handleRequest($request);
+                 if ($form->isSubmitted() && $form->isValid()) {
+                     $data = $form->getData();
+                     $desde = $data['desde'];
+                     $hasta = $data['hasta'];
+                     $especialidadtipo = $data['especialidad'];
+
+                     $repository = $this->getDoctrine()->getRepository(Parte::class);
+                     $entityManager = $this->getDoctrine()->getManager();
+
+                     $query = $entityManager->createQuery(
+                          'SELECT p
+                           FROM App:Parte p
+                           WHERE (( p.fechafin >= :desde ) AND (p.fechafin <= :hasta ))
+                           ORDER BY p.fechafin DESC'
+                      )->setParameters(array('desde' => $desde, 'hasta' => $hasta));
+
+                      $partes= $query->getResult();
+                      $collection = new ArrayCollection();
+                      $total=0;
+                      foreach ($partes as $parte) {
+                        $especialidades = $parte->getEspecialidades();
+                        foreach ($especialidades as $especialidad) {
+                          if($especialidad->getTipo() == $especialidadtipo){
+                            $collection->add($especialidad);
+                            $total = $total+1;
+                          }
+                        }
+                      }
+                      $variable = 'partes';
+                      return $this->render('estadisticas/resultados.html.twig',array("total"=>$total, "variable"=>$variable));
+            }
+
+            return $this->render('estadisticas/seleccionaFechas.html.twig',array("form" => $form->createView()));
+            }
+
+
 
         /**
          * @Route("/mediaSolicitudes", name="mediaSolicitudes")

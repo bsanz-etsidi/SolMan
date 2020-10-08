@@ -126,24 +126,63 @@ class __TwigTemplate_733617e0b0dc150a090185b7e052072d4a8400575d2663c6e472c81bb6d
             // line 29
             echo "          <h3 class=\"my-3\"><small>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trabajador"], "nombre", [], "any", false, false, false, 29), "html", null, true);
-            echo "</small></h3>
+            echo ":&nbsp</small></h3>
           ";
+            // line 30
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["trabajador"], "instrucciones", [], "any", false, false, false, 30));
+            foreach ($context['_seq'] as $context["_key"] => $context["instruccion"]) {
+                // line 31
+                echo "          ";
+                if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["instruccion"], "solicitud", [], "any", false, false, false, 31), "id", [], "any", false, false, false, 31), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 31, $this->source); })()), "solicitud", [], "any", false, false, false, 31), "id", [], "any", false, false, false, 31))) {
+                    // line 32
+                    echo "          <h3 class=\"my-3\"><small>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspInstrucciones:&nbsp";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["instruccion"], "descripcionInstruccion", [], "any", false, false, false, 32), "html", null, true);
+                    echo "&nbsp</small></h3>
+          ";
+                }
+                // line 34
+                echo "          ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['instruccion'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 35
+            echo "          ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['trabajador'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
+        // line 36
         echo "          <h3 class=\"my-3\">Trabajos realizados: <small>";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 31, $this->source); })()), "descripcion", [], "any", false, false, false, 31), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 36, $this->source); })()), "descripcion", [], "any", false, false, false, 36), "html", null, true);
         echo "</small></h3>
           <h3 class=\"my-3\">Solicitud que genera el parte: <small>";
-        // line 32
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 32, $this->source); })()), "solicitud", [], "any", false, false, false, 32), "id", [], "any", false, false, false, 32), "html", null, true);
+        // line 37
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 37, $this->source); })()), "solicitud", [], "any", false, false, false, 37), "id", [], "any", false, false, false, 37), "html", null, true);
         echo "</small></h3>
           <h3 class=\"my-3\">Solicitante de la intervención: <small>";
-        // line 33
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 33, $this->source); })()), "solicitud", [], "any", false, false, false, 33), "solicitante", [], "any", false, false, false, 33), "html", null, true);
+        // line 38
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 38, $this->source); })()), "solicitud", [], "any", false, false, false, 38), "solicitante", [], "any", false, false, false, 38), "html", null, true);
         echo "</small></h3>
+          <h3 class=\"my-3\">Especialidades requeridas en la intervención:</h3>
+          ";
+        // line 40
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 40, $this->source); })()), "especialidades", [], "any", false, false, false, 40));
+        foreach ($context['_seq'] as $context["_key"] => $context["especialidad"]) {
+            // line 41
+            echo "          <h3 class=\"my-3\"><small>&nbsp&nbsp";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["especialidad"], "tipo", [], "any", false, false, false, 41), "html", null, true);
+            echo "&nbsp</small></h3>
+          ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['especialidad'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 43
+        echo "
+
 
         </div>
         <!-- /.row -->
@@ -171,7 +210,7 @@ class __TwigTemplate_733617e0b0dc150a090185b7e052072d4a8400575d2663c6e472c81bb6d
 
     }
 
-    // line 53
+    // line 64
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -181,7 +220,7 @@ class __TwigTemplate_733617e0b0dc150a090185b7e052072d4a8400575d2663c6e472c81bb6d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 54
+        // line 65
         echo "
 <script>
   var doc = new jsPDF();
@@ -225,7 +264,7 @@ class __TwigTemplate_733617e0b0dc150a090185b7e052072d4a8400575d2663c6e472c81bb6d
 
     public function getDebugInfo()
     {
-        return array (  185 => 54,  175 => 53,  145 => 33,  141 => 32,  136 => 31,  127 => 29,  123 => 28,  118 => 26,  114 => 25,  109 => 23,  104 => 21,  91 => 10,  81 => 9,  70 => 5,  60 => 4,  37 => 2,);
+        return array (  224 => 65,  214 => 64,  184 => 43,  175 => 41,  171 => 40,  166 => 38,  162 => 37,  157 => 36,  151 => 35,  145 => 34,  139 => 32,  136 => 31,  132 => 30,  127 => 29,  123 => 28,  118 => 26,  114 => 25,  109 => 23,  104 => 21,  91 => 10,  81 => 9,  70 => 5,  60 => 4,  37 => 2,);
     }
 
     public function getSourceContext()
@@ -258,11 +297,22 @@ Parte
           <h3 class=\"my-3\">Fecha de finalización: <small>{{parte.fechafin|date('Y/m/d')}}</small></h3>
           <h3 class=\"my-3\">intervención realizada por:</h3>
           {% for trabajador in parte.solicitud.trabajadores %}
-          <h3 class=\"my-3\"><small>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{trabajador.nombre}}</small></h3>
+          <h3 class=\"my-3\"><small>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{trabajador.nombre}}:&nbsp</small></h3>
+          {% for instruccion in trabajador.instrucciones %}
+          {% if instruccion.solicitud.id==parte.solicitud.id %}
+          <h3 class=\"my-3\"><small>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspInstrucciones:&nbsp{{instruccion.descripcionInstruccion}}&nbsp</small></h3>
+          {% endif %}
+          {% endfor %}
           {% endfor %}
           <h3 class=\"my-3\">Trabajos realizados: <small>{{parte.descripcion}}</small></h3>
           <h3 class=\"my-3\">Solicitud que genera el parte: <small>{{parte.solicitud.id}}</small></h3>
           <h3 class=\"my-3\">Solicitante de la intervención: <small>{{parte.solicitud.solicitante}}</small></h3>
+          <h3 class=\"my-3\">Especialidades requeridas en la intervención:</h3>
+          {% for especialidad in parte.especialidades %}
+          <h3 class=\"my-3\"><small>&nbsp&nbsp{{especialidad.tipo}}&nbsp</small></h3>
+          {% endfor %}
+
+
 
         </div>
         <!-- /.row -->
@@ -305,6 +355,6 @@ Parte
 
 
 
-{% endblock %}", "gestionMantenimiento/parte.html.twig", "C:\\symfony4\\SolMan\\templates\\gestionMantenimiento\\parte.html.twig");
+{% endblock %}", "gestionMantenimiento/parte.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\parte.html.twig");
     }
 }

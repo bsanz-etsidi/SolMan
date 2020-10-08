@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\CallbackTransformer;
 
@@ -22,7 +23,7 @@ class ParteType extends AbstractType
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
     $builder
-          ->add('localizacion', TextType::class, array ('label' => "Unidad donde se realiza la intervención"))
+          ->add('localizacion', TextType::class, array ('label' => "Unidad donde se realiza la intervención", 'data' => $options['estancia']))
           ->add('fechainicio', DateType::class, array ('label' => "fecha de inicio de los trabajos",'widget' => 'single_text'))
           ->add('fechafin', DateType::class, array ('label' => "Fecha de finalización de los trabajos",'widget' => 'single_text'))
           ->add('descripcion', TextareaType::class, array ('label' => "Trabajos realizados"))
@@ -30,5 +31,12 @@ class ParteType extends AbstractType
           ;
 
   }
+
+  public function configureOptions(OptionsResolver $resolver)
+{
+    $resolver->setDefaults(array(
+        'estancia' => null,
+    ));
+}
 
 }

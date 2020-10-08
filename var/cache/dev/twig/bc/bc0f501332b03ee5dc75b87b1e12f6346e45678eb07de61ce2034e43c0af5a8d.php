@@ -227,6 +227,6 @@ class __TwigTemplate_fbbb3c607de89ab04a1212b1d8333d6675de700b1e088271edd08da21b8
         </div>
     </form>
 </div>
-", "@WebProfiler/Profiler/search.html.twig", "C:\\symfony4\\SolMan\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\search.html.twig");
+", "@WebProfiler/Profiler/search.html.twig", "C:\\symfony4LOCAL\\SolMan\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\search.html.twig");
     }
 }

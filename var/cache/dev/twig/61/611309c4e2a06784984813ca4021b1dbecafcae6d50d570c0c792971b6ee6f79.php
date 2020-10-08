@@ -344,6 +344,6 @@ class __TwigTemplate_3464c873c1eac89d433f5a11244be69fb4f049ce4f62765dda04c6a266e
 <div style=\"margin-bottom:200px\">
 </div>
 </div>
-{% endblock %}", "gestionMantenimiento/anuladas.html.twig", "C:\\symfony4\\SolMan\\templates\\gestionMantenimiento\\anuladas.html.twig");
+{% endblock %}", "gestionMantenimiento/anuladas.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\anuladas.html.twig");
     }
 }

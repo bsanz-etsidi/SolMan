@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\PersistentCollection;
 
 /**
  * Parte
@@ -56,6 +59,21 @@ class Parte
      */
      private $solicitud;
 
+
+     /**
+      * Un parte tiene muchas especialidades
+      * @ORM\OneToMany(targetEntity="App\Entity\Especialidad", mappedBy="parte")
+      */
+     private $especialidades;
+
+
+     public function __construct()
+   {
+       $this->especialidades = new \Doctrine\Common\Collections\ArrayCollection();
+
+   }
+
+
     /**
      * Get id
      *
@@ -65,8 +83,6 @@ class Parte
     {
         return $this->id;
     }
-
-
 
 
     /**
@@ -189,6 +205,40 @@ class Parte
   {
       return $this->solicitud;
     }
+
+    /**
+     * Add especialidad
+     *
+     * @param \App\Entity\Especialidad $especialidad
+     *
+     * @return Parte
+     */
+    public function addEspecialidad(\App\Entity\Especialidad $especialidad)
+    {
+        $this->especialidades[] = $especialidad;
+        return $this;
+    }
+
+    /**
+     * Remove especialidad
+     *
+     * @param \App\Entity\Especialidad $especialidad
+     */
+    public function removeEspecialidad(\App\Entity\Especialidad $especialidad)
+    {
+        $this->especialidades->removeElement($especialidad);
+    }
+
+    /**
+     * Get especialidades
+     *
+     * @return Collection|Especialidad[]
+     */
+    public function getEspecialidades(): Collection
+    {
+        return $this->especialidades;
+      }
+
 
 
 }

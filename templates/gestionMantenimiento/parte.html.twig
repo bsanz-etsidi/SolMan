@@ -26,11 +26,22 @@ Parte
           <h3 class="my-3">Fecha de finalización: <small>{{parte.fechafin|date('Y/m/d')}}</small></h3>
           <h3 class="my-3">intervención realizada por:</h3>
           {% for trabajador in parte.solicitud.trabajadores %}
-          <h3 class="my-3"><small>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{trabajador.nombre}}</small></h3>
+          <h3 class="my-3"><small>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{trabajador.nombre}}:&nbsp</small></h3>
+          {% for instruccion in trabajador.instrucciones %}
+          {% if instruccion.solicitud.id==parte.solicitud.id %}
+          <h3 class="my-3"><small>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspInstrucciones:&nbsp{{instruccion.descripcionInstruccion}}&nbsp</small></h3>
+          {% endif %}
+          {% endfor %}
           {% endfor %}
           <h3 class="my-3">Trabajos realizados: <small>{{parte.descripcion}}</small></h3>
           <h3 class="my-3">Solicitud que genera el parte: <small>{{parte.solicitud.id}}</small></h3>
           <h3 class="my-3">Solicitante de la intervención: <small>{{parte.solicitud.solicitante}}</small></h3>
+          <h3 class="my-3">Especialidades requeridas en la intervención:</h3>
+          {% for especialidad in parte.especialidades %}
+          <h3 class="my-3"><small>&nbsp&nbsp{{especialidad.tipo}}&nbsp</small></h3>
+          {% endfor %}
+
+
 
         </div>
         <!-- /.row -->

@@ -203,6 +203,6 @@ class __TwigTemplate_3e97f22edd0170593b21b547f74a958dbd6651c6292fb238c340afd123e
 
 </div>
 
-{% endblock %}", "Emails/NotificacionParte.html.twig", "C:\\symfony4\\SolMan\\templates\\Emails\\NotificacionParte.html.twig");
+{% endblock %}", "Emails/NotificacionParte.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\Emails\\NotificacionParte.html.twig");
     }
 }

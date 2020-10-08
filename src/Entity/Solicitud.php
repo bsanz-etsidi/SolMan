@@ -101,6 +101,10 @@ class Solicitud
      */
     private $eventos;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Instruccion", mappedBy="solicitud")
+     */
+    private $instrucciones;
 
     /**
      * @var string
@@ -142,6 +146,8 @@ class Solicitud
     {
         $this->trabajadores = new \Doctrine\Common\Collections\ArrayCollection();
         $this->eventos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->instrucciones = new \Doctrine\Common\Collections\ArrayCollection();
+
     }
 
 
@@ -526,7 +532,7 @@ class Solicitud
 
 
 
-    /**
+  /**
    * Add evento
    *
    * @param \App\Entity\Evento $evento
@@ -558,6 +564,40 @@ class Solicitud
   {
       return $this->eventos;
     }
+
+    /**
+     * Add instruccion
+     *
+     * @param \App\Entity\Instruccion $instruccion
+     *
+     * @return Solicitud
+     */
+    public function addInstruccion(\App\Entity\Instruccion $instruccion)
+    {
+        $this->instrucciones[] = $instruccion;
+        return $this;
+    }
+
+    /**
+     * Remove instruccion
+     *
+     * @param \App\Entity\Instruccion $instruccion
+     */
+    public function removeInstruccion(\App\Entity\Instruccion $instruccion)
+    {
+        $this->instrucciones->removeElement($instruccion);
+    }
+
+    /**
+     * Get instrucciones
+     *
+     * @return Collection|Instruccion[]
+     */
+    public function getInstrucciones(): Collection
+    {
+        return $this->instrucciones;
+      }
+
 
 
     public function __toString()

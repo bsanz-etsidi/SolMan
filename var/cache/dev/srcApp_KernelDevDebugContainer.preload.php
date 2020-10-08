@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'\\vendor/autoload.php';
-require __DIR__.'/ContainerR1uejHz/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerFv5IMo2/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -485,8 +485,9 @@ $classes[] = 'Symfony\Component\VarDumper\Dumper\ContextProvider\CliContextProvi
 $classes[] = 'Symfony\Component\WebLink\EventListener\AddLinkHeaderListener';
 $classes[] = 'Symfony\Bundle\WebProfilerBundle\Controller\ExceptionPanelController';
 $classes[] = 'Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController';
+$classes[] = 'Symfony\Bundle\WebProfilerBundle\Controller\RouterController';
 $classes[] = 'Symfony\Bundle\WebProfilerBundle\Csp\ContentSecurityPolicyHandler';
 $classes[] = 'Symfony\Bundle\WebProfilerBundle\Csp\NonceGenerator';
-$classes[] = 'Symfony\Bundle\WebProfilerBundle\Controller\RouterController';
+$classes[] = 'Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener';
 
 Preloader::preload($classes);
