@@ -845,7 +845,7 @@ class GestionController extends AbstractController
     {
       $data = array('especialidad' => 'especialidad');
       $form = $this->createFormBuilder($data)
-        ->add('especialidad', ChoiceType::class, ['choices'  => ['Fontanería' => 'Fontanería', 'Electricidad' => 'Electricidad', 'Medios Audiovisuales' => 'Ausiovisuales', 'Pintura' => 'Pintura', 'Albañilería' => 'Albañilería','Carpintería'=>'Carpintería', 'Cerrajería'=>'Cerrajería'],], array('label' => 'Especialidad'))
+        ->add('especialidad', ChoiceType::class, ['choices'  => ['Fontanería' => 'Fontanería', 'Electricidad' => 'Electricidad', 'Medios Audiovisuales' => 'Ausiovisuales', 'Pintura' => 'Pintura', 'Albañilería' => 'Albañilería','Carpintería'=>'Carpintería', 'Cerrajería'=>'Cerrajería','Trabajos varios'=>'Trabajos varios'],], array('label' => 'Especialidad'))
         ->add('Asignar', SubmitType::class, array('label' => 'Asignar'))
         ->getForm();
 
