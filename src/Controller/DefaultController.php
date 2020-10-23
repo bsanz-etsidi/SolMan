@@ -88,7 +88,7 @@ class DefaultController extends Controller
 
 
       /**
-       * @Route("/cronograma/{idcrypt}", name="cronograma")
+       * @Route("/cronograma/{idcrypt}", name="cronograma", requirements={"idcrypt"=".+"})
        */
       public function cronogramaAction(Request $request, $idcrypt)
       {
@@ -104,7 +104,7 @@ class DefaultController extends Controller
 
 
   /**
-   * @Route("/nuevaSolicitud/{email}", name="nuevaSolicitud")
+   * @Route("/nuevaSolicitud/{email}", name="nuevaSolicitud", requirements={"email"=".+"})
    */
    public function nuevaSolicitudAction(Request $request, $email, \Swift_Mailer $mailer)
    {
@@ -188,7 +188,7 @@ class DefaultController extends Controller
 
 
    /**
-    * @Route("/mensaje/{emailcrypt}", name="mensaje")
+    * @Route("/mensaje/{emailcrypt}", name="mensaje", requirements={"emailcrypt"=".+"})
     */
     public function mensajeAction(Request $request, $emailcrypt)
     {
@@ -253,16 +253,16 @@ class DefaultController extends Controller
          }
 
    /**
-    * @Route("/rellenarSatisfaccion/{id}/{emailcrypt}", name="rellenarSatisfaccion")
+    * @Route("/rellenarSatisfaccion/{id}/{email}", name="rellenarSatisfaccion", requirements={"id"=".+"})
     */
-    public function rellenarSatisfaccionAction(Request $request, AuthenticationUtils $authenticationUtils, $id, $emailcrypt)
+    public function rellenarSatisfaccionAction(Request $request, AuthenticationUtils $authenticationUtils, $id, $email)
     {
        $key = 'mqtrf2010';
        $encrypt = new Encrypter();
        $cadena = (string) $id;
        $parametro = $encrypt->decrypt($cadena,$key);
-       $cadena2 = (string) $emailcrypt;
-       $username = $encrypt->decrypt($cadena2,$key);
+       //$cadena2 = (string) $emailcrypt;
+       $username = $email;
        $valoracion = new Valoracion();
        $evento = new Evento();
        $solicitud = new Solicitud();

@@ -86,7 +86,7 @@ class GestionController extends AbstractController
 
 
       /**
-       * @Route("/nuevoParte/{id}", name="nuevoParte")
+       * @Route("/nuevoParte/{id}", name="nuevoParte", requirements={"id"=".+"})
        */
        public function nuevoParteAction(Request $request,$id, \Swift_Mailer $mailer)
        {
@@ -107,7 +107,7 @@ class GestionController extends AbstractController
           //  $trabajador = $parte->getTrabajador();
             $solicitud->setEstado('2');//estado 2: solicitud despachada
             $email = $solicitud->getEmail();
-            $emailcrypt = $encrypt->encrypt($email,$key);
+            //$emailcrypt = $encrypt->encrypt($email,$key);
             $evento->setTipo('Fin');
             $evento->setFecha();
             $evento->setSolicitud($solicitud);
@@ -134,8 +134,7 @@ class GestionController extends AbstractController
               ->setTo($email)
               //->setTo('mariabelen.sanz@upm.es')
               ->setBody(
-                  $this->renderView('Emails/NotificacionParte.html.twig', ['parte'=>$parte, 'parametro'=>$parametro, 'emailcrypt'=>$emailcrypt]),'text/html')
-              ;
+                  $this->renderView('Emails/NotificacionParte.html.twig', ['parte'=>$parte, 'parametro'=>$parametro, 'email'=>$email]),'text/html');
             $mailer->send($message);
           }
             return $this->redirectToRoute('asignarEspecialidad',array('parteId' => $parteId ));

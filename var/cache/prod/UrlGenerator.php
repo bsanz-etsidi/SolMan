@@ -5,7 +5,7 @@
 return [
     'home' => [[], ['_controller' => 'App\\Controller\\DefaultController::homeAction'], [], [['text', '/']], [], []],
     'cronograma' => [['idcrypt'], ['_controller' => 'App\\Controller\\DefaultController::cronogramaAction'], [], [['variable', '/', '[^/]++', 'idcrypt'], ['text', '/cronograma']], [], []],
-    'nuevaSolicitud' => [['email'], ['_controller' => 'App\\Controller\\DefaultController::nuevaSolicitudAction'], [], [['variable', '/', '[^/]++', 'email'], ['text', '/nuevaSolicitud']], [], []],
+    'nuevaSolicitud' => [['email'], ['_controller' => 'App\\Controller\\DefaultController::nuevaSolicitudAction'], ['email' => '.+'], [['variable', '/', '.+', 'email'], ['text', '/nuevaSolicitud']], [], []],
     'mensajeNoPuede' => [[], ['_controller' => 'App\\Controller\\DefaultController::mensajeNoPuedeAction'], [], [['text', '/mensajeNoPuede']], [], []],
     'mensaje' => [['emailcrypt'], ['_controller' => 'App\\Controller\\DefaultController::mensajeAction'], [], [['variable', '/', '[^/]++', 'emailcrypt'], ['text', '/mensaje']], [], []],
     'solicitudesTrabajador' => [[], ['_controller' => 'App\\Controller\\DefaultController::solicitudesTrabajadorAction'], [], [['text', '/solicitudesTrabajador']], [], []],

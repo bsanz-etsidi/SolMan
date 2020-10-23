@@ -41,80 +41,80 @@ return [
     [ // $regexpList
         0 => '{^(?'
                 .'|/cronograma/([^/]++)(*:27)'
-                .'|/nuevaSolicitud/([^/]++)(*:58)'
-                .'|/mensaje/([^/]++)(*:82)'
+                .'|/nuevaSolicitud/(.+)(*:54)'
+                .'|/mensaje/([^/]++)(*:78)'
                 .'|/s(?'
-                    .'|olicitudTrabajador(?:/([^/]++))?(*:126)'
-                    .'|tatistics/conteoSolicitudes(?:/([^/]++))?(*:175)'
+                    .'|olicitudTrabajador(?:/([^/]++))?(*:122)'
+                    .'|tatistics/conteoSolicitudes(?:/([^/]++))?(*:171)'
                 .')'
-                .'|/rellenarSatisfaccion/([^/]++)/([^/]++)(*:223)'
+                .'|/rellenarSatisfaccion/([^/]++)/([^/]++)(*:219)'
                 .'|/gestionMantenimiento/(?'
                     .'|b(?'
-                        .'|ajaTrabajador/([^/]++)(*:282)'
+                        .'|ajaTrabajador/([^/]++)(*:278)'
                         .'|orrar(?'
-                            .'|Asignacion/([^/]++)/([^/]++)/([^/]++)(*:335)'
-                            .'|Parte(?:/([^/]++))?(*:362)'
-                            .'|Especialidad/([^/]++)/([^/]++)(*:400)'
+                            .'|Asignacion/([^/]++)/([^/]++)/([^/]++)(*:331)'
+                            .'|Parte(?:/([^/]++))?(*:358)'
+                            .'|Especialidad/([^/]++)/([^/]++)(*:396)'
                         .')'
                     .')'
-                    .'|nuevoParte/([^/]++)(*:429)'
+                    .'|nuevoParte/([^/]++)(*:425)'
                     .'|editar(?'
-                        .'|Parte/([^/]++)(*:460)'
-                        .'|Instruccion/([^/]++)/([^/]++)/([^/]++)(*:506)'
+                        .'|Parte/([^/]++)(*:456)'
+                        .'|Instruccion/([^/]++)/([^/]++)/([^/]++)(*:502)'
                     .')'
                     .'|c(?'
-                        .'|ronogramaGestion/([^/]++)(*:544)'
-                        .'|ompletarInstruccion/([^/]++)(*:580)'
+                        .'|ronogramaGestion/([^/]++)(*:540)'
+                        .'|ompletarInstruccion/([^/]++)(*:576)'
                     .')'
                     .'|a(?'
-                        .'|nularSolicitud/([^/]++)(*:616)'
+                        .'|nularSolicitud/([^/]++)(*:612)'
                         .'|signar(?'
-                            .'|Solicitud/([^/]++)(*:651)'
-                            .'|Especialidad/([^/]++)(*:680)'
+                            .'|Solicitud/([^/]++)(*:647)'
+                            .'|Especialidad/([^/]++)(*:676)'
                         .')'
                     .')'
                     .'|s(?'
-                        .'|uspenderSolicitud/([^/]++)(*:720)'
-                        .'|olicitud(?:/([^/]++))?(*:750)'
+                        .'|uspenderSolicitud/([^/]++)(*:716)'
+                        .'|olicitud(?:/([^/]++))?(*:746)'
                     .')'
                     .'|reactivarSolicitud(?'
-                        .'|Suspendida/([^/]++)(*:799)'
-                        .'|Anulada/([^/]++)(*:823)'
+                        .'|Suspendida/([^/]++)(*:795)'
+                        .'|Anulada/([^/]++)(*:819)'
                     .')'
                     .'|p(?'
-                        .'|arte(?:/([^/]++))?(*:854)'
-                        .'|riorizarSolicitud/([^/]++)(*:888)'
+                        .'|arte(?:/([^/]++))?(*:850)'
+                        .'|riorizarSolicitud/([^/]++)(*:884)'
                     .')'
-                    .'|desPriorizarSolicitud/([^/]++)(*:927)'
+                    .'|desPriorizarSolicitud/([^/]++)(*:923)'
                 .')'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
         27 => [[['_route' => 'cronograma', '_controller' => 'App\\Controller\\DefaultController::cronogramaAction'], ['idcrypt'], null, null, false, true, null]],
-        58 => [[['_route' => 'nuevaSolicitud', '_controller' => 'App\\Controller\\DefaultController::nuevaSolicitudAction'], ['email'], null, null, false, true, null]],
-        82 => [[['_route' => 'mensaje', '_controller' => 'App\\Controller\\DefaultController::mensajeAction'], ['emailcrypt'], null, null, false, true, null]],
-        126 => [[['_route' => 'solicitudTrabajador', 'id' => null, '_controller' => 'App\\Controller\\DefaultController::solicitudTrabajadorAction'], ['id'], null, null, false, true, null]],
-        175 => [[['_route' => 'conteoSolicitudes', 'estado' => null, '_controller' => 'App\\Controller\\StatisticsController::conteoSolicitudesAction'], ['estado'], null, null, false, true, null]],
-        223 => [[['_route' => 'rellenarSatisfaccion', '_controller' => 'App\\Controller\\DefaultController::rellenarSatisfaccionAction'], ['id', 'emailcrypt'], null, null, false, true, null]],
-        282 => [[['_route' => 'bajaTrabajador', '_controller' => 'App\\Controller\\GestionController::bajaTrabajadorAction'], ['trabajadorId'], null, null, false, true, null]],
-        335 => [[['_route' => 'borrarAsignacion', '_controller' => 'App\\Controller\\GestionController::borrarAsignacionAction'], ['id', 'idTrabajador', 'idInstruccion'], null, null, false, true, null]],
-        362 => [[['_route' => 'borrarParte', 'id' => null, '_controller' => 'App\\Controller\\GestionController::borrarParteAction'], ['id'], null, null, false, true, null]],
-        400 => [[['_route' => 'borrarEspecialidad', '_controller' => 'App\\Controller\\GestionController::borrarEspecialidadAction'], ['especialidadId', 'parteId'], null, null, false, true, null]],
-        429 => [[['_route' => 'nuevoParte', '_controller' => 'App\\Controller\\GestionController::nuevoParteAction'], ['id'], null, null, false, true, null]],
-        460 => [[['_route' => 'editarParte', '_controller' => 'App\\Controller\\GestionController::editarParteAction'], ['id'], null, null, false, true, null]],
-        506 => [[['_route' => 'editarInstruccion', '_controller' => 'App\\Controller\\GestionController::editarInstruccionAction'], ['idInstruccion', 'idSolicitud', 'nombreTrabajador'], null, null, false, true, null]],
-        544 => [[['_route' => 'cronogramaGestion', '_controller' => 'App\\Controller\\GestionController::cronogramaGestionAction'], ['id'], null, null, false, true, null]],
-        580 => [[['_route' => 'completarInstruccion', '_controller' => 'App\\Controller\\GestionController::completarInstruccionAction'], ['instruccionId'], null, null, false, true, null]],
-        616 => [[['_route' => 'anularSolicitud', '_controller' => 'App\\Controller\\GestionController::anularSolicitudAction'], ['id'], null, null, false, true, null]],
-        651 => [[['_route' => 'asignarSolicitud', '_controller' => 'App\\Controller\\GestionController::asignarSolicitudAction'], ['id'], null, null, false, true, null]],
-        680 => [[['_route' => 'asignarEspecialidad', '_controller' => 'App\\Controller\\GestionController::asignarEspecialidadAction'], ['parteId'], null, null, false, true, null]],
-        720 => [[['_route' => 'suspenderSolicitud', '_controller' => 'App\\Controller\\GestionController::suspenderSolicitudAction'], ['id'], null, null, false, true, null]],
-        750 => [[['_route' => 'solicitud', 'id' => null, '_controller' => 'App\\Controller\\GestionController::solicitudAction'], ['id'], null, null, false, true, null]],
-        799 => [[['_route' => 'reactivarSolicitudSuspendida', '_controller' => 'App\\Controller\\GestionController::reactivarSolicitudSuspendidaAction'], ['id'], null, null, false, true, null]],
-        823 => [[['_route' => 'reactivarSolicitudAnulada', '_controller' => 'App\\Controller\\GestionController::reactivarSolicitudAnuladaAction'], ['id'], null, null, false, true, null]],
-        854 => [[['_route' => 'parte', 'id' => null, '_controller' => 'App\\Controller\\GestionController::parteAction'], ['id'], null, null, false, true, null]],
-        888 => [[['_route' => 'priorizarSolicitud', '_controller' => 'App\\Controller\\GestionController::priorizarSolicitudAction'], ['id'], null, null, false, true, null]],
-        927 => [
+        54 => [[['_route' => 'nuevaSolicitud', '_controller' => 'App\\Controller\\DefaultController::nuevaSolicitudAction'], ['email'], null, null, false, true, null]],
+        78 => [[['_route' => 'mensaje', '_controller' => 'App\\Controller\\DefaultController::mensajeAction'], ['emailcrypt'], null, null, false, true, null]],
+        122 => [[['_route' => 'solicitudTrabajador', 'id' => null, '_controller' => 'App\\Controller\\DefaultController::solicitudTrabajadorAction'], ['id'], null, null, false, true, null]],
+        171 => [[['_route' => 'conteoSolicitudes', 'estado' => null, '_controller' => 'App\\Controller\\StatisticsController::conteoSolicitudesAction'], ['estado'], null, null, false, true, null]],
+        219 => [[['_route' => 'rellenarSatisfaccion', '_controller' => 'App\\Controller\\DefaultController::rellenarSatisfaccionAction'], ['id', 'emailcrypt'], null, null, false, true, null]],
+        278 => [[['_route' => 'bajaTrabajador', '_controller' => 'App\\Controller\\GestionController::bajaTrabajadorAction'], ['trabajadorId'], null, null, false, true, null]],
+        331 => [[['_route' => 'borrarAsignacion', '_controller' => 'App\\Controller\\GestionController::borrarAsignacionAction'], ['id', 'idTrabajador', 'idInstruccion'], null, null, false, true, null]],
+        358 => [[['_route' => 'borrarParte', 'id' => null, '_controller' => 'App\\Controller\\GestionController::borrarParteAction'], ['id'], null, null, false, true, null]],
+        396 => [[['_route' => 'borrarEspecialidad', '_controller' => 'App\\Controller\\GestionController::borrarEspecialidadAction'], ['especialidadId', 'parteId'], null, null, false, true, null]],
+        425 => [[['_route' => 'nuevoParte', '_controller' => 'App\\Controller\\GestionController::nuevoParteAction'], ['id'], null, null, false, true, null]],
+        456 => [[['_route' => 'editarParte', '_controller' => 'App\\Controller\\GestionController::editarParteAction'], ['id'], null, null, false, true, null]],
+        502 => [[['_route' => 'editarInstruccion', '_controller' => 'App\\Controller\\GestionController::editarInstruccionAction'], ['idInstruccion', 'idSolicitud', 'nombreTrabajador'], null, null, false, true, null]],
+        540 => [[['_route' => 'cronogramaGestion', '_controller' => 'App\\Controller\\GestionController::cronogramaGestionAction'], ['id'], null, null, false, true, null]],
+        576 => [[['_route' => 'completarInstruccion', '_controller' => 'App\\Controller\\GestionController::completarInstruccionAction'], ['instruccionId'], null, null, false, true, null]],
+        612 => [[['_route' => 'anularSolicitud', '_controller' => 'App\\Controller\\GestionController::anularSolicitudAction'], ['id'], null, null, false, true, null]],
+        647 => [[['_route' => 'asignarSolicitud', '_controller' => 'App\\Controller\\GestionController::asignarSolicitudAction'], ['id'], null, null, false, true, null]],
+        676 => [[['_route' => 'asignarEspecialidad', '_controller' => 'App\\Controller\\GestionController::asignarEspecialidadAction'], ['parteId'], null, null, false, true, null]],
+        716 => [[['_route' => 'suspenderSolicitud', '_controller' => 'App\\Controller\\GestionController::suspenderSolicitudAction'], ['id'], null, null, false, true, null]],
+        746 => [[['_route' => 'solicitud', 'id' => null, '_controller' => 'App\\Controller\\GestionController::solicitudAction'], ['id'], null, null, false, true, null]],
+        795 => [[['_route' => 'reactivarSolicitudSuspendida', '_controller' => 'App\\Controller\\GestionController::reactivarSolicitudSuspendidaAction'], ['id'], null, null, false, true, null]],
+        819 => [[['_route' => 'reactivarSolicitudAnulada', '_controller' => 'App\\Controller\\GestionController::reactivarSolicitudAnuladaAction'], ['id'], null, null, false, true, null]],
+        850 => [[['_route' => 'parte', 'id' => null, '_controller' => 'App\\Controller\\GestionController::parteAction'], ['id'], null, null, false, true, null]],
+        884 => [[['_route' => 'priorizarSolicitud', '_controller' => 'App\\Controller\\GestionController::priorizarSolicitudAction'], ['id'], null, null, false, true, null]],
+        923 => [
             [['_route' => 'desPriorizarSolicitud', '_controller' => 'App\\Controller\\GestionController::desPriorizarSolicitudAction'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
