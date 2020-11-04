@@ -366,6 +366,6 @@ class __TwigTemplate_172038e70b3eb302adbac1cb6be1b30c423899817be3fd03a984e97374f
 </div>
 </div>
 {% endblock %}
-", "gestionMantenimiento/suspendidas.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\suspendidas.html.twig");
+", "gestionMantenimiento/suspendidas.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\suspendidas.html.twig");
     }
 }

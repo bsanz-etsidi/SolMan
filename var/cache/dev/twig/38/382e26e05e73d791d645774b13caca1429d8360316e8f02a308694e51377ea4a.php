@@ -106,6 +106,6 @@ class __TwigTemplate_08a8f39a1b65347f4224c6066e88f431d8cfb30fc18b85bb15ba7fe0c97
 {{ include('@Twig/Exception/traces.txt.twig', { exception: e }, with_context = false) }}
 
 {% endfor %}
-", "@Twig/Exception/exception.txt.twig", "C:\\symfony4LOCAL\\SolMan\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\exception.txt.twig");
+", "@Twig/Exception/exception.txt.twig", "C:\\symfony4REMOTO\\SolMan\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\exception.txt.twig");
     }
 }

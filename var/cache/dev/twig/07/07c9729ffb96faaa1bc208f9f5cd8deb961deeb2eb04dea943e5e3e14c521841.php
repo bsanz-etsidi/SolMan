@@ -212,6 +212,6 @@ class __TwigTemplate_8fcc1993444fc477a4e19fbc9dee03bc4dd5ff7d113b24cdbf99de0f2d8
 
 
 {% endblock %}
-", "gestionMantenimiento/asignarEspecialidad.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\asignarEspecialidad.html.twig");
+", "gestionMantenimiento/asignarEspecialidad.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\asignarEspecialidad.html.twig");
     }
 }

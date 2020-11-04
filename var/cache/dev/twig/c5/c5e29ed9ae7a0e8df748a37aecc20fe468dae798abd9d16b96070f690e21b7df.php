@@ -377,6 +377,6 @@ Solicitud
   // This code is collected but useful, click below to jsfiddle link.
 </script>
 {% endblock %}
-", "gestionMantenimiento/solicitud.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\solicitud.html.twig");
+", "gestionMantenimiento/solicitud.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\solicitud.html.twig");
     }
 }

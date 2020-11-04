@@ -147,7 +147,7 @@ class StatisticsController extends AbstractController
         /**
          * @Route("/conteoSolicitudesTrabajador/", name="conteoSolicitudesTrabajador")
          */
-         public function conteoSolicitudesTrabajadorsAction(Request $request)
+         public function conteoSolicitudesTrabajadorAction(Request $request)
          {
               $data = array('desde' => null, 'hasta' => null, 'Nombre'=> null);
               $form = $this->createFormBuilder($data)
@@ -177,8 +177,12 @@ class StatisticsController extends AbstractController
                     )->setParameters(array('desde' => $desde, 'hasta' => $hasta));
 
                     $solicitudes = $query->getResult();
+                    $diferencia = $desde->diff($hasta);
+                    $dias = $diferencia->days;//days es la entrada del array DateInterval que contiene los días del intervalo obtenido con la función diff
+                   // $divisor = (int) $diferencia/30;
                     $totalSolicitudes = 0;
                     $totalSolicitudesTrabajador = 0;
+                    $meses = $dias/30;
                       foreach ($solicitudes as $solicitud) {
                         $totalSolicitudes = $totalSolicitudes + 1;
                         $trabajadores = $solicitud->getTrabajadores();
@@ -186,11 +190,61 @@ class StatisticsController extends AbstractController
                         $totalSolicitudesTrabajador = $totalSolicitudesTrabajador + 1;
                         }
                     }
-                    $media = $totalSolicitudesTrabajador/$totalSolicitudes;
+                    $media = $totalSolicitudesTrabajador/$meses;
                     return $this->render('estadisticas/resultadosSolicitudesTrabajador.html.twig',array("totalSolicitudesTrabajador" => $totalSolicitudesTrabajador, "nombre"=>$nombre, "media"=> $media));
           }
           return $this->render('estadisticas/seleccionaFechas.html.twig',array("form" => $form->createView()));
           }
+
+
+          /**
+           * @Route("/conteoSolicitudesDestino", name="conteoSolicitudesDestino")
+           */
+           public function conteoSolicitudesDestinoAction(Request $request)
+           {
+                $data = array('desde' => null, 'hasta' => null, 'Nombre'=> null);
+                $form = $this->createFormBuilder($data)
+                ->add('destino', ChoiceType::class, array ('label' => "Unidad de Destino",'choices'  => ['Dirección'=>'Dirección', 'Subdirecciones'=>'Subdirecciones','Secretaría de Alumnos'=>'Secretaría de Alumnos','Gestión Económica'=>'Gestión Económica','Administrador y Personal'=>'Administrador y Personal','Biblioteca'=>'Biblioteca','Servicios Informáticos'=>'Servicios Informáticos','Mantenimiento'=>'Mantenimiento','Conserjería'=>'Conserjería','Oficina de Empresa'=>'Oficina de Empresa','D180 general'=>'D180 general','D180 (Electricidad)'=>'D180 (Electricidad)','D180 (Electrónica)'=>'D180 (Electrónica)','D180 (Física)'=>'D180 (Física)','D190 general'=>'D190 general','D190 (Mecánica)'=>'D190 (Mecánica)','D190 (Química)'=>'D190 (Química)','D190 (Diseño)'=>'D190 (Diseño)','Departamento de Matemáticas'=>'Departamento de Matemáticas','Departamento de Lingüística'=>'Departamento de Lingüística','Departamento de Organización'=>'Departamento de Organización','LIMIT'=>'LIMIT','Asociaciones'=>'Asociaciones'],))
+                ->add('desde', DateType::class, array('label' => 'Desde','widget' => 'single_text'))
+                ->add('hasta', DateType::class, array('label' => 'Hasta','widget' => 'single_text'))
+                ->add('Aceptar', SubmitType::class, array('label' => 'Aceptar'))
+                ->getForm();
+
+                 $form->handleRequest($request);
+                 if ($form->isSubmitted() && $form->isValid()) {
+                     $data = $form->getData();
+                     $desde = $data['desde'];
+                     $hasta = $data['hasta'];
+                     $destino = $data['destino'];
+
+                     $repository = $this->getDoctrine()->getRepository(Solicitud::class);
+                     $trabajadorRepository = $this->getDoctrine()->getRepository(Trabajador::class);
+                     $entityManager = $this->getDoctrine()->getManager();
+
+                     $query = $entityManager->createQuery(
+                          'SELECT s
+                           FROM App:Solicitud s
+                           WHERE (( s.fecha >= :desde ) AND (s.fecha <= :hasta ))
+                           ORDER BY s.fecha ASC'
+                      )->setParameters(array('desde' => $desde, 'hasta' => $hasta));
+
+                      $solicitudes = $query->getResult();
+                      $diferencia = $desde->diff($hasta);
+                      $dias = $diferencia->days;//days es la entrada del array DateInterval que contiene los días del intervalo obtenido con la función diff
+                     // $divisor = (int) $diferencia/30;
+                      $totalSolicitudesDestino = 0;
+                      $meses = $dias/30;
+                        foreach ($solicitudes as $solicitud) {
+                          if ($solicitud->getDestino() == $destino){
+                          $totalSolicitudesDestino = $totalSolicitudesDestino + 1;
+                          }
+                      }
+                      $media = $totalSolicitudesDestino/$meses;
+                      return $this->render('estadisticas/resultadosSolicitudesDestino.html.twig',array("totalSolicitudesDestino" => $totalSolicitudesDestino, "destino"=>$destino, "media"=> $media));
+            }
+            return $this->render('estadisticas/seleccionaFechas.html.twig',array("form" => $form->createView()));
+            }
+
 
           /**
            * @Route("/conteoPartesEspecialidad", name="conteoPartesEspecialidad")

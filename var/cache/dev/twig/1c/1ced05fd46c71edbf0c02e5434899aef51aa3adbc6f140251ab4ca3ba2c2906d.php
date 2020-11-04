@@ -167,6 +167,6 @@ class __TwigTemplate_6954dc821d2ef74da973156eb0424843ee3a14b7112437d7b7a24142ae8
 
 
 {% endblock %}
-", "frontal/mensajeNoCorresponde.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\frontal\\mensajeNoCorresponde.html.twig");
+", "frontal/mensajeNoCorresponde.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\frontal\\mensajeNoCorresponde.html.twig");
     }
 }

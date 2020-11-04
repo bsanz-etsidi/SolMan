@@ -164,6 +164,6 @@ class __TwigTemplate_dc2f29bed660b1c00785373850706ecbb25da17c67d67b986dd55308c14
 </div>
 
 {% endblock %}
-", "Emails/NotificacionAnulacionSolicitud.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\Emails\\NotificacionAnulacionSolicitud.html.twig");
+", "Emails/NotificacionAnulacionSolicitud.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\Emails\\NotificacionAnulacionSolicitud.html.twig");
     }
 }

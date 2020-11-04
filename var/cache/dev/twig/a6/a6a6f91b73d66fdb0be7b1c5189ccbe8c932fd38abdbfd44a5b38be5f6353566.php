@@ -65,7 +65,7 @@ class __TwigTemplate_001afe0aaee11974454a9f31cc37548332ff325a2eb93a8582fd44dbe0b
     ";
         // line 12
         $this->displayBlock('contenido', $context, $blocks);
-        // line 47
+        // line 46
         echo "
   </body>
 
@@ -116,72 +116,71 @@ class __TwigTemplate_001afe0aaee11974454a9f31cc37548332ff325a2eb93a8582fd44dbe0b
         echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 16, $this->source); })()), "html", null, true);
         echo "<br />
       </font>
-      <a href=\"javascript:history.back(-1);\" style=\"text-decoration:none;color:white;font-size:15px;font-style:italic\">&nbsp&nbsp&nbsp&nbsp&nbsp&lt;&lt;&nbspVolver</a></h1>
 
     </div>
     <div style=\"margin-bottom:60px\">
     </div>
     ";
-        // line 23
+        // line 22
         $context["i"] = 1;
-        // line 24
+        // line 23
         echo "    ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["eventos"]) || array_key_exists("eventos", $context) ? $context["eventos"] : (function () { throw new RuntimeError('Variable "eventos" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["eventos"]) || array_key_exists("eventos", $context) ? $context["eventos"] : (function () { throw new RuntimeError('Variable "eventos" does not exist.', 23, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["evento"]) {
-            // line 25
+            // line 24
             echo "    ";
-            if (((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 25, $this->source); })()) % 2 == 1)) {
-                // line 26
+            if (((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 24, $this->source); })()) % 2 == 1)) {
+                // line 25
                 echo "    <div class=\"timeline\">
       <div class=\"container left\">
         <div class=\"content\">
           <h2>";
-                // line 29
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evento"], "tipo", [], "any", false, false, false, 29), "html", null, true);
+                // line 28
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evento"], "tipo", [], "any", false, false, false, 28), "html", null, true);
                 echo "</h2>
           <h4 style=\"font-style:italic\">";
-                // line 30
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evento"], "causa", [], "any", false, false, false, 30), "html", null, true);
+                // line 29
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evento"], "causa", [], "any", false, false, false, 29), "html", null, true);
                 echo "</h4>
           <p>";
-                // line 31
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evento"], "fecha", [], "any", false, false, false, 31), "d/m/Y"), "html", null, true);
+                // line 30
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evento"], "fecha", [], "any", false, false, false, 30), "d/m/Y"), "html", null, true);
                 echo "</p>
         </div>
       </div>
       ";
             } else {
-                // line 35
+                // line 34
                 echo "      <div class=\" container right\">
         <div class=\"content\">
           <h2>";
-                // line 37
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evento"], "tipo", [], "any", false, false, false, 37), "html", null, true);
+                // line 36
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evento"], "tipo", [], "any", false, false, false, 36), "html", null, true);
                 echo "
             <h4 style=\"font-style:italic\">";
-                // line 38
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evento"], "causa", [], "any", false, false, false, 38), "html", null, true);
+                // line 37
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evento"], "causa", [], "any", false, false, false, 37), "html", null, true);
                 echo "</h4>
             <p>";
-                // line 39
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evento"], "fecha", [], "any", false, false, false, 39), "d/m/Y"), "html", null, true);
+                // line 38
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evento"], "fecha", [], "any", false, false, false, 38), "d/m/Y"), "html", null, true);
                 echo "</p>
         </div>
       </div>
     </div>
     ";
             }
-            // line 44
+            // line 43
             echo "    ";
-            $context["i"] = ((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 44, $this->source); })()) + 1);
-            // line 45
+            $context["i"] = ((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 43, $this->source); })()) + 1);
+            // line 44
             echo "    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evento'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
+        // line 45
         echo "    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -203,7 +202,7 @@ class __TwigTemplate_001afe0aaee11974454a9f31cc37548332ff325a2eb93a8582fd44dbe0b
 
     public function getDebugInfo()
     {
-        return array (  185 => 46,  179 => 45,  176 => 44,  168 => 39,  164 => 38,  160 => 37,  156 => 35,  149 => 31,  145 => 30,  141 => 29,  136 => 26,  133 => 25,  128 => 24,  126 => 23,  116 => 16,  111 => 13,  101 => 12,  82 => 6,  69 => 47,  67 => 12,  60 => 8,  56 => 7,  52 => 6,  45 => 1,);
+        return array (  184 => 45,  178 => 44,  175 => 43,  167 => 38,  163 => 37,  159 => 36,  155 => 34,  148 => 30,  144 => 29,  140 => 28,  135 => 25,  132 => 24,  127 => 23,  125 => 22,  116 => 16,  111 => 13,  101 => 12,  82 => 6,  69 => 46,  67 => 12,  60 => 8,  56 => 7,  52 => 6,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -225,7 +224,6 @@ class __TwigTemplate_001afe0aaee11974454a9f31cc37548332ff325a2eb93a8582fd44dbe0b
       <font color=\"white\">
         <h1>&nbsp&nbspCronograma de la solicitud&nbsp{{id}}<br />
       </font>
-      <a href=\"javascript:history.back(-1);\" style=\"text-decoration:none;color:white;font-size:15px;font-style:italic\">&nbsp&nbsp&nbsp&nbsp&nbsp&lt;&lt;&nbspVolver</a></h1>
 
     </div>
     <div style=\"margin-bottom:60px\">
@@ -257,6 +255,6 @@ class __TwigTemplate_001afe0aaee11974454a9f31cc37548332ff325a2eb93a8582fd44dbe0b
 
   </body>
 
-</html>", "frontal/timeline.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\frontal\\timeline.html.twig");
+</html>", "frontal/timeline.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\frontal\\timeline.html.twig");
     }
 }

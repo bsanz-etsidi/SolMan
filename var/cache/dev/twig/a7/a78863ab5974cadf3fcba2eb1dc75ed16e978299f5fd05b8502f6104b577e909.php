@@ -119,11 +119,11 @@ class __TwigTemplate_3e97f22edd0170593b21b547f74a958dbd6651c6292fb238c340afd123e
 
         </div>
         <h4 class=\"my-3\">Si desea realizar la valoración puede hacerlo en el siguiente enlace: </h4>
-        <a href=\"localhost:8000/rellenarSatisfaccion/";
+        <a href=\"https://mantenimiento.etsidi.upm.es/rellenarSatisfaccion/";
         // line 31
         echo twig_escape_filter($this->env, (isset($context["parametro"]) || array_key_exists("parametro", $context) ? $context["parametro"] : (function () { throw new RuntimeError('Variable "parametro" does not exist.', 31, $this->source); })()), "html", null, true);
         echo "/";
-        echo twig_escape_filter($this->env, (isset($context["emailcrypt"]) || array_key_exists("emailcrypt", $context) ? $context["emailcrypt"] : (function () { throw new RuntimeError('Variable "emailcrypt" does not exist.', 31, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["email"]) || array_key_exists("email", $context) ? $context["email"] : (function () { throw new RuntimeError('Variable "email" does not exist.', 31, $this->source); })()), "html", null, true);
         echo "\">Rellenar formulario de satisfacción</a>
         <hr color=\"green\" size=1>
         <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
@@ -189,7 +189,7 @@ class __TwigTemplate_3e97f22edd0170593b21b547f74a958dbd6651c6292fb238c340afd123e
 
         </div>
         <h4 class=\"my-3\">Si desea realizar la valoración puede hacerlo en el siguiente enlace: </h4>
-        <a href=\"localhost:8000/rellenarSatisfaccion/{{parametro}}/{{emailcrypt}}\">Rellenar formulario de satisfacción</a>
+        <a href=\"https://mantenimiento.etsidi.upm.es/rellenarSatisfaccion/{{parametro}}/{{email}}\">Rellenar formulario de satisfacción</a>
         <hr color=\"green\" size=1>
         <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
 
@@ -203,6 +203,7 @@ class __TwigTemplate_3e97f22edd0170593b21b547f74a958dbd6651c6292fb238c340afd123e
 
 </div>
 
-{% endblock %}", "Emails/NotificacionParte.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\Emails\\NotificacionParte.html.twig");
+{% endblock %}
+", "Emails/NotificacionParte.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\Emails\\NotificacionParte.html.twig");
     }
 }

@@ -477,6 +477,6 @@ class __TwigTemplate_5e5a784f27d5c780b6192eb3f74f73dea082d129477ff1906394b2df3ee
 {% block body %}
     {% include '@Twig/Exception/exception.html.twig' %}
 {% endblock %}
-", "@Twig/Exception/exception_full.html.twig", "C:\\symfony4LOCAL\\SolMan\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\exception_full.html.twig");
+", "@Twig/Exception/exception_full.html.twig", "C:\\symfony4REMOTO\\SolMan\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\exception_full.html.twig");
     }
 }

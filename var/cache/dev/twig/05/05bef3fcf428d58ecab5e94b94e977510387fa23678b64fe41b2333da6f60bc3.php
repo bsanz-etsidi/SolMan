@@ -424,6 +424,6 @@ class __TwigTemplate_fdc6359399e55b21c8fc5e4c139272d7025ef5a3a1fe3bfe40fb749c42e
 <script src=\"{{asset('js/sweetalert.min.js')}}\"></script>
 <script src=\"{{asset('js/controlBorrado.js')}}\"></script>
 
-{% endblock %}", "gestionMantenimiento/partes.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\partes.html.twig");
+{% endblock %}", "gestionMantenimiento/partes.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\partes.html.twig");
     }
 }

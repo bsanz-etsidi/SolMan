@@ -683,6 +683,6 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
 {%- endif -%}
 <button style=\"background-color:#C3C3C3;border: #000;background: -moz-linear-gradient(center top , #C0C0C0 0%, #808080 100%) repeat scroll 0 0 transparent;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #C0C0C0), color-stop(100%,#808080));
   box-shadow: 1px 1px 1px grey\" type=\"{{ type|default('button') }}\" class=\"btn btn-primary\" {{ block('button_attributes') }}>{{label}}</button>
-{%- endblock button_widget -%}", "form/baseForm.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\form\\baseForm.html.twig");
+{%- endblock button_widget -%}", "form/baseForm.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\form\\baseForm.html.twig");
     }
 }

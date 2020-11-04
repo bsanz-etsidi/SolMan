@@ -33,7 +33,7 @@ class __TwigTemplate_c6235b65f9c83419e69c8fcc214956cf8492f7678c0da0fa2abce4ecb9a
     protected function doGetParent(array $context)
     {
         // line 2
-        return "estadisticas/basestatistics.html.twig";
+        return "estadisticas/basestatisticspiebajo.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -48,7 +48,7 @@ class __TwigTemplate_c6235b65f9c83419e69c8fcc214956cf8492f7678c0da0fa2abce4ecb9a
         // line 3
         $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 3, $this->source); })()), [0 => "form/baseForm.html.twig"], true);
         // line 2
-        $this->parent = $this->loadTemplate("estadisticas/basestatistics.html.twig", "estadisticas/seleccionaFechas.html.twig", 2);
+        $this->parent = $this->loadTemplate("estadisticas/basestatisticspiebajo.html.twig", "estadisticas/seleccionaFechas.html.twig", 2);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -151,7 +151,7 @@ class __TwigTemplate_c6235b65f9c83419e69c8fcc214956cf8492f7678c0da0fa2abce4ecb9a
     public function getSourceContext()
     {
         return new Source("{# Plantilla de nuestra aplicación#}
-{%extends 'estadisticas/basestatistics.html.twig'%}
+{%extends 'estadisticas/basestatisticspiebajo.html.twig'%}
 {% form_theme form 'form/baseForm.html.twig' %}
 
 {#TITULO#}
@@ -185,6 +185,7 @@ class __TwigTemplate_c6235b65f9c83419e69c8fcc214956cf8492f7678c0da0fa2abce4ecb9a
 </div>
 
 <!-- /.row -->
-{% endblock %}", "estadisticas/seleccionaFechas.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\estadisticas\\seleccionaFechas.html.twig");
+{% endblock %}
+", "estadisticas/seleccionaFechas.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\estadisticas\\seleccionaFechas.html.twig");
     }
 }

@@ -86,7 +86,7 @@ class __TwigTemplate_aabccf50d4460c43923805245ae7a64067b66db2930b71a3728a745818a
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["solicitud"] ?? null), "estancia", [], "any", false, false, false, 22), "html", null, true);
         echo "</small></h4>
           <h4 class=\"my-3\">Si desea consultar la evolución de los trabajos puede hacerlo en el siguiente enlace: </h4>
-          <a href=\"http://138.100.103.25/cronograma/";
+          <a href=\"https://mantenimiento.etsidi.upm.es/cronograma/";
         // line 24
         echo twig_escape_filter($this->env, ($context["idcrypt"] ?? null), "html", null, true);
         echo "\">Estado de los trabajos</a>

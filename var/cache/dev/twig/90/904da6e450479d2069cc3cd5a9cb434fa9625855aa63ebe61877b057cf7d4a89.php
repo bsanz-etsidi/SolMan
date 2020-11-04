@@ -83,6 +83,6 @@ class __TwigTemplate_e4d48c1608895951d655dbe970b146c88bc72764250ea7e77269db8c60c
 {{ status_code }} {{ status_text }}
 
 */
-", "@Twig/Exception/error.js.twig", "C:\\symfony4LOCAL\\SolMan\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\error.js.twig");
+", "@Twig/Exception/error.js.twig", "C:\\symfony4REMOTO\\SolMan\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\error.js.twig");
     }
 }

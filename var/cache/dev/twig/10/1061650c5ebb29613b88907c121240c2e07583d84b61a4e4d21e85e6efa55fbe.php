@@ -343,6 +343,6 @@ class __TwigTemplate_e2fde228681fff35a9f4a0af93791590e3a0c6716a05f8b47b5cdb438df
   <div style=\"margin-bottom:200px\">
   </div>
 </div>
-{% endblock %}", "gestionMantenimiento/solicitudesTrabajador.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\solicitudesTrabajador.html.twig");
+{% endblock %}", "gestionMantenimiento/solicitudesTrabajador.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\solicitudesTrabajador.html.twig");
     }
 }

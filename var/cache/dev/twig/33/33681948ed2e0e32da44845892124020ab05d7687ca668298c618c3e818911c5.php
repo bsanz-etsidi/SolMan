@@ -251,6 +251,6 @@ class __TwigTemplate_f0bf54293970248976ee723139ba6daa128df1cbb243c771a2f06c82c0a
   <div style=\"margin-bottom:200px\">
   </div>
 </div>
-{% endblock %}", "gestionMantenimiento/instruccionesCompletadas.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\instruccionesCompletadas.html.twig");
+{% endblock %}", "gestionMantenimiento/instruccionesCompletadas.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\instruccionesCompletadas.html.twig");
     }
 }

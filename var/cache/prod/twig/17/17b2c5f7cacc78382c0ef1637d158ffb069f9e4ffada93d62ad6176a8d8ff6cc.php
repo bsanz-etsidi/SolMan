@@ -101,11 +101,11 @@ class __TwigTemplate_7682c966d76e488a2610337faac109c0acaad055384850d018820691ec6
 
         </div>
         <h4 class=\"my-3\">Si desea realizar la valoración puede hacerlo en el siguiente enlace: </h4>
-        <a href=\"http://138.100.103.25/rellenarSatisfaccion/";
+        <a href=\"https://mantenimiento.etsidi.upm.es/rellenarSatisfaccion/";
         // line 31
         echo twig_escape_filter($this->env, ($context["parametro"] ?? null), "html", null, true);
         echo "/";
-        echo twig_escape_filter($this->env, ($context["emailcrypt"] ?? null), "html", null, true);
+        echo twig_escape_filter($this->env, ($context["email"] ?? null), "html", null, true);
         echo "\">Rellenar formulario de satisfacción</a>
         <hr color=\"green\" size=1>
         <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>

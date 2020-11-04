@@ -213,6 +213,6 @@ class __TwigTemplate_19986852b30ae3d26db30e47ba922cca276177d4d812a91ff6827deaba1
 <!-- /.row -->
 
 
-{% endblock %}", "gestionMantenimiento/editarInstruccion.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\editarInstruccion.html.twig");
+{% endblock %}", "gestionMantenimiento/editarInstruccion.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\editarInstruccion.html.twig");
     }
 }

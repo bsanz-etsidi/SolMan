@@ -161,6 +161,6 @@ class __TwigTemplate_48a02145a32a5a0f25f4101855add5123607ba83e576e3641e869ac603d
         </tr>
     </tbody>
 </table>
-", "@Twig/Exception/traces_text.html.twig", "C:\\symfony4LOCAL\\SolMan\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\traces_text.html.twig");
+", "@Twig/Exception/traces_text.html.twig", "C:\\symfony4REMOTO\\SolMan\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\traces_text.html.twig");
     }
 }

@@ -355,6 +355,6 @@ Parte
 
 
 
-{% endblock %}", "gestionMantenimiento/parte.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\parte.html.twig");
+{% endblock %}", "gestionMantenimiento/parte.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\parte.html.twig");
     }
 }

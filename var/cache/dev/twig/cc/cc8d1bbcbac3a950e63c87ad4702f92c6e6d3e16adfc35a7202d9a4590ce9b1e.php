@@ -170,6 +170,6 @@ class __TwigTemplate_53a7b1357eda29c6fc88b66f7c1c7cec99371272988d3654689e70973c6
 
 
 {% endblock %}
-", "frontal/mensaje.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\frontal\\mensaje.html.twig");
+", "frontal/mensaje.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\frontal\\mensaje.html.twig");
     }
 }

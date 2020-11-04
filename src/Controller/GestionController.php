@@ -592,6 +592,40 @@ class GestionController extends AbstractController
           return $this->render('gestionMantenimiento/seleccionaTrabajador.html.twig',array("form" => $form->createView()));
       }
 
+      /**
+       * @Route("/solicitudesUnidadDestino", name="solicitudesUnidadDestino")
+       */
+      public function solicitudesUnidadDestinoAction(Request $request)
+      {
+        $data = array('destino' => 'destino');
+        $form = $this->createFormBuilder($data)
+          ->add('destino', ChoiceType::class, array ('label' => "Unidad de Destino",'choices'  => ['Dirección'=>'Dirección', 'Subdirecciones'=>'Subdirecciones','Secretaría de Alumnos'=>'Secretaría de Alumnos','Gestión Económica'=>'Gestión Económica','Administrador y Personal'=>'Administrador y Personal','Biblioteca'=>'Biblioteca','Servicios Informáticos'=>'Servicios Informáticos','Mantenimiento'=>'Mantenimiento','Conserjería'=>'Conserjería','Oficina de Empresa'=>'Oficina de Empresa','D180 general'=>'D180 general','D180 (Electricidad)'=>'D180 (Electricidad)','D180 (Electrónica)'=>'D180 (Electrónica)','D180 (Física)'=>'D180 (Física)','D190 general'=>'D190 general','D190 (Mecánica)'=>'D190 (Mecánica)','D190 (Química)'=>'D190 (Química)','D190 (Diseño)'=>'D190 (Diseño)','Departamento de Matemáticas'=>'Departamento de Matemáticas','Departamento de Lingüística'=>'Departamento de Lingüística','Departamento de Organización'=>'Departamento de Organización','LIMIT'=>'LIMIT','Asociaciones'=>'Asociaciones'],))
+          ->add('Seleccionar', SubmitType::class, array('label' => 'Seleccionar'))
+          ->getForm();
+        $form->handleRequest($request);
+        $data = $form->getData();
+        $solicitud = new Solicitud();
+
+        $solicitudRepository = $this->getDoctrine()->getRepository(Solicitud::class);
+        $entityManager = $this->getDoctrine()->getManager();
+
+        if ($form->isSubmitted() && $form->isValid()) {
+        $destino = $data['destino'];
+        $query = $entityManager->createQuery(
+             'SELECT s
+             FROM App:Solicitud s
+             WHERE ( s.destino = :destino )
+             ORDER BY s.fecha DESC'
+         )->setParameters(array('destino' => $destino));
+
+        $solicitudes = $query->getResult();
+        return $this->render('gestionMantenimiento/pendientes.html.twig',array("solicitudes" => $solicitudes));
+      }
+        return $this->render('gestionMantenimiento/seleccionaDestino.html.twig',array("form" => $form->createView()));
+    }
+
+
+
 
     /**
      * @Route("/partes", name="partes")

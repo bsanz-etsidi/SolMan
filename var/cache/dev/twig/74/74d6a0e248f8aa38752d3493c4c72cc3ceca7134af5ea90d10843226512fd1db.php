@@ -167,6 +167,6 @@ class __TwigTemplate_c964b6c8881498edaf255d842158ecf9d35213623e0477afd31afbeac64
 
 
 {% endblock %}
-", "frontal/mensajeNoPreparada.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\frontal\\mensajeNoPreparada.html.twig");
+", "frontal/mensajeNoPreparada.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\frontal\\mensajeNoPreparada.html.twig");
     }
 }

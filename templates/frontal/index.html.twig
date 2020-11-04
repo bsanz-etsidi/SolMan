@@ -1,12 +1,14 @@
 {# Plantilla de nuestra aplicación#}
-{%extends 'frontal/base.html.twig'%}
+{%extends 'frontal/baseautenticacion.html.twig'%}
 {% form_theme form 'form/baseForm.html.twig' %}
 
 {#TITULO#}
 {% block titulo %}Mantenimiento ETSIDI{% endblock %}
 {#Contenido#}
+
 {% block contenido %}
 <!-- Page Content -->
+
 
 <div class="container">
 
@@ -26,7 +28,39 @@
       <div class="col-lg-6">
 
         {{ form_start(form) }}
-        {{ form_widget(form) }}
+        <table>
+          <tr>
+            <td>
+              <h7>Usuario</h7>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:300px">
+              {{ form_widget(form.Usuario)}}</td>
+            <td>
+              <h7 style="font-style:italic;color: grey"> &nbsp@upm.es</h7>
+            </td>
+          </tr>
+          <tr>
+          <tr>
+            <td><br /></td>
+          </tr>
+          <td>
+            <h7>Contraseña</h7>
+          </td>
+          </tr>
+          <tr>
+            <td>
+              {{ form_widget(form.Password) }}</td>
+          </tr>
+          <tr>
+            <td><br /></td>
+          </tr>
+          <tr>
+            <td>
+              {{ form_widget(form.Aceptar) }}</td>
+          </tr>
+        </table>
         {{ form_end(form) }}
 
       </div>
@@ -36,6 +70,4 @@
 </div>
 
 <!-- /.row -->
-
-
 {% endblock %}

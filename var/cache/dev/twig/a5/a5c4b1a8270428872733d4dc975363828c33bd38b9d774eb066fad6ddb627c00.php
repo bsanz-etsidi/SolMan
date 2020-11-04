@@ -468,6 +468,6 @@ class __TwigTemplate_0a33ca2757824fcfc52a4f4b30417e0998671dc8ff31817a03902107585
     {% endblock %}
   </body>
 
-</html>", "estadisticas/basestatistics.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\estadisticas\\basestatistics.html.twig");
+</html>", "estadisticas/basestatistics.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\estadisticas\\basestatistics.html.twig");
     }
 }

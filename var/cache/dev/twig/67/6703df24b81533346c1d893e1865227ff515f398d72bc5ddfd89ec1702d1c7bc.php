@@ -275,6 +275,6 @@ class __TwigTemplate_789c47cf2e5158c306be747ea4ca7ff16e9115c2d1095f8e5b6569983f9
     </body>
 </html>
 {% block after_html %}{% endblock %}
-", "@Twig/layout.html.twig", "C:\\symfony4LOCAL\\SolMan\\vendor\\symfony\\twig-bundle\\Resources\\views\\layout.html.twig");
+", "@Twig/layout.html.twig", "C:\\symfony4REMOTO\\SolMan\\vendor\\symfony\\twig-bundle\\Resources\\views\\layout.html.twig");
     }
 }

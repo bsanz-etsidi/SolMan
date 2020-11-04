@@ -104,7 +104,7 @@ class __TwigTemplate_0537a364ec7bf6583dbbde468ea3fbdd4ed4a201739ad355b791e3c77de
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["solicitud"]) || array_key_exists("solicitud", $context) ? $context["solicitud"] : (function () { throw new RuntimeError('Variable "solicitud" does not exist.', 22, $this->source); })()), "estancia", [], "any", false, false, false, 22), "html", null, true);
         echo "</small></h4>
           <h4 class=\"my-3\">Si desea consultar la evolución de los trabajos puede hacerlo en el siguiente enlace: </h4>
-          <a href=\"localhost:8000/cronograma/";
+          <a href=\"https://mantenimiento.etsidi.upm.es/cronograma/";
         // line 24
         echo twig_escape_filter($this->env, (isset($context["idcrypt"]) || array_key_exists("idcrypt", $context) ? $context["idcrypt"] : (function () { throw new RuntimeError('Variable "idcrypt" does not exist.', 24, $this->source); })()), "html", null, true);
         echo "\">Estado de los trabajos</a>
@@ -163,7 +163,7 @@ class __TwigTemplate_0537a364ec7bf6583dbbde468ea3fbdd4ed4a201739ad355b791e3c77de
           <h4 class=\"my-3\">Descripción Incidencia: <small>{{solicitud.descripcionIncidencia}}</small></h4>
           <h4 class=\"my-3\">Lugar Incidencia: <small>{{solicitud.estancia}}</small></h4>
           <h4 class=\"my-3\">Si desea consultar la evolución de los trabajos puede hacerlo en el siguiente enlace: </h4>
-          <a href=\"localhost:8000/cronograma/{{idcrypt}}\">Estado de los trabajos</a>
+          <a href=\"https://mantenimiento.etsidi.upm.es/cronograma/{{idcrypt}}\">Estado de los trabajos</a>
         </div>
         <!-- /.row -->
       </div>
@@ -175,6 +175,7 @@ class __TwigTemplate_0537a364ec7bf6583dbbde468ea3fbdd4ed4a201739ad355b791e3c77de
   <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
 </div>
 
-{% endblock %}", "Emails/NotificacionRegistroSolicitud.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\Emails\\NotificacionRegistroSolicitud.html.twig");
+{% endblock %}
+", "Emails/NotificacionRegistroSolicitud.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\Emails\\NotificacionRegistroSolicitud.html.twig");
     }
 }

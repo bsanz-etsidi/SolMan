@@ -1360,6 +1360,6 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
   <div style=\"margin-bottom:200px\">
   </div>
 </div>
-{% endblock %}", "gestionMantenimiento/pendientes.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\gestionMantenimiento\\pendientes.html.twig");
+{% endblock %}", "gestionMantenimiento/pendientes.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\pendientes.html.twig");
     }
 }

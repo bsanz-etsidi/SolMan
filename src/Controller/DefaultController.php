@@ -57,6 +57,7 @@ class DefaultController extends Controller
           $data = $form->getData();
           $username = (string) $data['Usuario'];
           $password = (string) $data['Password'];
+          $username = $username."@upm.es";
           $ldap_dn = "uid=".$username.",ou=Users,dc=upm,dc=es";
           $ldap_password = $password;
           $ldap_con = ldap_connect("ldap.etsidi.upm.es");
@@ -169,12 +170,44 @@ class DefaultController extends Controller
                  $this->renderView('Emails/NotificacionRegistroSolicitud.html.twig', ['solicitud'=>$solicitud, 'idcrypt'=>$idcrypt]),'text/html');
           $mailer->send($message);
         }
-
+        if($solicitud->getDestino()=='Otro'){
+          return $this->redirectToRoute('otroDestino',array('emailcrypt' => $email, 'id' =>$id ));
+        }else{
           return $this->redirectToRoute('mensaje',array('emailcrypt' => $email ));
           }
+    }
       return $this->render('frontal/nuevaSolicitud.html.twig',array("form" => $form->createView(),'email' => $email));
+ }
 
+   /**
+    * @Route("/otroDestino/{emailcrypt}/{id}", name="otroDestino")
+    */
+   public function otroDestinoAction(Request $request, $emailcrypt, $id)
+   {
+     $key = 'mqtrf2010';
+     $encrypt = new Encrypter();
+     $emaildecrypt = $encrypt->decrypt($emailcrypt,$key);
+     $data = array('destino' => null);
+     $form = $this->createFormBuilder($data)
+       ->add('destino', TextType::class, array ('label' => "Especifique la unidad de destino"))
+       ->add('Aceptar', SubmitType::class, array('label' => 'Aceptar'))
+       ->getForm();
+     $form->handleRequest($request);
+     $data = $form->getData();
+     $solicitudRepository = $this->getDoctrine()->getRepository(Solicitud::class);
+     $solicitud= $solicitudRepository->find($id);
+
+     if ($form->isSubmitted() && $form->isValid()) {
+     $destino = $data['destino'];
+     $solicitud->setDestino($destino);
+     $em = $this->getDoctrine()->getManager();
+     $em->persist($solicitud);
+     $em->flush();
+     return $this->redirectToRoute('mensaje',array('emailcrypt' => $emailcrypt ));
    }
+   return $this->render('frontal/nuevaSolicitud.html.twig',array("form" => $form->createView(),'email' => $emailcrypt));
+
+}
 
 
 
@@ -224,7 +257,7 @@ class DefaultController extends Controller
            */
               public function solicitudTrabajadorAction(Request $request,$id=null)
               {
-                $this->denyAccessUnlessGranted('ROLE_USER');
+                $this->denyAccessUnlessGranted(['ROLE_USER','ROLE_ADMIN']);
                 if($id!=null){
                   //Capturar el repositorio de la Tabla contra la DB
                   $solicitudRepository = $this->getDoctrine()->getRepository(Solicitud::class);

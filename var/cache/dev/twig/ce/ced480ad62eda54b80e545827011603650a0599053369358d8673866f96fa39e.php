@@ -164,6 +164,6 @@ class __TwigTemplate_1d2821d105de5422981dc57e63f421db5cc04b2ad5a60b00dcdfd25ea01
   <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
 </div>
 {% endblock %}
-", "Emails/NotificacionSuspensionSolicitud.html.twig", "C:\\symfony4LOCAL\\SolMan\\templates\\Emails\\NotificacionSuspensionSolicitud.html.twig");
+", "Emails/NotificacionSuspensionSolicitud.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\Emails\\NotificacionSuspensionSolicitud.html.twig");
     }
 }
