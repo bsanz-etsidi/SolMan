@@ -33,31 +33,29 @@ class __TwigTemplate_3c35b29ee1fca5ff158e351289aa6b3ba7352b4c66e53a0aeabe8e88fba
     protected function doGetParent(array $context)
     {
         // line 2
-        return "frontal/base.html.twig";
+        return "frontal/baseautenticacion.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 3
         $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme(($context["form"] ?? null), [0 => "form/baseForm.html.twig"], true);
-        // line 2
-        $this->parent = $this->loadTemplate("frontal/base.html.twig", "gestionMantenimiento/registroUsuario.html.twig", 2);
+        $this->parent = $this->loadTemplate("frontal/baseautenticacion.html.twig", "gestionMantenimiento/registroUsuario.html.twig", 2);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 6
+    // line 5
     public function block_titulo($context, array $blocks = [])
     {
         $macros = $this->macros;
         echo " Registro Usuario";
     }
 
-    // line 8
+    // line 7
     public function block_contenido($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 9
+        // line 8
         echo "<!-- Page Content -->
 
 <div class=\"container\">
@@ -78,15 +76,15 @@ class __TwigTemplate_3c35b29ee1fca5ff158e351289aa6b3ba7352b4c66e53a0aeabe8e88fba
       <div class=\"col-lg-6\">
 
         ";
-        // line 28
+        // line 27
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? null), 'form_start');
         echo "
         ";
-        // line 29
+        // line 28
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(($context["form"] ?? null), 'widget');
         echo "
         ";
-        // line 30
+        // line 29
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? null), 'form_end');
         echo "
       </div>
@@ -115,7 +113,7 @@ class __TwigTemplate_3c35b29ee1fca5ff158e351289aa6b3ba7352b4c66e53a0aeabe8e88fba
 
     public function getDebugInfo()
     {
-        return array (  90 => 30,  86 => 29,  82 => 28,  61 => 9,  57 => 8,  50 => 6,  45 => 2,  43 => 3,  36 => 2,);
+        return array (  88 => 29,  84 => 28,  80 => 27,  59 => 8,  55 => 7,  48 => 5,  36 => 2,);
     }
 
     public function getSourceContext()

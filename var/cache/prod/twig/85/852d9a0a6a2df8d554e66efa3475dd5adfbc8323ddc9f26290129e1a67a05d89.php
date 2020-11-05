@@ -33,7 +33,7 @@ class __TwigTemplate_b965e09ab972b7cbb2d4a89cb74d7380201010516c39a29b4d375f7c46f
     protected function doGetParent(array $context)
     {
         // line 2
-        return "estadisticas/basestatistics.html.twig";
+        return "estadisticas/basestatisticspiebajo.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -42,7 +42,7 @@ class __TwigTemplate_b965e09ab972b7cbb2d4a89cb74d7380201010516c39a29b4d375f7c46f
         // line 3
         $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme(($context["form"] ?? null), [0 => "form/baseForm.html.twig"], true);
         // line 2
-        $this->parent = $this->loadTemplate("estadisticas/basestatistics.html.twig", "estadisticas/seleccionaFechas.html.twig", 2);
+        $this->parent = $this->loadTemplate("estadisticas/basestatisticspiebajo.html.twig", "estadisticas/seleccionaFechas.html.twig", 2);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 

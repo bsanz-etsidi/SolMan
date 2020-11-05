@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelProdContainer::class, false)) {
 
 return new \Container6Rpgx8H\srcApp_KernelProdContainer([
     'container.build_hash' => '6Rpgx8H',
-    'container.build_id' => '67986e02',
-    'container.build_time' => 1603464947,
+    'container.build_id' => 'ef7995fa',
+    'container.build_time' => 1604569500,
 ], __DIR__.\DIRECTORY_SEPARATOR.'Container6Rpgx8H');

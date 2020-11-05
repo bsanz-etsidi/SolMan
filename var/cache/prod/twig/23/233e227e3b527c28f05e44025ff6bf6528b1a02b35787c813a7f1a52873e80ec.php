@@ -183,13 +183,13 @@ class __TwigTemplate_c92521382964b71085ccb82a4edf1af74aac11434409d8eebcc3b5ad918
     ";
         // line 107
         $this->displayBlock('contenido', $context, $blocks);
-        // line 152
+        // line 153
         echo "
     <!-- Footer -->
     <footer class=\"page-footer  bg-info\">
       <div class=\"footer-copyright text-center py-3\">
         <img src=\"";
-        // line 156
+        // line 157
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/upm.png"), "html", null, true);
         echo "\" style=\"margin-bottom: 0\" height=\"100\" alt=\"\">
       </div>
@@ -198,51 +198,51 @@ class __TwigTemplate_c92521382964b71085ccb82a4edf1af74aac11434409d8eebcc3b5ad918
 
     <!-- Bootstrap core JavaScript -->
     <script src=\"";
-        // line 162
+        // line 163
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/exportacion.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 163
+        // line 164
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/genPDF.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 164
+        // line 165
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/downloadCanvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 165
+        // line 166
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/html2canvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 166
+        // line 167
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 167
+        // line 168
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jspdf.min.js"), "html", null, true);
         echo "\"></script>
     <link href=\"";
-        // line 168
+        // line 169
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 169
+        // line 170
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap-datepicker.es.min.js"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <script src=\"";
-        // line 170
+        // line 171
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 171
+        // line 172
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script>
     <script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script>
     ";
-        // line 174
+        // line 175
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 176
+        // line 177
         echo "  </body>
 
 </html>";
@@ -309,7 +309,7 @@ class __TwigTemplate_c92521382964b71085ccb82a4edf1af74aac11434409d8eebcc3b5ad918
         // line 132
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoPartesEspecialidad");
         echo "\" class=\"list-group-item\" style=\" color: grey;\">Partes por especialidad</a>
-              <a href=\"\" class=\"list-group-item\" style=\" color: black;font-size:20px;font-weight:bold\">Medias:</a>
+              <a href=\"\" class=\"list-group-item\" style=\" color: black;font-size:20px;font-weight:bold\">Conteos/Medias:</a>
               <a href=\"";
         // line 134
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mediaSolicitudes");
@@ -321,14 +321,18 @@ class __TwigTemplate_c92521382964b71085ccb82a4edf1af74aac11434409d8eebcc3b5ad918
               <a href=\"";
         // line 136
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoSolicitudesTrabajador");
-        echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes por trabajador</a>
+        echo "\" class=\"list-group-item\" style=\" color: grey;\">Conteo/Media por trabajador</a>
+              <a href=\"";
+        // line 137
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("conteoSolicitudesDestino");
+        echo "\" class=\"list-group-item\" style=\" color: grey;\">Conteo/Media por destino</a>
             </div>
           </div>
           <!-- Content Column -->
           <div class=\"col-lg-9 mb-4\">
             <h1><br /><br /><br /><br /></h1>
             <img src=\"";
-        // line 142
+        // line 143
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/estadistica1.png"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"Responsive image\">
           </div>
@@ -342,11 +346,11 @@ class __TwigTemplate_c92521382964b71085ccb82a4edf1af74aac11434409d8eebcc3b5ad918
     ";
     }
 
-    // line 174
+    // line 175
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 175
+        // line 176
         echo "    ";
     }
 
@@ -362,7 +366,7 @@ class __TwigTemplate_c92521382964b71085ccb82a4edf1af74aac11434409d8eebcc3b5ad918
 
     public function getDebugInfo()
     {
-        return array (  350 => 175,  346 => 174,  332 => 142,  323 => 136,  319 => 135,  315 => 134,  310 => 132,  306 => 131,  302 => 130,  298 => 129,  294 => 128,  290 => 127,  286 => 126,  282 => 125,  263 => 108,  259 => 107,  252 => 6,  246 => 176,  244 => 174,  238 => 171,  234 => 170,  230 => 169,  226 => 168,  222 => 167,  218 => 166,  214 => 165,  210 => 164,  206 => 163,  202 => 162,  193 => 156,  187 => 152,  185 => 107,  177 => 101,  163 => 89,  150 => 79,  135 => 67,  117 => 52,  107 => 45,  83 => 23,  81 => 22,  77 => 21,  66 => 13,  61 => 11,  57 => 10,  52 => 8,  47 => 6,  40 => 1,);
+        return array (  354 => 176,  350 => 175,  336 => 143,  327 => 137,  323 => 136,  319 => 135,  315 => 134,  310 => 132,  306 => 131,  302 => 130,  298 => 129,  294 => 128,  290 => 127,  286 => 126,  282 => 125,  263 => 108,  259 => 107,  252 => 6,  246 => 177,  244 => 175,  238 => 172,  234 => 171,  230 => 170,  226 => 169,  222 => 168,  218 => 167,  214 => 166,  210 => 165,  206 => 164,  202 => 163,  193 => 157,  187 => 153,  185 => 107,  177 => 101,  163 => 89,  150 => 79,  135 => 67,  117 => 52,  107 => 45,  83 => 23,  81 => 22,  77 => 21,  66 => 13,  61 => 11,  57 => 10,  52 => 8,  47 => 6,  40 => 1,);
     }
 
     public function getSourceContext()
