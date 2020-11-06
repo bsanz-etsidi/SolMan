@@ -98,7 +98,7 @@ class __TwigTemplate_102918b85450d38ff590fab58d1750f9ec8270afdb862d005b7af30d39e
     <h1 class=\" mt-4 mb-3\">Mantenimiento ETSIDI
 
     </h1>
-    <h6>Introduzca el nombre de usuario sin \"@upm.es\"</h6>
+    
   </div>
 
 
@@ -212,7 +212,7 @@ class __TwigTemplate_102918b85450d38ff590fab58d1750f9ec8270afdb862d005b7af30d39e
     <h1 class=\" mt-4 mb-3\">Mantenimiento ETSIDI
 
     </h1>
-    <h6>Introduzca el nombre de usuario sin \"@upm.es\"</h6>
+    
   </div>
 
 

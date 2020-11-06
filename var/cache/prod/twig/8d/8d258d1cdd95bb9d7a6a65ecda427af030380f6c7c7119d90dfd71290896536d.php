@@ -68,7 +68,7 @@ class __TwigTemplate_e8fdf1d14f24d191b31c37990243a20029dfd86eca54748bbcf945de025
     <h1 class=\" mt-4 mb-3\">Mantenimiento ETSIDI
 
     </h1>
-    <h6>Introduzca el nombre de usuario sin \"@upm.es\"</h6>
+
   </div>
 
 
@@ -86,7 +86,7 @@ class __TwigTemplate_e8fdf1d14f24d191b31c37990243a20029dfd86eca54748bbcf945de025
         <table>
           <tr>
             <td>
-              <h7>Usuario</h7>
+              <h6 style=\"color: black\">Usuario</h6>
             </td>
           </tr>
           <tr>
@@ -96,7 +96,7 @@ class __TwigTemplate_e8fdf1d14f24d191b31c37990243a20029dfd86eca54748bbcf945de025
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, ($context["form"] ?? null), "Usuario", [], "any", false, false, false, 40), 'widget');
         echo "</td>
             <td>
-              <h7 style=\"font-style:italic;color: grey\"> &nbsp@upm.es</h7>
+              <h6 style=\"font-style:italic;color: black\"> &nbsp@upm.es</h6>
             </td>
           </tr>
           <tr>
@@ -104,7 +104,7 @@ class __TwigTemplate_e8fdf1d14f24d191b31c37990243a20029dfd86eca54748bbcf945de025
             <td><br /></td>
           </tr>
           <td>
-            <h7>Contraseña</h7>
+            <h6 style=\"color: black\">Contraseña</h6>
           </td>
           </tr>
           <tr>

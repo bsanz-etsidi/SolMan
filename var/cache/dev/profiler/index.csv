@@ -1,8 +1,1 @@
-2d0d9a,::1,GET,https://localhost:8000/,1604569339,,200
-968d13,::1,GET,https://localhost:8000/,1604569383,,200
-17ae48,::1,GET,https://localhost:8000/,1604569406,,200
-30bd77,::1,GET,https://localhost:8000/gestionMantenimiento/desactivarTrabajador,1604569465,f49cc8,401
-f49cc8,::1,GET,https://localhost:8000/gestionMantenimiento/desactivarTrabajador,1604569465,,401
-5c3272,::1,GET,https://localhost:8000/logout,1604569471,,302
-8793d8,::1,GET,https://localhost:8000/,1604569471,,200
-887fc7,::1,GET,https://localhost:8000/,1604569475,,200
+947ac4,::1,GET,https://localhost:8000/,1604588355,,200
