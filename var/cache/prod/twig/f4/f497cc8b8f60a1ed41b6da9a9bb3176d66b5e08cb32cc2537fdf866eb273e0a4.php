@@ -33,14 +33,14 @@ class __TwigTemplate_3c35b29ee1fca5ff158e351289aa6b3ba7352b4c66e53a0aeabe8e88fba
     protected function doGetParent(array $context)
     {
         // line 2
-        return "frontal/baseautenticacion.html.twig";
+        return "frontal/base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
         $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme(($context["form"] ?? null), [0 => "form/baseForm.html.twig"], true);
-        $this->parent = $this->loadTemplate("frontal/baseautenticacion.html.twig", "gestionMantenimiento/registroUsuario.html.twig", 2);
+        $this->parent = $this->loadTemplate("frontal/base.html.twig", "gestionMantenimiento/registroUsuario.html.twig", 2);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
