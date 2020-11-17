@@ -15,13 +15,13 @@
           <h4 class="mt-4 mb-3">Usted ha realizado una solicitud al servicio de Mantenimiento con identificador {{solicitud.id}} </h4>
           <h4 class="my-3">Solicitante: <small> {{solicitud.solicitante}}</small></h4>
           <h4 class="my-3">Unidad de destino: <small> {{solicitud.destino}}</small></h4>
-          <h4 class="my-3">Fecha: <small>{{solicitud.fecha|date('Y/m/d')}}</small></h4>
+          <h4 class="my-3">Fecha: <small>{{solicitud.fecha|date('d/m/Y')}}</small></h4>
           <h4 class="my-3">Extensión: <small>{{solicitud.extension}}</small></h4>
           <h4 class="my-3">Email: <small>{{solicitud.email}}</small></h4>
           <h4 class="my-3">Descripción Incidencia: <small>{{solicitud.descripcionIncidencia}}</small></h4>
           <h4 class="my-3">Lugar Incidencia: <small>{{solicitud.estancia}}</small></h4>
           <h4 class="my-3">Si desea consultar la evolución de los trabajos puede hacerlo en el siguiente enlace: </h4>
-          <a href="https://mantenimiento.etsidi.upm.es/cronograma/{{idcrypt}}">Estado de los trabajos</a>
+          <a href="https://localhost:8000/cronograma/{{idcrypt}}">Estado de los trabajos</a>
         </div>
         <!-- /.row -->
       </div>

@@ -70,60 +70,69 @@ class __TwigTemplate_3e97f22edd0170593b21b547f74a958dbd6651c6292fb238c340afd123e
     <div id=\"content\">
       <div class=\"row\">
         <div class=\"col-lg-20\">
-          <h4 class=\"mt-4 mb-3\">Desde la Subdirección de asuntos económicos y planificación de la ETSIDI le invitamos a valorar los trabajos realizados para solventar la incidencia notificada por ";
+          <h4 class=\"mt-4 mb-3\">Desde la Subdirección de asuntos económicos y planificación de la ETSIDI le invitamos a valorar los trabajos realizados para solventar la incidencia ";
         // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 14, $this->source); })()), "solicitud", [], "any", false, false, false, 14), "solicitante", [], "any", false, false, false, 14), "html", null, true);
-        echo ": </h4>
-          <h4 class=\"mt-4 mb-3\">Parte de Trabajo ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 14, $this->source); })()), "solicitud", [], "any", false, false, false, 14), "id", [], "any", false, false, false, 14), "html", null, true);
+        echo " notificada por
+            ";
         // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 15, $this->source); })()), "id", [], "any", false, false, false, 15), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 15, $this->source); })()), "solicitud", [], "any", false, false, false, 15), "solicitante", [], "any", false, false, false, 15), "html", null, true);
+        echo ": </h4>
+          <h4 class=\"my-3\">Incidencia notificada: ";
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 16, $this->source); })()), "solicitud", [], "any", false, false, false, 16), "descripcionIncidencia", [], "any", false, false, false, 16), "html", null, true);
+        echo " </h4>
+          <h4 class=\"my-3\">Localización: ";
+        // line 17
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 17, $this->source); })()), "solicitud", [], "any", false, false, false, 17), "estancia", [], "any", false, false, false, 17), "html", null, true);
+        echo " </h4>
+          <h4 class=\"my-3\">Fecha de la incidencia: ";
+        // line 18
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 18, $this->source); })()), "solicitud", [], "any", false, false, false, 18), "fecha", [], "any", false, false, false, 18), "d/m/Y"), "html", null, true);
         echo " </h4>
 
-          <h4 class=\"my-3\">localización: <small> ";
-        // line 17
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 17, $this->source); })()), "localizacion", [], "any", false, false, false, 17), "html", null, true);
-        echo "</small></h4>
+          <h3 class=\"mt-4 mb-3\">PARTE DE TRABAJO: </h3>
 
-          <h4 class=\"my-3\">Fecha de inicio: <small>";
-        // line 19
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 19, $this->source); })()), "fechainicio", [], "any", false, false, false, 19), "Y/m/d"), "html", null, true);
+          <h4 class=\"my-3\">localización de los trabajos realizados: <small> ";
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 22, $this->source); })()), "localizacion", [], "any", false, false, false, 22), "html", null, true);
         echo "</small></h4>
-          <h4 class=\"my-3\">Fecha de finalización: <small>";
-        // line 20
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 20, $this->source); })()), "fechafin", [], "any", false, false, false, 20), "Y/m/d"), "html", null, true);
+          <h4 class=\"my-3\">Fecha de inicio de los trabajos: <small>";
+        // line 23
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 23, $this->source); })()), "fechainicio", [], "any", false, false, false, 23), "d/m/Y"), "html", null, true);
+        echo "</small></h4>
+          <h4 class=\"my-3\">Fecha de finalización de los trabajos: <small>";
+        // line 24
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 24, $this->source); })()), "fechafin", [], "any", false, false, false, 24), "d/m/Y"), "html", null, true);
         echo "</small></h4>
           <h4 class=\"my-3\">intervención realizada por:</h4>
           ";
-        // line 22
+        // line 26
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 22, $this->source); })()), "solicitud", [], "any", false, false, false, 22), "trabajadores", [], "any", false, false, false, 22));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 26, $this->source); })()), "solicitud", [], "any", false, false, false, 26), "trabajadores", [], "any", false, false, false, 26));
         foreach ($context['_seq'] as $context["_key"] => $context["trabajador"]) {
-            // line 23
+            // line 27
             echo "          <h4 class=\"my-3\"><small>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trabajador"], "nombre", [], "any", false, false, false, 23), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trabajador"], "nombre", [], "any", false, false, false, 27), "html", null, true);
             echo "</small></h4>
           ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['trabajador'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 29
         echo "          <h4 class=\"my-3\">Trabajos realizados: <small>";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 25, $this->source); })()), "descripcion", [], "any", false, false, false, 25), "html", null, true);
-        echo "</small></h4>
-          <h4 class=\"my-3\">Solicitud que genera el parte: <small>";
-        // line 26
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 26, $this->source); })()), "solicitud", [], "any", false, false, false, 26), "id", [], "any", false, false, false, 26), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 29, $this->source); })()), "descripcion", [], "any", false, false, false, 29), "html", null, true);
         echo "</small></h4>
 
 
         </div>
-        <h4 class=\"my-3\">Si desea realizar la valoración puede hacerlo en el siguiente enlace: </h4>
-        <a href=\"https://mantenimiento.etsidi.upm.es/rellenarSatisfaccion/";
-        // line 31
-        echo twig_escape_filter($this->env, (isset($context["parametro"]) || array_key_exists("parametro", $context) ? $context["parametro"] : (function () { throw new RuntimeError('Variable "parametro" does not exist.', 31, $this->source); })()), "html", null, true);
+        <h4 class=\"my-3\">Si desea valorar los trabajos realizados puede hacerlo en el siguiente enlace: </h4>
+        <a href=\"https://localhost:8000/rellenarSatisfaccion/";
+        // line 34
+        echo twig_escape_filter($this->env, (isset($context["parametro"]) || array_key_exists("parametro", $context) ? $context["parametro"] : (function () { throw new RuntimeError('Variable "parametro" does not exist.', 34, $this->source); })()), "html", null, true);
         echo "/";
-        echo twig_escape_filter($this->env, (isset($context["email"]) || array_key_exists("email", $context) ? $context["email"] : (function () { throw new RuntimeError('Variable "email" does not exist.', 31, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["email"]) || array_key_exists("email", $context) ? $context["email"] : (function () { throw new RuntimeError('Variable "email" does not exist.', 34, $this->source); })()), "html", null, true);
         echo "\">Rellenar formulario de satisfacción</a>
         <hr color=\"green\" size=1>
         <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
@@ -154,7 +163,7 @@ class __TwigTemplate_3e97f22edd0170593b21b547f74a958dbd6651c6292fb238c340afd123e
 
     public function getDebugInfo()
     {
-        return array (  124 => 31,  116 => 26,  111 => 25,  102 => 23,  98 => 22,  93 => 20,  89 => 19,  84 => 17,  79 => 15,  75 => 14,  63 => 4,  44 => 3,);
+        return array (  133 => 34,  124 => 29,  115 => 27,  111 => 26,  106 => 24,  102 => 23,  98 => 22,  91 => 18,  87 => 17,  83 => 16,  79 => 15,  75 => 14,  63 => 4,  44 => 3,);
     }
 
     public function getSourceContext()
@@ -172,24 +181,27 @@ class __TwigTemplate_3e97f22edd0170593b21b547f74a958dbd6651c6292fb238c340afd123e
     <div id=\"content\">
       <div class=\"row\">
         <div class=\"col-lg-20\">
-          <h4 class=\"mt-4 mb-3\">Desde la Subdirección de asuntos económicos y planificación de la ETSIDI le invitamos a valorar los trabajos realizados para solventar la incidencia notificada por {{parte.solicitud.solicitante}}: </h4>
-          <h4 class=\"mt-4 mb-3\">Parte de Trabajo {{parte.id}} </h4>
+          <h4 class=\"mt-4 mb-3\">Desde la Subdirección de asuntos económicos y planificación de la ETSIDI le invitamos a valorar los trabajos realizados para solventar la incidencia {{parte.solicitud.id}} notificada por
+            {{parte.solicitud.solicitante}}: </h4>
+          <h4 class=\"my-3\">Incidencia notificada: {{parte.solicitud.descripcionIncidencia}} </h4>
+          <h4 class=\"my-3\">Localización: {{parte.solicitud.estancia}} </h4>
+          <h4 class=\"my-3\">Fecha de la incidencia: {{parte.solicitud.fecha|date('d/m/Y')}} </h4>
 
-          <h4 class=\"my-3\">localización: <small> {{parte.localizacion}}</small></h4>
+          <h3 class=\"mt-4 mb-3\">PARTE DE TRABAJO: </h3>
 
-          <h4 class=\"my-3\">Fecha de inicio: <small>{{parte.fechainicio|date('Y/m/d')}}</small></h4>
-          <h4 class=\"my-3\">Fecha de finalización: <small>{{parte.fechafin|date('Y/m/d')}}</small></h4>
+          <h4 class=\"my-3\">localización de los trabajos realizados: <small> {{parte.localizacion}}</small></h4>
+          <h4 class=\"my-3\">Fecha de inicio de los trabajos: <small>{{parte.fechainicio|date('d/m/Y')}}</small></h4>
+          <h4 class=\"my-3\">Fecha de finalización de los trabajos: <small>{{parte.fechafin|date('d/m/Y')}}</small></h4>
           <h4 class=\"my-3\">intervención realizada por:</h4>
           {% for trabajador in parte.solicitud.trabajadores %}
           <h4 class=\"my-3\"><small>{{trabajador.nombre}}</small></h4>
           {% endfor %}
           <h4 class=\"my-3\">Trabajos realizados: <small>{{parte.descripcion}}</small></h4>
-          <h4 class=\"my-3\">Solicitud que genera el parte: <small>{{parte.solicitud.id}}</small></h4>
 
 
         </div>
-        <h4 class=\"my-3\">Si desea realizar la valoración puede hacerlo en el siguiente enlace: </h4>
-        <a href=\"https://mantenimiento.etsidi.upm.es/rellenarSatisfaccion/{{parametro}}/{{email}}\">Rellenar formulario de satisfacción</a>
+        <h4 class=\"my-3\">Si desea valorar los trabajos realizados puede hacerlo en el siguiente enlace: </h4>
+        <a href=\"https://localhost:8000/rellenarSatisfaccion/{{parametro}}/{{email}}\">Rellenar formulario de satisfacción</a>
         <hr color=\"green\" size=1>
         <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
 
@@ -203,7 +215,6 @@ class __TwigTemplate_3e97f22edd0170593b21b547f74a958dbd6651c6292fb238c340afd123e
 
 </div>
 
-{% endblock %}
-", "Emails/NotificacionParte.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\Emails\\NotificacionParte.html.twig");
+{% endblock %}", "Emails/NotificacionParte.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\Emails\\NotificacionParte.html.twig");
     }
 }

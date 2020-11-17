@@ -11,24 +11,27 @@
     <div id="content">
       <div class="row">
         <div class="col-lg-20">
-          <h4 class="mt-4 mb-3">Desde la Subdirección de asuntos económicos y planificación de la ETSIDI le invitamos a valorar los trabajos realizados para solventar la incidencia notificada por {{parte.solicitud.solicitante}}: </h4>
-          <h4 class="mt-4 mb-3">Parte de Trabajo {{parte.id}} </h4>
+          <h4 class="mt-4 mb-3">Desde la Subdirección de asuntos económicos y planificación de la ETSIDI le invitamos a valorar los trabajos realizados para solventar la incidencia {{parte.solicitud.id}} notificada por
+            {{parte.solicitud.solicitante}}: </h4>
+          <h4 class="my-3">Incidencia notificada: {{parte.solicitud.descripcionIncidencia}} </h4>
+          <h4 class="my-3">Localización: {{parte.solicitud.estancia}} </h4>
+          <h4 class="my-3">Fecha de la incidencia: {{parte.solicitud.fecha|date('d/m/Y')}} </h4>
 
-          <h4 class="my-3">localización: <small> {{parte.localizacion}}</small></h4>
+          <h3 class="mt-4 mb-3">PARTE DE TRABAJO: </h3>
 
-          <h4 class="my-3">Fecha de inicio: <small>{{parte.fechainicio|date('Y/m/d')}}</small></h4>
-          <h4 class="my-3">Fecha de finalización: <small>{{parte.fechafin|date('Y/m/d')}}</small></h4>
+          <h4 class="my-3">localización de los trabajos realizados: <small> {{parte.localizacion}}</small></h4>
+          <h4 class="my-3">Fecha de inicio de los trabajos: <small>{{parte.fechainicio|date('d/m/Y')}}</small></h4>
+          <h4 class="my-3">Fecha de finalización de los trabajos: <small>{{parte.fechafin|date('d/m/Y')}}</small></h4>
           <h4 class="my-3">intervención realizada por:</h4>
           {% for trabajador in parte.solicitud.trabajadores %}
           <h4 class="my-3"><small>{{trabajador.nombre}}</small></h4>
           {% endfor %}
           <h4 class="my-3">Trabajos realizados: <small>{{parte.descripcion}}</small></h4>
-          <h4 class="my-3">Solicitud que genera el parte: <small>{{parte.solicitud.id}}</small></h4>
 
 
         </div>
-        <h4 class="my-3">Si desea realizar la valoración puede hacerlo en el siguiente enlace: </h4>
-        <a href="https://mantenimiento.etsidi.upm.es/rellenarSatisfaccion/{{parametro}}/{{email}}">Rellenar formulario de satisfacción</a>
+        <h4 class="my-3">Si desea valorar los trabajos realizados puede hacerlo en el siguiente enlace: </h4>
+        <a href="https://localhost:8000/rellenarSatisfaccion/{{parametro}}/{{email}}">Rellenar formulario de satisfacción</a>
         <hr color="green" size=1>
         <h4 class="my-3"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
 

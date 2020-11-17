@@ -148,24 +148,24 @@ class DefaultController extends Controller
           $idcrypt = $encrypt->encrypt($id,$key);
           $message = (new \Swift_Message('Nueva Solicitud para el servicio de Mantenimiento ETSIDI'))
             ->setFrom('gestion.partes.etsidi@upm.es')
-            ->setTo('fernando.elena@upm.es')
-            //->setTo('mariabelen.sanz@upm.es')
+            //->setTo('fernando.elena@upm.es')
+            ->setTo('mariabelen.sanz@upm.es')
             ->setBody(
                  $this->renderView('Emails/NotificacionSolicitud.html.twig', ['solicitud'=>$solicitud]),'text/html');
           $mailer->send($message);
           if($this->getUser()){
           $message = (new \Swift_Message('Mantenimiento ETSIDI-Registro de su solicitud'))
             ->setFrom('gestion.partes.etsidi@upm.es')
-            ->setTo($email)
-            //->setTo('mariabelen.sanz@upm.es')
+            //->setTo($email)
+            ->setTo('mariabelen.sanz@upm.es')
             ->setBody(
                  $this->renderView('Emails/NotificacionRegistroSolicitud.html.twig', ['solicitud'=>$solicitud, 'idcrypt'=>$idcrypt]),'text/html');
           $mailer->send($message);
         }else{
           $message = (new \Swift_Message('Mantenimiento ETSIDI-Registro de su solicitud'))
             ->setFrom('gestion.partes.etsidi@upm.es')
-            ->setTo($emaildecrypt)
-            //->setTo('mariabelen.sanz@upm.es')
+            //->setTo($emaildecrypt)
+            ->setTo('mariabelen.sanz@upm.es')
             ->setBody(
                  $this->renderView('Emails/NotificacionRegistroSolicitud.html.twig', ['solicitud'=>$solicitud, 'idcrypt'=>$idcrypt]),'text/html');
           $mailer->send($message);

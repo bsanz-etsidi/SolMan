@@ -98,7 +98,7 @@ class __TwigTemplate_102918b85450d38ff590fab58d1750f9ec8270afdb862d005b7af30d39e
     <h1 class=\" mt-4 mb-3\">Mantenimiento ETSIDI
 
     </h1>
-    
+
   </div>
 
 
@@ -116,7 +116,7 @@ class __TwigTemplate_102918b85450d38ff590fab58d1750f9ec8270afdb862d005b7af30d39e
         <table>
           <tr>
             <td>
-              <h7>Usuario</h7>
+              <h6 style=\"color: black\">Usuario</h6>
             </td>
           </tr>
           <tr>
@@ -126,7 +126,7 @@ class __TwigTemplate_102918b85450d38ff590fab58d1750f9ec8270afdb862d005b7af30d39e
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 40, $this->source); })()), "Usuario", [], "any", false, false, false, 40), 'widget');
         echo "</td>
             <td>
-              <h7 style=\"font-style:italic;color: grey\"> &nbsp@upm.es</h7>
+              <h6 style=\"font-style:italic;color: black\"> &nbsp@upm.es</h6>
             </td>
           </tr>
           <tr>
@@ -134,7 +134,7 @@ class __TwigTemplate_102918b85450d38ff590fab58d1750f9ec8270afdb862d005b7af30d39e
             <td><br /></td>
           </tr>
           <td>
-            <h7>Contraseña</h7>
+            <h6 style=\"color: black\">Contraseña</h6>
           </td>
           </tr>
           <tr>
@@ -212,7 +212,7 @@ class __TwigTemplate_102918b85450d38ff590fab58d1750f9ec8270afdb862d005b7af30d39e
     <h1 class=\" mt-4 mb-3\">Mantenimiento ETSIDI
 
     </h1>
-    
+
   </div>
 
 
@@ -227,14 +227,14 @@ class __TwigTemplate_102918b85450d38ff590fab58d1750f9ec8270afdb862d005b7af30d39e
         <table>
           <tr>
             <td>
-              <h7>Usuario</h7>
+              <h6 style=\"color: black\">Usuario</h6>
             </td>
           </tr>
           <tr>
             <td style=\"width:300px\">
               {{ form_widget(form.Usuario)}}</td>
             <td>
-              <h7 style=\"font-style:italic;color: grey\"> &nbsp@upm.es</h7>
+              <h6 style=\"font-style:italic;color: black\"> &nbsp@upm.es</h6>
             </td>
           </tr>
           <tr>
@@ -242,7 +242,7 @@ class __TwigTemplate_102918b85450d38ff590fab58d1750f9ec8270afdb862d005b7af30d39e
             <td><br /></td>
           </tr>
           <td>
-            <h7>Contraseña</h7>
+            <h6 style=\"color: black\">Contraseña</h6>
           </td>
           </tr>
           <tr>

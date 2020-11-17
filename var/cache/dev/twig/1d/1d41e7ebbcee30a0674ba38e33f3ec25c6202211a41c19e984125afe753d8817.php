@@ -33,7 +33,7 @@ class __TwigTemplate_b09696a26018b152c977ed033e9c8498a43f3947afec481aa9a66ff205f
     protected function doGetParent(array $context)
     {
         // line 2
-        return "frontal/baseautenticacion.html.twig";
+        return "frontal/base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -46,7 +46,7 @@ class __TwigTemplate_b09696a26018b152c977ed033e9c8498a43f3947afec481aa9a66ff205f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "gestionMantenimiento/registroUsuario.html.twig"));
 
         $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), [0 => "form/baseForm.html.twig"], true);
-        $this->parent = $this->loadTemplate("frontal/baseautenticacion.html.twig", "gestionMantenimiento/registroUsuario.html.twig", 2);
+        $this->parent = $this->loadTemplate("frontal/base.html.twig", "gestionMantenimiento/registroUsuario.html.twig", 2);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -155,7 +155,7 @@ class __TwigTemplate_b09696a26018b152c977ed033e9c8498a43f3947afec481aa9a66ff205f
     public function getSourceContext()
     {
         return new Source("{# Plantilla de nuestra aplicación#}
-{%extends 'frontal/baseautenticacion.html.twig'%}{% form_theme form 'form/baseForm.html.twig' %}
+{%extends 'frontal/base.html.twig'%}{% form_theme form 'form/baseForm.html.twig' %}
 
 {#TITULO#}
 {% block titulo %} Registro Usuario{% endblock %}

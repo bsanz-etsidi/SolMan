@@ -131,8 +131,8 @@ class GestionController extends AbstractController
             if($valorada==0){//si no ha sido valorada
             $message = (new \Swift_Message('Grado de satisfacción con el servicio recibido'))
               ->setFrom('gestion.partes.etsidi@upm.es')
-              ->setTo($email)
-              //->setTo('mariabelen.sanz@upm.es')
+              //->setTo($email)
+              ->setTo('mariabelen.sanz@upm.es')
               ->setBody(
                   $this->renderView('Emails/NotificacionParte.html.twig', ['parte'=>$parte, 'parametro'=>$parametro, 'email'=>$email]),'text/html');
             $mailer->send($message);
@@ -288,8 +288,8 @@ class GestionController extends AbstractController
 
              $message = (new \Swift_Message('Anulación de su solicitud al servicio de Mantenimiento ETSIDI'))
                ->setFrom('gestion.partes.etsidi@upm.es')
-               ->setTo($email)
-               //->setTo('mariabelen.sanz@upm.es')
+               //->setTo($email)
+               ->setTo('mariabelen.sanz@upm.es')
                ->setBody(
                     $this->renderView('Emails/NotificacionAnulacionSolicitud.html.twig', ['solicitud'=>$solicitud, 'evento'=>$evento,]),'text/html');
              $mailer->send($message);
@@ -338,8 +338,8 @@ class GestionController extends AbstractController
 
                $message = (new \Swift_Message('Suspensión de su solicitud al servicio de Mantenimiento ETSIDI'))
                  ->setFrom('gestion.partes.etsidi@upm.es')
-                 ->setTo($email)
-                 //->setTo('mariabelen.sanz@upm.es')
+                 //->setTo($email)
+                 ->setTo('mariabelen.sanz@upm.es')
                  ->setBody(
                       $this->renderView('Emails/NotificacionSuspensionSolicitud.html.twig', ['solicitud'=>$solicitud, 'evento'=>$evento]),'text/html');
                $mailer->send($message);
@@ -390,8 +390,8 @@ class GestionController extends AbstractController
 
                   $message = (new \Swift_Message('Reactivación de su solicitud al servicio de Mantenimiento ETSIDI'))
                     ->setFrom('gestion.partes.etsidi@upm.es')
-                    ->setTo($email)
-                    //->setTo('mariabelen.sanz@upm.es')
+                    //->setTo($email)
+                    ->setTo('mariabelen.sanz@upm.es')
                     ->setBody(
                         $this->renderView('Emails/NotificacionReactivacionSolicitud.html.twig', ['solicitud'=>$solicitud]),'text/html');
                         $mailer->send($message);
@@ -423,8 +423,8 @@ class GestionController extends AbstractController
 
                  $message = (new \Swift_Message('Reactivación de su solicitud al servicio de Mantenimiento ETSIDI'))
                    ->setFrom('gestion.partes.etsidi@upm.es')
-                   ->setTo($email)
-                   //->setTo('mariabelen.sanz@upm.es')
+                   //->setTo($email)
+                   ->setTo('mariabelen.sanz@upm.es')
                    ->setBody(
                         $this->renderView('Emails/NotificacionReactivacionAnulada.html.twig', ['solicitud'=>$solicitud]),'text/html');
                         $mailer->send($message);
@@ -488,8 +488,8 @@ class GestionController extends AbstractController
 
               $message = (new \Swift_Message('Le ha sido asignada una solicitud para el servicio de Mantenimiento ETSIDI'))
                 ->setFrom('gestion.partes.etsidi@upm.es')
-                ->setTo($emailTrabajador)
-                //->setTo('mariabelen.sanz@upm.es')
+                //->setTo($emailTrabajador)
+                ->setTo('mariabelen.sanz@upm.es')
                 ->setBody(
                      $this->renderView('Emails/NotificacionTrabajador.html.twig', ['solicitud'=>$solicitud,'ordenes'=>$ordenes]),'text/html');
               $mailer->send($message);
@@ -535,8 +535,8 @@ class GestionController extends AbstractController
 
                 $message = (new \Swift_Message('Cambio de órdenes desde el servicio de Mantenimiento ETSIDI'))
                   ->setFrom('gestion.partes.etsidi@upm.es')
-                  ->setTo($email)
-                  //->setTo('mariabelen.sanz@upm.es')
+                  //->setTo($email)
+                  ->setTo('mariabelen.sanz@upm.es')
                   ->setBody(
                        $this->renderView('Emails/NotificacionTrabajador.html.twig', ['solicitud'=>$solicitud,'ordenes'=>$ordenes]),'text/html');
                        $mailer->send($message);
@@ -811,8 +811,8 @@ class GestionController extends AbstractController
            $solicitud->removeInstruccion($instruccion);
            $message = (new \Swift_Message('Revocación de asignación de Solicitud - Mantenimiento ETSIDI'))
              ->setFrom('gestion.partes.etsidi@upm.es')
-             ->setTo($emailTrabajador)
-             //->setTo('mariabelen.sanz@upm.es')
+             //->setTo($emailTrabajador)
+             ->setTo('mariabelen.sanz@upm.es')
              ->setBody(
                   $this->renderView('Emails/NotificacionRevocacion.html.twig', ['solicitud'=>$solicitud]),'text/html');
            $mailer->send($message);
