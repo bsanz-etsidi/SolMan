@@ -26,6 +26,14 @@ class Solicitud
     private $id;
 
     /**
+   * @var string
+   *
+   * @ORM\Column(name="idcrypt", type="string", length=255, nullable=true)
+   */
+  private $idcrypt;
+
+
+    /**
      * @var int
      *
      * @ORM\Column(name="valorada", type="integer", nullable=true)
@@ -90,6 +98,14 @@ class Solicitud
     private $email;
 
     /**
+   * @var string
+   *
+   * @ORM\Column(name="emailcrypt", type="string", length=255, nullable=true)
+   */
+  private $emailcrypt;
+
+
+    /**
      * Many solicitudes have Many trabajadores.
      * @ORM\ManyToMany(targetEntity="App\Entity\Trabajador", inversedBy="solicitudes")
      * @ORM\JoinTable(name="solicitudes_trabajadores")
@@ -105,6 +121,13 @@ class Solicitud
      * @ORM\OneToMany(targetEntity="Instruccion", mappedBy="solicitud")
      */
     private $instrucciones;
+
+    /**
+     * Una Solicitud tiene una Valoración.
+     * @ORM\OneToOne(targetEntity="Solicitud", inversedBy="valoracion")
+     * @ORM\JoinColumn(name="solicitud_id", referencedColumnName="id")
+     */
+    private $valoracion;
 
     /**
      * @var string
@@ -161,6 +184,78 @@ class Solicitud
     {
         return $this->id;
     }
+
+    /**
+   * Get idcrypt
+   *
+   * @return string
+   */
+  public function getIdcrypt()
+  {
+      return $this->idcrypt;
+  }
+
+  /**
+   * Set idcrypt
+   *
+   * @param string $idcrypt
+   *
+   * @return Solicitud
+   */
+  public function setIdcrypt($idcrypt)
+  {
+      $this->idcrypt = $idcrypt;
+      return $this;
+  }
+
+  /**
+  * Get valoracionId
+  *
+  * @return string
+  */
+  public function getValoracionId()
+  {
+    return $this->valoracionId;
+  }
+
+  /**
+  * Set valoracionId
+  *
+  * @param integer $valoracionId
+  *
+  * @return Solicitud
+  */
+  public function setValoracionId($valoracionId)
+  {
+    $this->valoracionId = $valoracionId;
+    return $this;
+  }
+
+
+  /**
+   * Get valoracion
+   *
+   * @return \App\Entity\Valoracion
+   */
+  public function getValoracion()
+  {
+      return $this->valoracion;
+  }
+
+
+  /**
+   * Set valoracion
+   *
+   * @param \App\Entity\Valoracion $valoracion
+   *
+   * @return Solicitud
+   */
+  public function setValoracion(\App\Entity\Valoracion $valoracion = null)
+  {
+      $this->valoracion = $valoracion;
+
+      return $this;
+  }
 
     /**
       * Get valorada
@@ -411,6 +506,30 @@ class Solicitud
     }
 
     /**
+   * Set emailcrypt
+   *
+   * @param string $emailcrypt
+   *
+   * @return Solicitud
+   */
+  public function setEmailcrypt($emailcrypt)
+  {
+      $this->emailcrypt = $emailcrypt;
+
+      return $this;
+  }
+
+  /**
+   * Get emailcrypt
+   *
+   * @return string
+   */
+  public function getEmailcrypt()
+  {
+      return $this->emailcrypt;
+  }
+
+    /**
      * Set estancia
      *
      * @param string $estancia
@@ -604,5 +723,48 @@ class Solicitud
     {
       return (string)$this->id;
     }
+
+    public function addTrabajadore(Trabajador $trabajadore): self
+    {
+        if (!$this->trabajadores->contains($trabajadore)) {
+            $this->trabajadores[] = $trabajadore;
+        }
+
+        return $this;
+    }
+
+    public function removeTrabajadore(Trabajador $trabajadore): self
+    {
+        if ($this->trabajadores->contains($trabajadore)) {
+            $this->trabajadores->removeElement($trabajadore);
+        }
+
+        return $this;
+    }
+
+    public function addInstruccione(Instruccion $instruccione): self
+    {
+        if (!$this->instrucciones->contains($instruccione)) {
+            $this->instrucciones[] = $instruccione;
+            $instruccione->setSolicitud($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInstruccione(Instruccion $instruccione): self
+    {
+        if ($this->instrucciones->contains($instruccione)) {
+            $this->instrucciones->removeElement($instruccione);
+            // set the owning side to null (unless already changed)
+            if ($instruccione->getSolicitud() === $this) {
+                $instruccione->setSolicitud(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 
 }

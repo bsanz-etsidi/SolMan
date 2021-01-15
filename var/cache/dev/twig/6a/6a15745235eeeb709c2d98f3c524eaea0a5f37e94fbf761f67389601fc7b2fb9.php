@@ -103,8 +103,8 @@ class __TwigTemplate_dc2f29bed660b1c00785373850706ecbb25da17c67d67b986dd55308c14
   </div>
 </div>
 <div style=\"margin-top:130px\">
-  <hr color=\"green\" size=1>
-  <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
+<hr style=\"height:1px;border-width:0;color:#70AD47;background-color:#70AD47\">
+<h4 class=\"my-3\" style=\"color: red;\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
 </div>
 
 ";
@@ -159,8 +159,8 @@ class __TwigTemplate_dc2f29bed660b1c00785373850706ecbb25da17c67d67b986dd55308c14
   </div>
 </div>
 <div style=\"margin-top:130px\">
-  <hr color=\"green\" size=1>
-  <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
+<hr style=\"height:1px;border-width:0;color:#70AD47;background-color:#70AD47\">
+<h4 class=\"my-3\" style=\"color: red;\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
 </div>
 
 {% endblock %}

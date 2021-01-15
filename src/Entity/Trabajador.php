@@ -225,4 +225,48 @@ class Trabajador
        return $this->id;
      }
 
+     public function addSolicitude(Solicitud $solicitude): self
+     {
+         if (!$this->solicitudes->contains($solicitude)) {
+             $this->solicitudes[] = $solicitude;
+             $solicitude->addTrabajadore($this);
+         }
+
+         return $this;
+     }
+
+     public function removeSolicitude(Solicitud $solicitude): self
+     {
+         if ($this->solicitudes->contains($solicitude)) {
+             $this->solicitudes->removeElement($solicitude);
+             $solicitude->removeTrabajadore($this);
+         }
+
+         return $this;
+     }
+
+     public function addInstruccione(Instruccion $instruccione): self
+     {
+         if (!$this->instrucciones->contains($instruccione)) {
+             $this->instrucciones[] = $instruccione;
+             $instruccione->setTrabajador($this);
+         }
+
+         return $this;
+     }
+
+     public function removeInstruccione(Instruccion $instruccione): self
+     {
+         if ($this->instrucciones->contains($instruccione)) {
+             $this->instrucciones->removeElement($instruccione);
+             // set the owning side to null (unless already changed)
+             if ($instruccione->getTrabajador() === $this) {
+                 $instruccione->setTrabajador(null);
+             }
+         }
+
+         return $this;
+     }
+
+
 }

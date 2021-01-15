@@ -85,7 +85,7 @@ class __TwigTemplate_2b03f38b5c22d336801f7ed03766b1d84a86ee7175d09d7e2662294ccbf
         echo "</small></h4>
           <h4 class=\"my-3\">Fecha: <small>";
         // line 18
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["solicitud"]) || array_key_exists("solicitud", $context) ? $context["solicitud"] : (function () { throw new RuntimeError('Variable "solicitud" does not exist.', 18, $this->source); })()), "fecha", [], "any", false, false, false, 18), "Y/m/d"), "html", null, true);
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["solicitud"]) || array_key_exists("solicitud", $context) ? $context["solicitud"] : (function () { throw new RuntimeError('Variable "solicitud" does not exist.', 18, $this->source); })()), "fecha", [], "any", false, false, false, 18), "d/m/Y"), "html", null, true);
         echo "</small></h4>
           <h4 class=\"my-3\">Extensión: <small>";
         // line 19
@@ -115,8 +115,8 @@ class __TwigTemplate_2b03f38b5c22d336801f7ed03766b1d84a86ee7175d09d7e2662294ccbf
   </div>
 </div>
 <div style=\"margin-top:90px\">
-  <hr color=\"green\" size=1>
-  <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
+  <hr style=\"height:1px;border-width:0;color:#70AD47;background-color:#70AD47\">
+  <h4 class=\"my-3\" style=\"color: red;\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
 </div>
 
 ";
@@ -157,7 +157,7 @@ class __TwigTemplate_2b03f38b5c22d336801f7ed03766b1d84a86ee7175d09d7e2662294ccbf
           <h4 class=\"mt-4 mb-3\">Ha recibido una nueva solicitud del servicio de Mantenimiento con identificador {{solicitud.id}} </h4>
           <h4 class=\"my-3\">Solicitante: <small> {{solicitud.solicitante}}</small></h4>
           <h4 class=\"my-3\">Unidad de destino: <small> {{solicitud.destino}}</small></h4>
-          <h4 class=\"my-3\">Fecha: <small>{{solicitud.fecha|date('Y/m/d')}}</small></h4>
+          <h4 class=\"my-3\">Fecha: <small>{{solicitud.fecha|date('d/m/Y')}}</small></h4>
           <h4 class=\"my-3\">Extensión: <small>{{solicitud.extension}}</small></h4>
           <h4 class=\"my-3\">Email: <small>{{solicitud.email}}</small></h4>
           <h4 class=\"my-3\">Descripción Incidencia: <small>{{solicitud.descripcionIncidencia}}</small></h4>
@@ -171,8 +171,8 @@ class __TwigTemplate_2b03f38b5c22d336801f7ed03766b1d84a86ee7175d09d7e2662294ccbf
   </div>
 </div>
 <div style=\"margin-top:90px\">
-  <hr color=\"green\" size=1>
-  <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
+  <hr style=\"height:1px;border-width:0;color:#70AD47;background-color:#70AD47\">
+  <h4 class=\"my-3\" style=\"color: red;\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
 </div>
 
 {% endblock %}", "Emails/NotificacionTrabajador.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\Emails\\NotificacionTrabajador.html.twig");

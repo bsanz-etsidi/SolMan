@@ -1,36 +1,35 @@
-{# Plantilla de nuestra aplicación#}
-{#Contenido#}
-{% block contenido %}
-<!-- Page Content -->
-<div class="container">
-  <div style="margin-top:10px">
+<!DOCTYPE html>
+<html>
 
-    <!-- Page Heading/Breadcrumbs -->
+  <body>
+    {#Contenido#}
+    {% block contenido %}
 
-    <!-- Portfolio Item Row -->
-    <div id="content">
-      <div class="row">
-
-        <div class="col-lg-20">
-          <h4 class="mt-4 mb-3">Usted ha realizado una solicitud al servicio de Mantenimiento con identificador {{solicitud.id}} </h4>
-          <h4 class="my-3">Solicitante: <small> {{solicitud.solicitante}}</small></h4>
-          <h4 class="my-3">Unidad de destino: <small> {{solicitud.destino}}</small></h4>
-          <h4 class="my-3">Fecha: <small>{{solicitud.fecha|date('d/m/Y')}}</small></h4>
-          <h4 class="my-3">Extensión: <small>{{solicitud.extension}}</small></h4>
-          <h4 class="my-3">Email: <small>{{solicitud.email}}</small></h4>
-          <h4 class="my-3">Descripción Incidencia: <small>{{solicitud.descripcionIncidencia}}</small></h4>
-          <h4 class="my-3">Lugar Incidencia: <small>{{solicitud.estancia}}</small></h4>
-          <h4 class="my-3">Si desea consultar la evolución de los trabajos puede hacerlo en el siguiente enlace: </h4>
-          <a href="https://localhost:8000/cronograma/{{idcrypt}}">Estado de los trabajos</a>
+    <div class="container">
+      <div style="margin-top:10px">
+        <div id="content">
+          <div class="row">
+            <div class="col-lg-20">
+              <h4 class="mt-4 mb-3">Usted ha realizado una solicitud al servicio de Mantenimiento con identificador {{solicitud.id}} </h4>
+              <h4 class="my-3">Solicitante: <small> {{solicitud.solicitante}}</small></h4>
+              <h4 class="my-3">Unidad de destino: <small> {{solicitud.destino}}</small></h4>
+              <h4 class="my-3">Fecha: <small>{{solicitud.fecha|date('d/m/Y')}}</small></h4>
+              <h4 class="my-3">Extensión: <small>{{solicitud.extension}}</small></h4>
+              <h4 class="my-3">Email: <small>{{solicitud.email}}</small></h4>
+              <h4 class="my-3">Descripción Incidencia: <small>{{solicitud.descripcionIncidencia}}</small></h4>
+              <h4 class="my-3">Lugar Incidencia: <small>{{solicitud.estancia}}</small></h4>
+              <h4 class="my-3">Si desea consultar la evolución de los trabajos puede hacerlo en el siguiente enlace: </h4>
+              <a href="https://mantenimiento.etsidi.upm.es/cronograma/{{idcrypt}}">Estado de los trabajos</a>
+            </div>
+          </div>
         </div>
-        <!-- /.row -->
+      </div>
+      <div style="margin-top:90px;">
+        <hr style="height:1px;border-width:0;color:#70AD47;background-color:#70AD47">
+        <h4 class="my-3" style="color: red;"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
       </div>
     </div>
-  </div>
-</div>
-<div style="margin-top:90px">
-  <hr color="green" size=1>
-  <h4 class="my-3"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
-</div>
+    {% endblock %}
+  </body>
 
-{% endblock %}
+</html>

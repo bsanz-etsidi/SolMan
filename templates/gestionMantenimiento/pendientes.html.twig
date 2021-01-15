@@ -1,7 +1,7 @@
 {% extends 'frontal/base.html.twig' %}
 {% block titulo %}Solicitudes{% endblock %}
 {% block contenido %}
-<div class="container-fluid">
+<div class="container-fluid" style="font-family: Saira Extra Condensed">
   <div style="margin-top:50px">
     <h1 class=" mt-4 mb-3">Solicitudes</<h1>
   </div>
@@ -27,10 +27,10 @@
               <th scope="col">
                 <h6>Solicitante</h6>
               </th>
-              <th scope="col">
-                <h6>Descripcion</h6>
+              <th scope="col" style="width:200px">
+                <h6>Descripción</h6>
               </th>
-              <th style="width:25%">
+              <th scope="col">
                 <h6>Trabajador<br /> asignado</h6>
               </th>
               <th scope="col">
@@ -55,49 +55,49 @@
 
               <td>
                 {% if solicitud.prioritaria==1 and solicitud.estado==1 %}
-                <h5><a href="{{path('solicitud',{'id':solicitud.id})}}" style="color: red;">{{solicitud.id}}</a></h5>
+                <h5><a href="{{path('solicitud',{'idcrypt':solicitud.idcrypt, 'id':solicitud.id})}}" style="color: red;">{{solicitud.id}}</a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==1 and solicitud.estado==0 %}
-                <h5><a href="{{path('solicitud',{'id':solicitud.id})}}" style="color: red;">{{solicitud.id}}</a></h5>
+                <h5><a href="{{path('solicitud',{'idcrypt':solicitud.idcrypt,'id':solicitud.id})}}" style="color: red;">{{solicitud.id}}</a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==1 and solicitud.estado==4 %}
-                <h5><a href="{{path('solicitud',{'id':solicitud.id})}}" style="color: red;">{{solicitud.id}}</a></h5>
+                <h5><a href="{{path('solicitud',{'idcrypt':solicitud.idcrypt,'id':solicitud.id})}}" style="color: red;">{{solicitud.id}}</a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==0 and solicitud.estado==1 %}
-                <h5><a href="{{path('solicitud',{'id':solicitud.id})}}">{{solicitud.id}}</a></h5>
+                <h5><a href="{{path('solicitud',{'idcrypt':solicitud.idcrypt,'id':solicitud.id})}}">{{solicitud.id}}</a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==0 and solicitud.estado==0 %}
-                <h5><a href="{{path('solicitud',{'id':solicitud.id})}}">{{solicitud.id}}</a></h5>
+                <h5><a href="{{path('solicitud',{'idcrypt':solicitud.idcrypt,'id':solicitud.id})}}">{{solicitud.id}}</a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==0 and solicitud.estado==4 %}
-                <h5><a href="{{path('solicitud',{'id':solicitud.id})}}" style="color: fuchsia;">{{solicitud.id}}</a></h5>
+                <h5><a href="{{path('solicitud',{'idcrypt':solicitud.idcrypt,'id':solicitud.id})}}" style="color: fuchsia;">{{solicitud.id}}</a></h5>
                 {% endif %}
                 {% if solicitud.estado==2 %}
-                <h5><a href="{{path('solicitud',{'id':solicitud.id})}}">{{solicitud.id}}</a></h5>
+                <h5><a href="{{path('solicitud',{'idcrypt':solicitud.idcrypt,'id':solicitud.id})}}">{{solicitud.id}}</a></h5>
                 {% endif %}
               </td>
 
               <td>
                 {% if solicitud.prioritaria==1 and solicitud.estado==1 %}
-                <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}" style="color: red;"><small><i class="far fa-hourglass"></i></small></a></h5>
+                <h5><a href="{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}" style="color: red;"><small><i class="far fa-hourglass"></i></small></a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==1 and solicitud.estado==0 %}
-                <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}" style="color: red;"><small><i class="far fa-hourglass"></i></small></a></h5>
+                <h5><a href="{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}" style="color: red;"><small><i class="far fa-hourglass"></i></small></a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==1 and solicitud.estado==4 %}
-                <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}" style="color: red;"><small><i class="far fa-hourglass"></i></small></a></h5>
+                <h5><a href="{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}" style="color: red;"><small><i class="far fa-hourglass"></i></small></a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==0 and solicitud.estado==1 %}
-                <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}"><small><i class="far fa-hourglass"></i></small></a></h5>
+                <h5><a href="{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}"><small><i class="far fa-hourglass"></i></small></a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==0 and solicitud.estado==0 %}
-                <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}"><small><i class="far fa-hourglass"></i></small></a></h5>
+                <h5><a href="{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}"><small><i class="far fa-hourglass"></i></small></a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==0 and solicitud.estado==4 %}
-                <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}" style="color: fuchsia;"><small><i class="far fa-hourglass"></i></small></a></h5>
+                <h5><a href="{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}" style="color: fuchsia;"><small><i class="far fa-hourglass"></i></small></a></h5>
                 {% endif %}
                 {% if solicitud.estado==2 %}
-                <h5><a href="{{path('cronogramaGestion',{'id':solicitud.id})}}"><small><i class="far fa-hourglass"></i></small></a></h5>
+                <h5><a href="{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}"><small><i class="far fa-hourglass"></i></small></a></h5>
                 {% endif %}
               </td>
 

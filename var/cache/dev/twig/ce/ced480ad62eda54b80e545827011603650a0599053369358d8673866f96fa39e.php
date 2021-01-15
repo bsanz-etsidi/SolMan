@@ -104,8 +104,8 @@ class __TwigTemplate_1d2821d105de5422981dc57e63f421db5cc04b2ad5a60b00dcdfd25ea01
   </div>
 </div>
 <div style=\"margin-top:90px\">
-  <hr color=\"green\" size=1>
-  <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
+  <hr style=\"height:1px;border-width:0;color:#70AD47;background-color:#70AD47\">
+  <h4 class=\"my-3\" style=\"color: red;\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
 </div>
 ";
         
@@ -160,10 +160,9 @@ class __TwigTemplate_1d2821d105de5422981dc57e63f421db5cc04b2ad5a60b00dcdfd25ea01
   </div>
 </div>
 <div style=\"margin-top:90px\">
-  <hr color=\"green\" size=1>
-  <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
+  <hr style=\"height:1px;border-width:0;color:#70AD47;background-color:#70AD47\">
+  <h4 class=\"my-3\" style=\"color: red;\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
 </div>
-{% endblock %}
-", "Emails/NotificacionSuspensionSolicitud.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\Emails\\NotificacionSuspensionSolicitud.html.twig");
+{% endblock %}", "Emails/NotificacionSuspensionSolicitud.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\Emails\\NotificacionSuspensionSolicitud.html.twig");
     }
 }

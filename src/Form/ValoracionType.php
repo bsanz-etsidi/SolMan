@@ -16,7 +16,7 @@ class ValoracionType extends AbstractType
           ->add('satisfaccion', ChoiceType::class,  ['label'=>'Indique su grado de satisfacción:', 'choices'  => ['Muy Satisfecho' => 'Muy Satisfecho','Satisfecho' => 'Satisfecho','No satisfecho' => 'No satisfecho',],],)
           ->add('rapidez', ChoiceType::class,  ['label'=>'Valore la rapidez de los trabajos realizados:', 'choices'  => ['A tiempo' => 'A tiempo', 'No a tiempo' => 'No a tiempo',],],)
           //->add('observaciones', TextType::class, array('label' => 'Observaciones a los trabajos realizados:'))
-          ->add('Aceptar', SubmitType::class, array('label' => 'Aceptar'))
+          ->add('Aceptar', SubmitType::class, array('label' => 'ACEPTAR'))
 
           ;
     }

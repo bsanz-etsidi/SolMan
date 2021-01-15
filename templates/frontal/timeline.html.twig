@@ -2,47 +2,97 @@
 <html>
 
   <head>
-    <meta charset="UTF-8" />
-    <title>{% block titulo %}Cronograma{% endblock %}</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link href="{{ asset('css/timeline.css')}}" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Cronograma</title>
+    <link href="{{ asset('css/google-fonts-Montserrat.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/google-fonts-Droid.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/google-fonts-Roboto.css')}}" rel="stylesheet" type="text/css">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{ asset('css/stylestimeline.css')}}" rel="stylesheet" type="text/css">
   </head>
 
-  <body>
+  <body id="page-top">
     {% block contenido %}
 
-    <div style="margin-top:40px">
-      <font color="white">
-        <h1>&nbsp&nbspCronograma de la solicitud&nbsp{{id}}<br />
-      </font>
+    <section class="page-section" id="about">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading" style="font-size:30px">Mantenimiento ETSIDI</h2>
+          <h3 class="section-subheading text-muted" style="font-size:20px">Cronograma de la solicitud&nbsp{{id}} realizada por {{solicitud.solicitante}}</h3>
+        </div>
+        <ul class="timeline">
+          {% set i = 1 %}
+          {% for evento in eventos %}
+          {% if i is odd %}
 
-    </div>
-    <div style="margin-bottom:60px">
-    </div>
-    {% set i = 1 %}
-    {% for evento in eventos %}
-    {% if i is odd %}
-    <div class="timeline">
-      <div class="container left">
-        <div class="content">
-          <h2>{{evento.tipo}}</h2>
-          <h4 style="font-style:italic">{{evento.causa}}</h4>
-          <p>{{evento.fecha|date('d/m/Y')}}</p>
+          <li>
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset(evento.Imagen)}}" alt="" /></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="subheading">{{evento.tipo}}</h4>
+              </div>
+              {% if i == 1 %}
+              <div class="timeline-body">
+                <p class="text-muted">{{solicitud.descripcionIncidencia}}</p>
+              </div>
+              {% endif %}
+              <div class="timeline-body">
+                <p class="text-muted">{{evento.causa}}</p>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">{{evento.rapidez}}</p>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">{{evento.fecha|date('d/m/Y')}}</p>
+              </div>
+            </div>
+          </li>
+          {% else %}
+
+          <li class="timeline-inverted">
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset(evento.Imagen)}}" alt="" /></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="subheading">{{evento.tipo}}</h4>
+              </div>
+              {% if i == 1 %}
+              <div class="timeline-body">
+                <p class="text-muted">{{solicitud.descripcionIncidencia}}</p>
+              </div>
+              {% endif %}
+              <div class="timeline-body">
+                <p class="text-muted">{{evento.causa}}</p>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">{{evento.rapidez}}</p>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">{{evento.fecha|date('d/m/Y')}}</p>
+              </div>
+
+            </div>
+          </li>
+          {% endif %}
+          {% set i = i + 1 %}
+          {% endfor %}
+          {% endblock %}
+        </ul>
+        <div class="text-center" style="margin-top:50px">
+          <h8 style="font-family: Helvetica; font-size:13px"><br /><br /><br /><br /><br /><br /><br />Universidad Politécnica de Madrid ©2020</h8>
         </div>
       </div>
-      {% else %}
-      <div class=" container right">
-        <div class="content">
-          <h2>{{evento.tipo}}
-            <h4 style="font-style:italic">{{evento.causa}}</h4>
-            <p>{{evento.fecha|date('d/m/Y')}}</p>
-        </div>
-      </div>
-    </div>
-    {% endif %}
-    {% set i = i + 1 %}
-    {% endfor %}
-    {% endblock %}
+    </section>
+
+    <!-- Bootstrap core JS-->
+    <script src="{{ asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('js/jquery.easing.min.js')}}"></script>
+    <script src="{{asset('js/scriptstimeline.js')}}"></script>
+    <script src="{{asset('js/all.js')}}"></script>
+
 
   </body>
 

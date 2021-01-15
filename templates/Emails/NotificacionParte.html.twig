@@ -28,21 +28,14 @@
           {% endfor %}
           <h4 class="my-3">Trabajos realizados: <small>{{parte.descripcion}}</small></h4>
 
-
         </div>
         <h4 class="my-3">Si desea valorar los trabajos realizados puede hacerlo en el siguiente enlace: </h4>
-        <a href="https://localhost:8000/rellenarSatisfaccion/{{parametro}}/{{email}}">Rellenar formulario de satisfacción</a>
-        <hr color="green" size=1>
-        <h4 class="my-3"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
-
-
-
-        <!-- /.row -->
-
+        <a href="https://mantenimiento.etsidi.upm.es/rellenarSatisfaccion/{{idcrypt}}/{{email}}">Rellenar formulario de satisfacción</a>
+        <hr style="height:1px;border-width:0;color:#70AD47;background-color:#70AD47">
+        <h4 class="my-3" style="color: red;"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
       </div>
     </div>
   </div>
-
 </div>
 
 {% endblock %}

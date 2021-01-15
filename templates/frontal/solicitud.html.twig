@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block titulo %}CAU MANTENIMIENTO ETSIDI{% endblock %}</title>
+
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/modern-business.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/all.css')}}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link href="{{ asset('css/google-fonts3.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/google-fonts4.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+
+
+  </head>
+
+  <body>
+
+    <!--MENÚ DE NAVEGACIÓN-->
+
+    <nav class="navbar navbar-dark fixed-top navbar-expand-lg fixed-top text-right bg-danger">
+      <div class="container" style="font-family: Saira Extra Condensed;">
+        <a class="navbar-brand">
+          <img src="{{asset('img/logo_etsidi_mini_negro.png')}}" height="60" alt=""></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" style="color:white" ; data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <pre>        </pre>
+            </li>
+            <li class="nav-item">
+              <h5><a class="nav-link text-white" href="{{ path('portadaUsuario',{'emailcrypt': emailcrypt, 'email': email}) }}"><small><i class="fas fa-home"></i></small></a></h5>
+            </li>
+            {% if is_granted('ROLE_USER') %}
+            <li class="nav-item">
+              <pre>         </pre>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" <a href="{{path('solicitudesTrabajador')}}" style="font-family: Saira Extra Condensed;">SOLICITUDES<br />ASIGNADAS</a>
+            </li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+            <li class="nav-item">
+              <pre>         </pre>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" <a href="{{path('base')}}" style="font-family: Saira Extra Condensed;">GESTIÓN</a>
+            </li>
+            <li class="nav-item">
+              <pre>        </pre>
+            </li>
+            <li class="nav-item">
+              <pre>       </pre>
+            </li>
+            {%else%}
+
+            <li class="nav-item">
+              <pre>              </pre>
+            </li>
+            {% endif %}
+
+            <a class="nav-link text-white" <a href="{{path('nuevaSolicitud',{'emailcrypt':emailcrypt, 'email':email})}}" style="font-family: Saira Extra Condensed;">NUEVA SOLICITUD</a>
+            <li class="nav-item">
+              <pre>               </pre>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{{ path('solicitudesUsuario',{'emailcrypt':emailcrypt, 'email':email}) }}" style="font-family: Saira Extra Condensed;">MIS SOLICITUDES</a>
+            </li>
+
+            <li class="nav-item">
+              <pre>      </pre>
+            </li>
+            <li class="nav-item">
+              <pre>     </pre>
+            <li class="nav-item">
+              <pre>       </pre>
+            </li>
+
+            <li class="nav-item">
+              <a href="{{path('app_logout')}}" class="btn bg-danger"
+                style="border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:white;height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px;font-family: Saira Extra Condensed"
+                role="button">SALIR</a>
+            </li>
+
+            <li class="nav-item">
+              <pre>            </pre>
+            </li>
+            {% if app.user %}
+            <li class="nav-item text-right">
+              <a class="nav-link text-warning text-right" href="">{{app.user.email}}</a>
+            </li>
+            {% else %}
+            <li class="nav-item text-right">
+              <a class="nav-link text-warning text-right" href="">{{email}}</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--FIN MENÚ DE NAVEGACIÓN-->
+
+    <div class="container" style="font-family: Saira Extra Condensed">
+      <div style="margin-top:75px">
+
+        <div id="content" style="font-family: Saira Extra Condensed">
+          <div class="row">
+
+            <div class="col-lg-20">
+              <h1 class="mt-4 mb-3" style="font-family: Saira Extra Condensed">Solicitud {{solicitud.id}} </h1>
+              <h3 class="my-3">Solicitante: <small> {{solicitud.solicitante}}</small></h3>
+              <h3 class="my-3">Unidad de destino: <small> {{solicitud.destino}}</small></h3>
+              <h3 class="my-3">Fecha: <small>{{solicitud.fecha|date('Y/m/d')}}</small></h3>
+              <h3 class="my-3">Extensión: <small>{{solicitud.extension}}</small></h3>
+              <h3 class="my-3">Email: <small>{{solicitud.email}}</small></h3>
+              <h3 class="my-3">Descripción Incidencia: <small>{{solicitud.descripcionIncidencia}}</small></h3>
+              <h3 class="my-3">Lugar Incidencia: <small>{{solicitud.estancia}}</small></h3>
+              {% if solicitud.trabajadores %}
+              <h3 class="my-3">Solicitud asignada a:</h3>
+              {% for trabajador in solicitud.trabajadores %}
+              <h3 class="my-3"><small>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{trabajador.nombre}}</small></h3>
+              {% endfor %}
+              {% else %}
+              <h3 class="my-3">Solicitud pendiente de ser asignada</h3>
+              {% endif %}
+              {% if solicitud.estado==2 %}
+              <h3 class="my-3"> Solicitud despachada</h3>
+              {% endif %}
+              {% for trabajador in solicitud.trabajadores %}
+              {% for instruccion in trabajador.instrucciones %}
+              {% if instruccion.solicitud.id==solicitud.id %}
+              <h3 class="my-3">Instrucciones para {{trabajador.nombre}}: <small>{{instruccion.descripcionInstruccion}}</small></h3>
+              {% endif %}
+              {% endfor %}
+              {% endfor %}
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-20">
+            <button id="cmd" style="background-color:#2D2D3B;border: none;font-size: 12.8px; font-family: 'Source Sans Pro'; font-height: 30px; font-weight: 650; color: white; letter-spacing: 0.1em">Generar PDF</button>
+          </div>
+          <div class="col-lg-20">
+          </div>
+
+
+          <div style="margin-bottom:75px">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <script>
+      var doc = new jsPDF();
+      var specialElementHandlers = {
+        '#editor': function(element, renderer) {
+          return true;
+        }
+      };
+
+      $('#cmd').click(function() {
+        doc.fromHTML($('#content').html(), 15, 15, {
+          'width': 170,
+          'elementHandlers': specialElementHandlers
+        });
+        doc.save('Solicitud.pdf');
+      });
+
+      // This code is collected but useful, click below to jsfiddle link.
+    </script>
+
+
+    <script src="{{asset('js/exportacion.js')}}"></script>
+    <script src="{{asset('js/genPDF.js')}}"></script>
+    <script src="{{asset('js/downloadCanvas.js')}}"></script>
+    <script src="{{asset('js/html2canvas.js')}}"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/jspdf.min.js')}}"></script>
+    <link href="{{ asset('js/bootstrap-datepicker.min.js')}}" rel="stylesheet">
+    <link href="{{ asset('js/bootstrap-datepicker.es.min.js')}}" rel="stylesheet">
+    <script src="{{ asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+      var doc = new jsPDF();
+      var specialElementHandlers = {
+        '#editor': function(element, renderer) {
+          return true;
+        }
+      };
+
+      $('#cmd').click(function() {
+        doc.fromHTML($('#content').html(), 15, 15, {
+          'width': 170,
+          'elementHandlers': specialElementHandlers
+        });
+        doc.save('Solicitud.pdf');
+      });
+
+      // This code is collected but useful, click below to jsfiddle link.
+    </script>
+  </body>
+
+</html>

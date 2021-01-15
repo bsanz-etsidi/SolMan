@@ -5,6 +5,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Solicitud;
 use App\Entity\Evento;
+use App\Entity\Valoracion;
 use App\Entity\Task;
 use App\Entity\Usuario;
 use App\Entity\Parte;
@@ -40,6 +41,8 @@ class RegistroController extends AbstractController
      */
      public function registroAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
      {
+       $key = 'mqtrf2010';
+       $encrypt = new Encrypter();
         $usuario = new Usuario();//Crea un Entity Usuario llamado usuario
         //Construyendo el formulario
         $form = $this->createForm(UsuarioType::class, $usuario);
@@ -60,8 +63,17 @@ class RegistroController extends AbstractController
           $em = $this->getDoctrine()->getManager();
           $em->persist($usuario);
           $em->flush();
+
+          $email = $usuario->getEmail();
+          $emailcrypt = $encrypt->encrypt($email,$key);
+          $usuario->setEmailcrypt($emailcrypt);
+          $em = $this->getDoctrine()->getManager();
+          $em->persist($usuario);
+          $em->flush();
           return $this->redirectToRoute('registro');
       }
-        return $this->render('gestionMantenimiento/registroUsuario.html.twig',array("form" => $form->createView()));
+      return $this->render('gestionMantenimiento/registroUsuario.html.twig',array("form" => $form->createView()));
       }
+
+
   }

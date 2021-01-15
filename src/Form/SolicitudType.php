@@ -2,6 +2,7 @@
 namespace App\Form;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\AbstractType;
@@ -27,7 +28,7 @@ class SolicitudType extends AbstractType
           ->add('extension', TextType::class, array ('label' => "Extensión Telefónica"))
           //->add('email', EmailType::class)
           //->add('fecha', DateType::class, array ('label' => "fecha",'widget' => 'single_text'))
-          ->add('descripcionIncidencia', TextType::class, array ('label' => "Incidencia detectada"))
+          ->add('descripcionIncidencia', TextareaType::class, array ('label' => "Incidencia detectada"))
           ->add('estancia', TextType::class, array ('label' => "localización de la incidencia"))
           ->add('Registrar', SubmitType::class, array('label' => 'Registrar'))
 

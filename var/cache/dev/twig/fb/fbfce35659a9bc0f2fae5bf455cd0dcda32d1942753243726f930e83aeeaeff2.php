@@ -85,7 +85,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenido"));
 
         // line 4
-        echo "<div class=\"container-fluid\">
+        echo "<div class=\"container-fluid\" style=\"font-family: Saira Extra Condensed\">
   <div style=\"margin-top:50px\">
     <h1 class=\" mt-4 mb-3\">Solicitudes</<h1>
   </div>
@@ -111,10 +111,10 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
               <th scope=\"col\">
                 <h6>Solicitante</h6>
               </th>
-              <th scope=\"col\">
-                <h6>Descripcion</h6>
+              <th scope=\"col\" style=\"width:200px\">
+                <h6>Descripción</h6>
               </th>
-              <th style=\"width:25%\">
+              <th scope=\"col\">
                 <h6>Trabajador<br /> asignado</h6>
               </th>
               <th scope=\"col\">
@@ -150,7 +150,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "prioritaria", [], "any", false, false, false, 57), 1) && 0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 57), 1))) {
                     // line 58
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 58)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 58), "id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 58)]), "html", null, true);
                     echo "\" style=\"color: red;\">";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 58), "html", null, true);
                     echo "</a></h5>
@@ -161,7 +161,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "prioritaria", [], "any", false, false, false, 60), 1) && 0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 60), 0))) {
                     // line 61
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 61)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 61), "id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 61)]), "html", null, true);
                     echo "\" style=\"color: red;\">";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 61), "html", null, true);
                     echo "</a></h5>
@@ -172,7 +172,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "prioritaria", [], "any", false, false, false, 63), 1) && 0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 63), 4))) {
                     // line 64
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 64)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 64), "id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 64)]), "html", null, true);
                     echo "\" style=\"color: red;\">";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 64), "html", null, true);
                     echo "</a></h5>
@@ -183,7 +183,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "prioritaria", [], "any", false, false, false, 66), 0) && 0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 66), 1))) {
                     // line 67
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 67)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 67), "id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 67)]), "html", null, true);
                     echo "\">";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 67), "html", null, true);
                     echo "</a></h5>
@@ -194,7 +194,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "prioritaria", [], "any", false, false, false, 69), 0) && 0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 69), 0))) {
                     // line 70
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 70)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 70), "id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 70)]), "html", null, true);
                     echo "\">";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 70), "html", null, true);
                     echo "</a></h5>
@@ -205,7 +205,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "prioritaria", [], "any", false, false, false, 72), 0) && 0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 72), 4))) {
                     // line 73
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 73)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 73), "id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 73)]), "html", null, true);
                     echo "\" style=\"color: fuchsia;\">";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 73), "html", null, true);
                     echo "</a></h5>
@@ -216,7 +216,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 75), 2)) {
                     // line 76
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 76)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 76), "id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 76)]), "html", null, true);
                     echo "\">";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 76), "html", null, true);
                     echo "</a></h5>
@@ -231,7 +231,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "prioritaria", [], "any", false, false, false, 81), 1) && 0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 81), 1))) {
                     // line 82
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronogramaGestion", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 82)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronograma", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 82)]), "html", null, true);
                     echo "\" style=\"color: red;\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 ";
                 }
@@ -240,7 +240,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "prioritaria", [], "any", false, false, false, 84), 1) && 0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 84), 0))) {
                     // line 85
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronogramaGestion", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 85)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronograma", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 85)]), "html", null, true);
                     echo "\" style=\"color: red;\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 ";
                 }
@@ -249,7 +249,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "prioritaria", [], "any", false, false, false, 87), 1) && 0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 87), 4))) {
                     // line 88
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronogramaGestion", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 88)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronograma", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 88)]), "html", null, true);
                     echo "\" style=\"color: red;\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 ";
                 }
@@ -258,7 +258,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "prioritaria", [], "any", false, false, false, 90), 0) && 0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 90), 1))) {
                     // line 91
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronogramaGestion", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 91)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronograma", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 91)]), "html", null, true);
                     echo "\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 ";
                 }
@@ -267,7 +267,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "prioritaria", [], "any", false, false, false, 93), 0) && 0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 93), 0))) {
                     // line 94
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronogramaGestion", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 94)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronograma", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 94)]), "html", null, true);
                     echo "\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 ";
                 }
@@ -276,7 +276,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "prioritaria", [], "any", false, false, false, 96), 0) && 0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 96), 4))) {
                     // line 97
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronogramaGestion", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 97)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronograma", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 97)]), "html", null, true);
                     echo "\" style=\"color: fuchsia;\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 ";
                 }
@@ -285,7 +285,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
                 if (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["solicitud"], "estado", [], "any", false, false, false, 99), 2)) {
                     // line 100
                     echo "                <h5><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronogramaGestion", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 100)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cronograma", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 100)]), "html", null, true);
                     echo "\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 ";
                 }
@@ -998,7 +998,7 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
         return new Source("{% extends 'frontal/base.html.twig' %}
 {% block titulo %}Solicitudes{% endblock %}
 {% block contenido %}
-<div class=\"container-fluid\">
+<div class=\"container-fluid\" style=\"font-family: Saira Extra Condensed\">
   <div style=\"margin-top:50px\">
     <h1 class=\" mt-4 mb-3\">Solicitudes</<h1>
   </div>
@@ -1024,10 +1024,10 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
               <th scope=\"col\">
                 <h6>Solicitante</h6>
               </th>
-              <th scope=\"col\">
-                <h6>Descripcion</h6>
+              <th scope=\"col\" style=\"width:200px\">
+                <h6>Descripción</h6>
               </th>
-              <th style=\"width:25%\">
+              <th scope=\"col\">
                 <h6>Trabajador<br /> asignado</h6>
               </th>
               <th scope=\"col\">
@@ -1052,49 +1052,49 @@ class __TwigTemplate_b135d1e11ded8d223c48a5afe7fe9666ea0924635cf6b37df406dc168e4
 
               <td>
                 {% if solicitud.prioritaria==1 and solicitud.estado==1 %}
-                <h5><a href=\"{{path('solicitud',{'id':solicitud.id})}}\" style=\"color: red;\">{{solicitud.id}}</a></h5>
+                <h5><a href=\"{{path('solicitud',{'idcrypt':solicitud.idcrypt, 'id':solicitud.id})}}\" style=\"color: red;\">{{solicitud.id}}</a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==1 and solicitud.estado==0 %}
-                <h5><a href=\"{{path('solicitud',{'id':solicitud.id})}}\" style=\"color: red;\">{{solicitud.id}}</a></h5>
+                <h5><a href=\"{{path('solicitud',{'idcrypt':solicitud.idcrypt,'id':solicitud.id})}}\" style=\"color: red;\">{{solicitud.id}}</a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==1 and solicitud.estado==4 %}
-                <h5><a href=\"{{path('solicitud',{'id':solicitud.id})}}\" style=\"color: red;\">{{solicitud.id}}</a></h5>
+                <h5><a href=\"{{path('solicitud',{'idcrypt':solicitud.idcrypt,'id':solicitud.id})}}\" style=\"color: red;\">{{solicitud.id}}</a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==0 and solicitud.estado==1 %}
-                <h5><a href=\"{{path('solicitud',{'id':solicitud.id})}}\">{{solicitud.id}}</a></h5>
+                <h5><a href=\"{{path('solicitud',{'idcrypt':solicitud.idcrypt,'id':solicitud.id})}}\">{{solicitud.id}}</a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==0 and solicitud.estado==0 %}
-                <h5><a href=\"{{path('solicitud',{'id':solicitud.id})}}\">{{solicitud.id}}</a></h5>
+                <h5><a href=\"{{path('solicitud',{'idcrypt':solicitud.idcrypt,'id':solicitud.id})}}\">{{solicitud.id}}</a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==0 and solicitud.estado==4 %}
-                <h5><a href=\"{{path('solicitud',{'id':solicitud.id})}}\" style=\"color: fuchsia;\">{{solicitud.id}}</a></h5>
+                <h5><a href=\"{{path('solicitud',{'idcrypt':solicitud.idcrypt,'id':solicitud.id})}}\" style=\"color: fuchsia;\">{{solicitud.id}}</a></h5>
                 {% endif %}
                 {% if solicitud.estado==2 %}
-                <h5><a href=\"{{path('solicitud',{'id':solicitud.id})}}\">{{solicitud.id}}</a></h5>
+                <h5><a href=\"{{path('solicitud',{'idcrypt':solicitud.idcrypt,'id':solicitud.id})}}\">{{solicitud.id}}</a></h5>
                 {% endif %}
               </td>
 
               <td>
                 {% if solicitud.prioritaria==1 and solicitud.estado==1 %}
-                <h5><a href=\"{{path('cronogramaGestion',{'id':solicitud.id})}}\" style=\"color: red;\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
+                <h5><a href=\"{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}\" style=\"color: red;\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==1 and solicitud.estado==0 %}
-                <h5><a href=\"{{path('cronogramaGestion',{'id':solicitud.id})}}\" style=\"color: red;\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
+                <h5><a href=\"{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}\" style=\"color: red;\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==1 and solicitud.estado==4 %}
-                <h5><a href=\"{{path('cronogramaGestion',{'id':solicitud.id})}}\" style=\"color: red;\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
+                <h5><a href=\"{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}\" style=\"color: red;\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==0 and solicitud.estado==1 %}
-                <h5><a href=\"{{path('cronogramaGestion',{'id':solicitud.id})}}\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
+                <h5><a href=\"{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==0 and solicitud.estado==0 %}
-                <h5><a href=\"{{path('cronogramaGestion',{'id':solicitud.id})}}\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
+                <h5><a href=\"{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 {% endif %}
                 {% if solicitud.prioritaria==0 and solicitud.estado==4 %}
-                <h5><a href=\"{{path('cronogramaGestion',{'id':solicitud.id})}}\" style=\"color: fuchsia;\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
+                <h5><a href=\"{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}\" style=\"color: fuchsia;\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 {% endif %}
                 {% if solicitud.estado==2 %}
-                <h5><a href=\"{{path('cronogramaGestion',{'id':solicitud.id})}}\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
+                <h5><a href=\"{{path('cronograma',{'idcrypt':solicitud.idcrypt})}}\"><small><i class=\"far fa-hourglass\"></i></small></a></h5>
                 {% endif %}
               </td>
 

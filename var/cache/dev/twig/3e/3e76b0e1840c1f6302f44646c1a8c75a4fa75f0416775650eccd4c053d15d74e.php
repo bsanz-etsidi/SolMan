@@ -66,9 +66,30 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
         // line 11
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/all.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/google-fonts.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/google-fonts2.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 14
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/google-fonts3.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/google-fonts4.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/fontawesome-free/css/all.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\">
+
     <!--load all styles -->
     <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        // line 13
+        // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
   </head>
@@ -77,10 +98,10 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
     <!--MENÚ DE NAVEGACIÓN-->
 
     <nav class=\"navbar navbar-dark bg-danger  fixed-top navbar-expand-lg fixed-top\">
-      <div class=\"container\">
+      <div class=\"container\" style=\"font-family: Saira Extra Condensed\">
         <a class=\"navbar-brand\"><img src=\"";
-        // line 21
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/Logo.png"), "html", null, true);
+        // line 27
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/logo_etsidi_mini_negro.png"), "html", null, true);
         echo "\" height=\"60\" alt=\"\"></a>
 
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" style=\"color:white\" ; data-target=\"#collapsibleNavbar\">
@@ -88,165 +109,179 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
         </button>
         <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">
           <ul class=\"navbar-nav ml-auto\">
-
             ";
-        // line 29
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 30
+        // line 34
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 35
             echo "            <li class=\"nav-item\">
-              <pre>               </pre>
+              <pre>         </pre>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link text-white\" <a href=\"";
+            // line 39
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudesTrabajador");
+            echo "\" style=\"font-family: Saira Extra Condensed;\">SOLICITUDES<br />ASIGNADAS</a>
+            </li>
+            ";
+        }
+        // line 42
+        echo "            ";
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 43
+            echo "            <li class=\"nav-item\">
+              <pre>           </pre>
             </li>
             <li class=\"nav-item\">
               <h5><a class=\"nav-link text-white\" href=\"";
-            // line 34
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("base");
+            // line 47
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("portadaUsuario", ["emailcrypt" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 47, $this->source); })()), "user", [], "any", false, false, false, 47), "emailcrypt", [], "any", false, false, false, 47), "email" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 47, $this->source); })()), "user", [], "any", false, false, false, 47), "username", [], "any", false, false, false, 47)]), "html", null, true);
             echo "\"><small><i class=\"fas fa-home\"></i></small></a></h5>
             </li>
             <li class=\"nav-item\">
-              <pre>  </pre>
+              <pre>      </pre>
             </li>
             <li class=\"nav-item\">
               <a class=\"nav-link text-white\" href=\"";
-            // line 40
+            // line 53
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("instruccionesCompletadas");
-            echo "\">Trabajos<br />completados</a>
+            echo "\" style=\"font-family: Saira Extra Condensed;\">TRABAJOS<br />COMPLETADOS</a>
             </li>
             <li class=\"nav-item\">
-              <pre>  </pre>
+              <pre>    </pre>
             </li>
             <li class=\"nav-item dropdown\">
-              <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                Solicitudes
+              <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" style=\"font-family: Saira Extra Condensed;\">
+                SOLICITUDES
               </a>
               <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
                 <a class=\"dropdown-item\" href=\"";
-            // line 50
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevaSolicitud", ["email" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 50, $this->source); })()), "user", [], "any", false, false, false, 50), "username", [], "any", false, false, false, 50)]), "html", null, true);
-            echo "\">Nueva</a>
+            // line 63
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevaSolicitud", ["emailcrypt" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 63, $this->source); })()), "user", [], "any", false, false, false, 63), "emailcrypt", [], "any", false, false, false, 63), "email" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 63, $this->source); })()), "user", [], "any", false, false, false, 63), "username", [], "any", false, false, false, 63)]), "html", null, true);
+            echo "\" style=\"font-family: Saira Extra Condensed;\">NUEVA</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 51
+            // line 64
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("asignadas");
-            echo "\">Asignadas</a>
+            echo "\" style=\"font-family: Saira Extra Condensed;\">ASIGNADAS</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 52
+            // line 65
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pendientesDeAsignar");
-            echo "\">Sin Asignar</a>
+            echo "\" style=\"font-family: Saira Extra Condensed;\">SIN ASIGNAR</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 53
+            // line 66
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("despachadas");
-            echo "\">Despachadas</a>
+            echo "\" style=\"font-family: Saira Extra Condensed;\">DESPACHADAS</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 54
+            // line 67
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudes");
-            echo "\">Todas</a>
+            echo "\" style=\"font-family: Saira Extra Condensed;\">TODAS</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 55
+            // line 68
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("anuladas");
-            echo "\">Anuladas</a>
+            echo "\" style=\"font-family: Saira Extra Condensed;\">ANULADAS</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 56
+            // line 69
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("suspendidas");
-            echo "\">Suspendidas</a>
+            echo "\" style=\"font-family: Saira Extra Condensed;\">SUSPENDIDAS</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 57
+            // line 70
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("prioritarias");
-            echo "\">Prioritarias</a>
+            echo "\" style=\"font-family: Saira Extra Condensed;\">PRIORITARIAS</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 58
+            // line 71
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("seleccionaSolicitudes");
-            echo "\">Por fecha</a>
+            echo "\" style=\"font-family: Saira Extra Condensed;\">POR FECHA</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 59
+            // line 72
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudesTrabajadorGestion");
-            echo "\">Por trabajador</a>
+            echo "\" style=\"font-family: Saira Extra Condensed;\">POR TRABAJADOR</a>
                 <a class=\"dropdown-item\" href=\"";
-            // line 60
+            // line 73
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudesUnidadDestino");
-            echo "\">Por destino solicitante</a>
+            echo "\" style=\"font-family: Saira Extra Condensed;\">POR DESTINO SOLICITANTE</a>
+              </div>
+            </li>
+
+            <li class=\"nav-item\">
+              <pre>     </pre>
+            </li>
+
+            <li class=\"nav-item dropdown\">
+              <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" style=\"font-family: Saira Extra Condensed;\">
+                PARTES
+              </a>
+              <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
+                <a class=\"dropdown-item\" href=\"\"></a>
+                <a class=\"dropdown-item\" href=\"";
+            // line 87
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("seleccionaPartes");
+            echo "\" style=\"font-family: Saira Extra Condensed;\">SELECCIÓN POR FECHA</a>
+                <a class=\"dropdown-item\" href=\"";
+            // line 88
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("partes");
+            echo "\" style=\"font-family: Saira Extra Condensed;\">TODOS</a>
+              </div>
+            </li>
+
+            <li class=\"nav-item\">
+              <pre>     </pre>
+            </li>
+
+            <li class=\"nav-item dropdown\">
+              <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" style=\"font-family: Saira Extra Condensed;\">
+                TRABAJADOR
+              </a>
+              <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
+                <a class=\"dropdown-item\" href=\"";
+            // line 101
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevoTrabajador");
+            echo "\" style=\"font-family: Saira Extra Condensed;\">NUEVO TRABAJADOR</a>
+                <a class=\"dropdown-item\" href=\"";
+            // line 102
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("desactivarTrabajador");
+            echo "\" style=\"font-family: Saira Extra Condensed;\">DESACTIVAR TRABAJADOR</a>
+                <a class=\"dropdown-item\" href=\"";
+            // line 103
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reactivarTrabajador");
+            echo "\" style=\"font-family: Saira Extra Condensed;\">REACTIVAR TRABAJADOR</a>
               </div>
             </li>
 
             <li class=\"nav-item\">
               <pre>   </pre>
             </li>
-
-            <li class=\"nav-item dropdown\">
-              <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                Partes
-              </a>
-              <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
-                <a class=\"dropdown-item\" href=\"\"></a>
-                <a class=\"dropdown-item\" href=\"";
-            // line 74
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("seleccionaPartes");
-            echo "\">Selección por fecha</a>
-                <a class=\"dropdown-item\" href=\"";
-            // line 75
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("partes");
-            echo "\">Todos</a>
-              </div>
+            ";
+            // line 110
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_SUPER_ADMIN")) {
+                // line 111
+                echo "            <li class=\"nav-item\">
+              <pre>  </pre>
             </li>
-
+            <li class=\"nav-item\">
+              <a class=\"nav-link text-white\" href=\"";
+                // line 115
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("registro");
+                echo "\" style=\"font-family: Saira Extra Condensed;\">NUEVO USUARIO</a>
+            </li>
+            <li class=\"nav-item\">
+              <pre>  </pre>
+            </li>
+            ";
+            }
+            // line 121
+            echo "
             <li class=\"nav-item\">
               <pre>    </pre>
             </li>
 
-            <li class=\"nav-item dropdown\">
-              <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                Trabajador
-              </a>
-              <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
-                <a class=\"dropdown-item\" href=\"";
-            // line 88
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevoTrabajador");
-            echo "\">Nuevo Trabajador</a>
-                <a class=\"dropdown-item\" href=\"";
-            // line 89
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("desactivarTrabajador");
-            echo "\">Desactivar Trabajador</a>
-                <a class=\"dropdown-item\" href=\"";
-            // line 90
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reactivarTrabajador");
-            echo "\">Reactivar Trabajador</a>
-              </div>
-            </li>
-
-            <li class=\"nav-item\">
-              <pre>  </pre>
-            </li>
-            ";
-            // line 97
-            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_SUPER_ADMIN")) {
-                // line 98
-                echo "            <li class=\"nav-item\">
-              <pre></pre>
-            </li>
-            <li class=\"nav-item\">
-              <a class=\"nav-link text-white\" href=\"";
-                // line 102
-                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("registro");
-                echo "\">Nuevo Usuario</a>
-            </li>
-            <li class=\"nav-item\">
-              <pre></pre>
-            </li>
-            ";
-            }
-            // line 108
-            echo "
-            <li class=\"nav-item\">
-              <pre>  </pre>
-            </li>
-
             <li class=\"nav-item\">
               <h2><a class=\"nav-link text-white\" href=\"";
-            // line 114
+            // line 127
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("estadisticas");
             echo "\"><i class=\"fas fa-chart-bar\"></i></a></h2>
             </li>
 
             <li class=\"nav-item\">
-              <pre>  </pre>
+              <pre>   </pre>
             </li>
 
 
@@ -257,45 +292,45 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
             <li class=\"nav-item\">
               <a href=\"";
-            // line 128
+            // line 141
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\" class=\"btn bg-danger\"
-                style=\"border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:lightgrey;height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px\"
-                role=\"button\">Salir</a>
+                style=\"border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:white;height: 25px;width:70px;font-family: Saira Extra Condensed;FONT-SIZE: 11pt;padding:0px 10px\"
+                role=\"button\">SALIR</a>
             </li>
 
 
             <li class=\"nav-item\">
-              <pre>      </pre>
+              <pre>       </pre>
             </li>
 
 
             <li class=\"nav-item\">
               <a class=\"nav-link text-warning\" href=\"\">";
-            // line 140
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 140, $this->source); })()), "user", [], "any", false, false, false, 140), "username", [], "any", false, false, false, 140), "html", null, true);
+            // line 153
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 153, $this->source); })()), "user", [], "any", false, false, false, 153), "username", [], "any", false, false, false, 153), "html", null, true);
             echo "</a>
             </li>
 
 
             <li class=\"nav-item\">
-              <pre>                             </pre>
+              <pre>                            </pre>
             </li>
 
 
             ";
         } else {
-            // line 150
+            // line 163
             echo "
             <ul class=\"navbar-nav ml-auto\">
 
               <li class=\"nav-item\">
                 <a href=\"";
-            // line 154
+            // line 167
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\" class=\"btn bg-danger\"
-                  style=\"border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:lightgrey;height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px\"
-                  role=\"button\">Salir</a> </li>
+                  style=\"border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:white;height: 25px;width:70px;font-family: Saira Extra Condensed;FONT-SIZE: 11pt;padding:0px 10px\"
+                  role=\"button\">SALIR</a> </li>
 
               <li class=\"nav-item\">
               </li>
@@ -303,7 +338,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
             </ul>
             ";
         }
-        // line 163
+        // line 176
         echo "          </ul>
         </div>
       </div>
@@ -311,68 +346,57 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
     </nav>
     <!--FIN MENÚ DE NAVEGACIÓN-->
     ";
-        // line 169
+        // line 182
         $this->displayBlock('contenido', $context, $blocks);
-        // line 237
+        // line 250
         echo "
-    <!-- Footer -->
-    <footer class=\"page-footer  bg-danger\">
-      <div class=\"footer-copyright text-center py-3\">
-        <img src=\"";
-        // line 241
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/upm.png"), "html", null, true);
-        echo "\" style=\"margin-bottom: 0\" height=\"100\" alt=\"\">
-      </div>
-    </footer>
-    <!-- Footer -->
-
     <!-- Bootstrap core JavaScript -->
     <script src=\"";
-        // line 247
+        // line 252
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/exportacion.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 248
+        // line 253
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/genPDF.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 249
+        // line 254
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/downloadCanvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 250
+        // line 255
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/html2canvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 251
+        // line 256
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 252
+        // line 257
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jspdf.min.js"), "html", null, true);
         echo "\"></script>
     <link href=\"";
-        // line 253
+        // line 258
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 254
+        // line 259
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap-datepicker.es.min.js"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <script src=\"";
-        // line 255
+        // line 260
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 256
+        // line 261
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script>
     <script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script>
     ";
-        // line 259
+        // line 264
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 261
+        // line 266
         echo "  </body>
 
 </html>";
@@ -403,7 +427,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
     }
 
-    // line 169
+    // line 182
     public function block_contenido($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -413,159 +437,159 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenido"));
 
-        // line 170
-        echo "    <div class=\"container\">
+        // line 183
+        echo "    <div class=\"container\" style=\"font-family: Saira Extra Condensed\">
       <div style=\"margin-top:50px\">
 
         ";
-        // line 173
+        // line 186
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 174
-            echo "        <h1 class=\"mt-4 mb-3\">Mantenimiento ETSIDI
+            // line 187
+            echo "        <h1 class=\"mt-4 mb-3\" style=\"font-family: Saira Extra Condensed;\">Mantenimiento ETSIDI
           <small>Trabajadores</small>
         </h1>
         <ol class=\"breadcrumb\">
-          <li class=\"breadcrumb-item\">Consulta de solicitudes</li>
+          <li class=\"breadcrumb-item\" style=\"font-family: Saira Extra Condensed;\">Consulta de solicitudes</li>
         </ol>
         ";
         }
-        // line 181
+        // line 194
         echo "
         ";
-        // line 182
+        // line 195
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 183
-            echo "        <h1 class=\"mt-4 mb-3\">Mantenimiento ETSIDI
+            // line 196
+            echo "        <h1 class=\"mt-4 mb-3\" style=\"font-family: Saira Extra Condensed;\">Mantenimiento ETSIDI
           <small>Gestión</small>
         </h1>
         <ol class=\"breadcrumb\">
-          <li class=\"breadcrumb-item\">Mantenimiento</li>
+          <li class=\"breadcrumb-item\" style=\"font-family: Saira Extra Condensed;\">Mantenimiento</li>
         </ol>
         ";
         }
-        // line 190
+        // line 203
         echo "
         <!-- Content Row -->
         <div class=\"row\">
           <!-- Sidebar Column -->
-          <div class=\"col-lg-3 mb-4 bg-light\">
+          <div class=\"col-lg-3 mb-4\" style=\"background-color: #EBECEE\">
             <div class=\"list-group \">
               ";
-        // line 196
+        // line 209
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 197
+            // line 210
             echo "              <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudesTrabajador");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes asignadas</a>
-              <a href=\"";
-            // line 198
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevaSolicitud", ["email" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 198, $this->source); })()), "user", [], "any", false, false, false, 198), "username", [], "any", false, false, false, 198)]), "html", null, true);
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Nueva Solicitud</a>
-              <a href=\"";
-            // line 199
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Salir</a>
-              ";
-        }
-        // line 201
-        echo "
-              ";
-        // line 202
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 203
-            echo "              <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("instruccionesCompletadas");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Trabajos completados</a>
-              <a href=\"";
-            // line 204
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevaSolicitud", ["email" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 204, $this->source); })()), "user", [], "any", false, false, false, 204), "username", [], "any", false, false, false, 204)]), "html", null, true);
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Nueva Solicitud</a>
-              <a href=\"";
-            // line 205
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudes");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Todas las solicitudes</a>
-              <a href=\"";
-            // line 206
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("asignadas");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes asignadas</a>
-              <a href=\"";
-            // line 207
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pendientesDeAsignar");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes sin asignar</a>
-              <a href=\"";
-            // line 208
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("despachadas");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes despachadas</a>
-              <a href=\"";
-            // line 209
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("anuladas");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes anuladas</a>
-              <a href=\"";
-            // line 210
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("suspendidas");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes suspendidas</a>
+            echo "\" class=\"list-group-item\" style=\" color: grey;\" style=\"font-family: Saira Extra Condensed;\">Solicitudes asignadas</a>
               <a href=\"";
             // line 211
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("prioritarias");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes prioritarias</a>
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevaSolicitud", ["emailcrypt" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 211, $this->source); })()), "user", [], "any", false, false, false, 211), "emailcrypt", [], "any", false, false, false, 211), "email" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 211, $this->source); })()), "user", [], "any", false, false, false, 211), "username", [], "any", false, false, false, 211)]), "html", null, true);
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Nueva Solicitud</a>
               <a href=\"";
             // line 212
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("seleccionaSolicitudes");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes por fecha</a>
-              <a href=\"";
-            // line 213
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudesTrabajadorGestion");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes por trabajador</a>
-              <a href=\"";
-            // line 214
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudesUnidadDestino");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Por destino solicitante</a>
-              <a href=\"";
-            // line 215
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("partes");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Todos los partes</a>
-              <a href=\"";
-            // line 216
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("seleccionaPartes");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Partes por fecha</a>
-              <a href=\"";
-            // line 217
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevoTrabajador");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Nuevo trabajador</a>
-              <a href=\"";
-            // line 218
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("desactivarTrabajador");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Desactivar Trabajador</a>
-              <a href=\"";
-            // line 219
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reactivarTrabajador");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Reactivar Trabajador</a>
-              <a href=\"";
-            // line 220
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("estadisticas");
-            echo "\" class=\"list-group-item\" style=\" color: grey;\">Estadísticas</a>
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Salir</a>
               ";
         }
-        // line 222
+        // line 214
+        echo "
+              ";
+        // line 215
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 216
+            echo "              <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("instruccionesCompletadas");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Trabajos completados</a>
+              <a href=\"";
+            // line 217
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevaSolicitud", ["emailcrypt" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 217, $this->source); })()), "user", [], "any", false, false, false, 217), "emailcrypt", [], "any", false, false, false, 217), "email" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 217, $this->source); })()), "user", [], "any", false, false, false, 217), "username", [], "any", false, false, false, 217)]), "html", null, true);
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Nueva Solicitud</a>
+              <a href=\"";
+            // line 218
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudes");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Todas las solicitudes</a>
+              <a href=\"";
+            // line 219
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("asignadas");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes asignadas</a>
+              <a href=\"";
+            // line 220
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pendientesDeAsignar");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes sin asignar</a>
+              <a href=\"";
+            // line 221
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("despachadas");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes despachadas</a>
+              <a href=\"";
+            // line 222
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("anuladas");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes anuladas</a>
+              <a href=\"";
+            // line 223
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("suspendidas");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes suspendidas</a>
+              <a href=\"";
+            // line 224
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("prioritarias");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes prioritarias</a>
+              <a href=\"";
+            // line 225
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("seleccionaSolicitudes");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes por fecha</a>
+              <a href=\"";
+            // line 226
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudesTrabajadorGestion");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes por trabajador</a>
+              <a href=\"";
+            // line 227
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitudesUnidadDestino");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Por destino solicitante</a>
+              <a href=\"";
+            // line 228
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("partes");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Todos los partes</a>
+              <a href=\"";
+            // line 229
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("seleccionaPartes");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Partes por fecha</a>
+              <a href=\"";
+            // line 230
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevoTrabajador");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Nuevo trabajador</a>
+              <a href=\"";
+            // line 231
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("desactivarTrabajador");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Desactivar Trabajador</a>
+              <a href=\"";
+            // line 232
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reactivarTrabajador");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Reactivar Trabajador</a>
+              <a href=\"";
+            // line 233
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("estadisticas");
+            echo "\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Estadísticas</a>
+              ";
+        }
+        // line 235
         echo "            </div>
           </div>
           <!-- Content Column -->
           <div class=\"col-lg-9 mb-4\">
             <img src=\"";
-        // line 226
+        // line 239
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/mantenimiento.jpg"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"Responsive image\">
             <img src=\"";
-        // line 227
+        // line 240
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/upm.png"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"Responsive image\">
+            <div class=\"col text-center\">
+              <h8 style=\"font-family: Helvetica; font-size:13px\"><br /><br /><br /><br /><br />Universidad Politécnica de Madrid ©2020</h8>
+            </div>
           </div>
         </div>
-
       </div>
-      <!-- /.row -->
     </div>
-
 
     ";
         
@@ -576,7 +600,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
     }
 
-    // line 259
+    // line 264
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -586,7 +610,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 260
+        // line 265
         echo "    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -608,7 +632,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
     public function getDebugInfo()
     {
-        return array (  590 => 260,  580 => 259,  560 => 227,  556 => 226,  550 => 222,  545 => 220,  541 => 219,  537 => 218,  533 => 217,  529 => 216,  525 => 215,  521 => 214,  517 => 213,  513 => 212,  509 => 211,  505 => 210,  501 => 209,  497 => 208,  493 => 207,  489 => 206,  485 => 205,  481 => 204,  476 => 203,  474 => 202,  471 => 201,  466 => 199,  462 => 198,  457 => 197,  455 => 196,  447 => 190,  438 => 183,  436 => 182,  433 => 181,  424 => 174,  422 => 173,  417 => 170,  407 => 169,  388 => 6,  376 => 261,  374 => 259,  368 => 256,  364 => 255,  360 => 254,  356 => 253,  352 => 252,  348 => 251,  344 => 250,  340 => 249,  336 => 248,  332 => 247,  323 => 241,  317 => 237,  315 => 169,  307 => 163,  295 => 154,  289 => 150,  276 => 140,  261 => 128,  244 => 114,  236 => 108,  227 => 102,  221 => 98,  219 => 97,  209 => 90,  205 => 89,  201 => 88,  185 => 75,  181 => 74,  164 => 60,  160 => 59,  156 => 58,  152 => 57,  148 => 56,  144 => 55,  140 => 54,  136 => 53,  132 => 52,  128 => 51,  124 => 50,  111 => 40,  102 => 34,  96 => 30,  94 => 29,  83 => 21,  72 => 13,  67 => 11,  63 => 10,  58 => 8,  53 => 6,  46 => 1,);
+        return array (  614 => 265,  604 => 264,  584 => 240,  580 => 239,  574 => 235,  569 => 233,  565 => 232,  561 => 231,  557 => 230,  553 => 229,  549 => 228,  545 => 227,  541 => 226,  537 => 225,  533 => 224,  529 => 223,  525 => 222,  521 => 221,  517 => 220,  513 => 219,  509 => 218,  505 => 217,  500 => 216,  498 => 215,  495 => 214,  490 => 212,  486 => 211,  481 => 210,  479 => 209,  471 => 203,  462 => 196,  460 => 195,  457 => 194,  448 => 187,  446 => 186,  441 => 183,  431 => 182,  412 => 6,  400 => 266,  398 => 264,  392 => 261,  388 => 260,  384 => 259,  380 => 258,  376 => 257,  372 => 256,  368 => 255,  364 => 254,  360 => 253,  356 => 252,  352 => 250,  350 => 182,  342 => 176,  330 => 167,  324 => 163,  311 => 153,  296 => 141,  279 => 127,  271 => 121,  262 => 115,  256 => 111,  254 => 110,  244 => 103,  240 => 102,  236 => 101,  220 => 88,  216 => 87,  199 => 73,  195 => 72,  191 => 71,  187 => 70,  183 => 69,  179 => 68,  175 => 67,  171 => 66,  167 => 65,  163 => 64,  159 => 63,  146 => 53,  137 => 47,  131 => 43,  128 => 42,  122 => 39,  116 => 35,  114 => 34,  104 => 27,  93 => 19,  87 => 16,  83 => 15,  79 => 14,  75 => 13,  71 => 12,  67 => 11,  63 => 10,  58 => 8,  53 => 6,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -624,6 +648,12 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
     <!-- Custom styles for this template -->
     <link href=\"{{ asset('css/modern-business.css')}}\" rel=\"stylesheet\">
     <link href=\"{{ asset('css/all.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('css/google-fonts.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('css/google-fonts2.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('css/google-fonts3.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('css/google-fonts4.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('vendor/fontawesome-free/css/all.min.css')}}\" rel=\"stylesheet\" type=\"text/css\">
+
     <!--load all styles -->
     <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
   </head>
@@ -632,97 +662,104 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
     <!--MENÚ DE NAVEGACIÓN-->
 
     <nav class=\"navbar navbar-dark bg-danger  fixed-top navbar-expand-lg fixed-top\">
-      <div class=\"container\">
-        <a class=\"navbar-brand\"><img src=\"{{asset('img/Logo.png')}}\" height=\"60\" alt=\"\"></a>
+      <div class=\"container\" style=\"font-family: Saira Extra Condensed\">
+        <a class=\"navbar-brand\"><img src=\"{{asset('img/logo_etsidi_mini_negro.png')}}\" height=\"60\" alt=\"\"></a>
 
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" style=\"color:white\" ; data-target=\"#collapsibleNavbar\">
           <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">
           <ul class=\"navbar-nav ml-auto\">
-
+            {% if is_granted('ROLE_USER') %}
+            <li class=\"nav-item\">
+              <pre>         </pre>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link text-white\" <a href=\"{{path('solicitudesTrabajador')}}\" style=\"font-family: Saira Extra Condensed;\">SOLICITUDES<br />ASIGNADAS</a>
+            </li>
+            {% endif %}
             {% if is_granted('ROLE_ADMIN') %}
             <li class=\"nav-item\">
-              <pre>               </pre>
+              <pre>           </pre>
             </li>
             <li class=\"nav-item\">
-              <h5><a class=\"nav-link text-white\" href=\"{{ path('base') }}\"><small><i class=\"fas fa-home\"></i></small></a></h5>
+              <h5><a class=\"nav-link text-white\" href=\"{{ path('portadaUsuario',{'emailcrypt': app.user.emailcrypt, 'email': app.user.username}) }}\"><small><i class=\"fas fa-home\"></i></small></a></h5>
             </li>
             <li class=\"nav-item\">
-              <pre>  </pre>
+              <pre>      </pre>
             </li>
             <li class=\"nav-item\">
-              <a class=\"nav-link text-white\" href=\"{{ path('instruccionesCompletadas') }}\">Trabajos<br />completados</a>
+              <a class=\"nav-link text-white\" href=\"{{ path('instruccionesCompletadas') }}\" style=\"font-family: Saira Extra Condensed;\">TRABAJOS<br />COMPLETADOS</a>
             </li>
             <li class=\"nav-item\">
-              <pre>  </pre>
+              <pre>    </pre>
             </li>
             <li class=\"nav-item dropdown\">
-              <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                Solicitudes
+              <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" style=\"font-family: Saira Extra Condensed;\">
+                SOLICITUDES
               </a>
               <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
-                <a class=\"dropdown-item\" href=\"{{ path('nuevaSolicitud',{'email': app.user.username}) }}\">Nueva</a>
-                <a class=\"dropdown-item\" href=\"{{ path('asignadas') }}\">Asignadas</a>
-                <a class=\"dropdown-item\" href=\"{{ path('pendientesDeAsignar') }}\">Sin Asignar</a>
-                <a class=\"dropdown-item\" href=\"{{ path('despachadas') }}\">Despachadas</a>
-                <a class=\"dropdown-item\" href=\"{{ path('solicitudes') }}\">Todas</a>
-                <a class=\"dropdown-item\" href=\"{{ path('anuladas') }}\">Anuladas</a>
-                <a class=\"dropdown-item\" href=\"{{ path('suspendidas') }}\">Suspendidas</a>
-                <a class=\"dropdown-item\" href=\"{{ path('prioritarias') }}\">Prioritarias</a>
-                <a class=\"dropdown-item\" href=\"{{ path('seleccionaSolicitudes') }}\">Por fecha</a>
-                <a class=\"dropdown-item\" href=\"{{ path('solicitudesTrabajadorGestion') }}\">Por trabajador</a>
-                <a class=\"dropdown-item\" href=\"{{ path('solicitudesUnidadDestino') }}\">Por destino solicitante</a>
+                <a class=\"dropdown-item\" href=\"{{ path('nuevaSolicitud',{'emailcrypt': app.user.emailcrypt, 'email': app.user.username}) }}\" style=\"font-family: Saira Extra Condensed;\">NUEVA</a>
+                <a class=\"dropdown-item\" href=\"{{ path('asignadas') }}\" style=\"font-family: Saira Extra Condensed;\">ASIGNADAS</a>
+                <a class=\"dropdown-item\" href=\"{{ path('pendientesDeAsignar') }}\" style=\"font-family: Saira Extra Condensed;\">SIN ASIGNAR</a>
+                <a class=\"dropdown-item\" href=\"{{ path('despachadas') }}\" style=\"font-family: Saira Extra Condensed;\">DESPACHADAS</a>
+                <a class=\"dropdown-item\" href=\"{{ path('solicitudes') }}\" style=\"font-family: Saira Extra Condensed;\">TODAS</a>
+                <a class=\"dropdown-item\" href=\"{{ path('anuladas') }}\" style=\"font-family: Saira Extra Condensed;\">ANULADAS</a>
+                <a class=\"dropdown-item\" href=\"{{ path('suspendidas') }}\" style=\"font-family: Saira Extra Condensed;\">SUSPENDIDAS</a>
+                <a class=\"dropdown-item\" href=\"{{ path('prioritarias') }}\" style=\"font-family: Saira Extra Condensed;\">PRIORITARIAS</a>
+                <a class=\"dropdown-item\" href=\"{{ path('seleccionaSolicitudes') }}\" style=\"font-family: Saira Extra Condensed;\">POR FECHA</a>
+                <a class=\"dropdown-item\" href=\"{{ path('solicitudesTrabajadorGestion') }}\" style=\"font-family: Saira Extra Condensed;\">POR TRABAJADOR</a>
+                <a class=\"dropdown-item\" href=\"{{ path('solicitudesUnidadDestino') }}\" style=\"font-family: Saira Extra Condensed;\">POR DESTINO SOLICITANTE</a>
+              </div>
+            </li>
+
+            <li class=\"nav-item\">
+              <pre>     </pre>
+            </li>
+
+            <li class=\"nav-item dropdown\">
+              <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" style=\"font-family: Saira Extra Condensed;\">
+                PARTES
+              </a>
+              <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
+                <a class=\"dropdown-item\" href=\"\"></a>
+                <a class=\"dropdown-item\" href=\"{{ path('seleccionaPartes') }}\" style=\"font-family: Saira Extra Condensed;\">SELECCIÓN POR FECHA</a>
+                <a class=\"dropdown-item\" href=\"{{ path('partes') }}\" style=\"font-family: Saira Extra Condensed;\">TODOS</a>
+              </div>
+            </li>
+
+            <li class=\"nav-item\">
+              <pre>     </pre>
+            </li>
+
+            <li class=\"nav-item dropdown\">
+              <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" style=\"font-family: Saira Extra Condensed;\">
+                TRABAJADOR
+              </a>
+              <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
+                <a class=\"dropdown-item\" href=\"{{ path('nuevoTrabajador') }}\" style=\"font-family: Saira Extra Condensed;\">NUEVO TRABAJADOR</a>
+                <a class=\"dropdown-item\" href=\"{{ path('desactivarTrabajador') }}\" style=\"font-family: Saira Extra Condensed;\">DESACTIVAR TRABAJADOR</a>
+                <a class=\"dropdown-item\" href=\"{{ path('reactivarTrabajador') }}\" style=\"font-family: Saira Extra Condensed;\">REACTIVAR TRABAJADOR</a>
               </div>
             </li>
 
             <li class=\"nav-item\">
               <pre>   </pre>
             </li>
-
-            <li class=\"nav-item dropdown\">
-              <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                Partes
-              </a>
-              <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
-                <a class=\"dropdown-item\" href=\"\"></a>
-                <a class=\"dropdown-item\" href=\"{{ path('seleccionaPartes') }}\">Selección por fecha</a>
-                <a class=\"dropdown-item\" href=\"{{ path('partes') }}\">Todos</a>
-              </div>
-            </li>
-
-            <li class=\"nav-item\">
-              <pre>    </pre>
-            </li>
-
-            <li class=\"nav-item dropdown\">
-              <a class=\"nav-link dropdown-toggle text-white\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                Trabajador
-              </a>
-              <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">
-                <a class=\"dropdown-item\" href=\"{{ path('nuevoTrabajador') }}\">Nuevo Trabajador</a>
-                <a class=\"dropdown-item\" href=\"{{ path('desactivarTrabajador') }}\">Desactivar Trabajador</a>
-                <a class=\"dropdown-item\" href=\"{{ path('reactivarTrabajador') }}\">Reactivar Trabajador</a>
-              </div>
-            </li>
-
+            {% if is_granted('ROLE_SUPER_ADMIN')%}
             <li class=\"nav-item\">
               <pre>  </pre>
             </li>
-            {% if is_granted('ROLE_SUPER_ADMIN')%}
             <li class=\"nav-item\">
-              <pre></pre>
+              <a class=\"nav-link text-white\" href=\"{{ path('registro') }}\" style=\"font-family: Saira Extra Condensed;\">NUEVO USUARIO</a>
             </li>
             <li class=\"nav-item\">
-              <a class=\"nav-link text-white\" href=\"{{ path('registro') }}\">Nuevo Usuario</a>
-            </li>
-            <li class=\"nav-item\">
-              <pre></pre>
+              <pre>  </pre>
             </li>
             {% endif %}
 
             <li class=\"nav-item\">
-              <pre>  </pre>
+              <pre>    </pre>
             </li>
 
             <li class=\"nav-item\">
@@ -730,7 +767,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
             </li>
 
             <li class=\"nav-item\">
-              <pre>  </pre>
+              <pre>   </pre>
             </li>
 
 
@@ -741,13 +778,13 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
             <li class=\"nav-item\">
               <a href=\"{{path('app_logout')}}\" class=\"btn bg-danger\"
-                style=\"border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:lightgrey;height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px\"
-                role=\"button\">Salir</a>
+                style=\"border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:white;height: 25px;width:70px;font-family: Saira Extra Condensed;FONT-SIZE: 11pt;padding:0px 10px\"
+                role=\"button\">SALIR</a>
             </li>
 
 
             <li class=\"nav-item\">
-              <pre>      </pre>
+              <pre>       </pre>
             </li>
 
 
@@ -757,7 +794,7 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
 
             <li class=\"nav-item\">
-              <pre>                             </pre>
+              <pre>                            </pre>
             </li>
 
 
@@ -767,8 +804,8 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
 
               <li class=\"nav-item\">
                 <a href=\"{{path('app_logout')}}\" class=\"btn bg-danger\"
-                  style=\"border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:lightgrey;height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px\"
-                  role=\"button\">Salir</a> </li>
+                  style=\"border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:white;height: 25px;width:70px;font-family: Saira Extra Condensed;FONT-SIZE: 11pt;padding:0px 10px\"
+                  role=\"button\">SALIR</a> </li>
 
               <li class=\"nav-item\">
               </li>
@@ -782,57 +819,57 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
     </nav>
     <!--FIN MENÚ DE NAVEGACIÓN-->
     {% block contenido %}
-    <div class=\"container\">
+    <div class=\"container\" style=\"font-family: Saira Extra Condensed\">
       <div style=\"margin-top:50px\">
 
         {% if is_granted('ROLE_USER') %}
-        <h1 class=\"mt-4 mb-3\">Mantenimiento ETSIDI
+        <h1 class=\"mt-4 mb-3\" style=\"font-family: Saira Extra Condensed;\">Mantenimiento ETSIDI
           <small>Trabajadores</small>
         </h1>
         <ol class=\"breadcrumb\">
-          <li class=\"breadcrumb-item\">Consulta de solicitudes</li>
+          <li class=\"breadcrumb-item\" style=\"font-family: Saira Extra Condensed;\">Consulta de solicitudes</li>
         </ol>
         {% endif %}
 
         {% if is_granted('ROLE_ADMIN') %}
-        <h1 class=\"mt-4 mb-3\">Mantenimiento ETSIDI
+        <h1 class=\"mt-4 mb-3\" style=\"font-family: Saira Extra Condensed;\">Mantenimiento ETSIDI
           <small>Gestión</small>
         </h1>
         <ol class=\"breadcrumb\">
-          <li class=\"breadcrumb-item\">Mantenimiento</li>
+          <li class=\"breadcrumb-item\" style=\"font-family: Saira Extra Condensed;\">Mantenimiento</li>
         </ol>
         {% endif %}
 
         <!-- Content Row -->
         <div class=\"row\">
           <!-- Sidebar Column -->
-          <div class=\"col-lg-3 mb-4 bg-light\">
+          <div class=\"col-lg-3 mb-4\" style=\"background-color: #EBECEE\">
             <div class=\"list-group \">
               {% if is_granted('ROLE_USER') %}
-              <a href=\"{{ path('solicitudesTrabajador') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes asignadas</a>
-              <a href=\"{{ path('nuevaSolicitud',{'email':app.user.username}) }}\" class=\"list-group-item\" style=\" color: grey;\">Nueva Solicitud</a>
-              <a href=\"{{path('app_logout')}}\" class=\"list-group-item\" style=\" color: grey;\">Salir</a>
+              <a href=\"{{ path('solicitudesTrabajador') }}\" class=\"list-group-item\" style=\" color: grey;\" style=\"font-family: Saira Extra Condensed;\">Solicitudes asignadas</a>
+              <a href=\"{{ path('nuevaSolicitud',{'emailcrypt':app.user.emailcrypt,'email':app.user.username}) }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Nueva Solicitud</a>
+              <a href=\"{{path('app_logout')}}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Salir</a>
               {% endif %}
 
               {% if is_granted('ROLE_ADMIN') %}
-              <a href=\"{{ path('instruccionesCompletadas') }}\" class=\"list-group-item\" style=\" color: grey;\">Trabajos completados</a>
-              <a href=\"{{ path('nuevaSolicitud',{'email':app.user.username}) }}\" class=\"list-group-item\" style=\" color: grey;\">Nueva Solicitud</a>
-              <a href=\"{{ path('solicitudes') }}\" class=\"list-group-item\" style=\" color: grey;\">Todas las solicitudes</a>
-              <a href=\"{{ path('asignadas') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes asignadas</a>
-              <a href=\"{{ path('pendientesDeAsignar') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes sin asignar</a>
-              <a href=\"{{ path('despachadas') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes despachadas</a>
-              <a href=\"{{ path('anuladas') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes anuladas</a>
-              <a href=\"{{ path('suspendidas') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes suspendidas</a>
-              <a href=\"{{ path('prioritarias') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes prioritarias</a>
-              <a href=\"{{ path('seleccionaSolicitudes') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes por fecha</a>
-              <a href=\"{{ path('solicitudesTrabajadorGestion') }}\" class=\"list-group-item\" style=\" color: grey;\">Solicitudes por trabajador</a>
-              <a href=\"{{ path('solicitudesUnidadDestino') }}\" class=\"list-group-item\" style=\" color: grey;\">Por destino solicitante</a>
-              <a href=\"{{ path('partes') }}\" class=\"list-group-item\" style=\" color: grey;\">Todos los partes</a>
-              <a href=\"{{ path('seleccionaPartes') }}\" class=\"list-group-item\" style=\" color: grey;\">Partes por fecha</a>
-              <a href=\"{{ path('nuevoTrabajador') }}\" class=\"list-group-item\" style=\" color: grey;\">Nuevo trabajador</a>
-              <a href=\"{{ path('desactivarTrabajador') }}\" class=\"list-group-item\" style=\" color: grey;\">Desactivar Trabajador</a>
-              <a href=\"{{ path('reactivarTrabajador') }}\" class=\"list-group-item\" style=\" color: grey;\">Reactivar Trabajador</a>
-              <a href=\"{{ path('estadisticas') }}\" class=\"list-group-item\" style=\" color: grey;\">Estadísticas</a>
+              <a href=\"{{ path('instruccionesCompletadas') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Trabajos completados</a>
+              <a href=\"{{ path('nuevaSolicitud',{'emailcrypt': app.user.emailcrypt, 'email': app.user.username}) }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Nueva Solicitud</a>
+              <a href=\"{{ path('solicitudes') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Todas las solicitudes</a>
+              <a href=\"{{ path('asignadas') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes asignadas</a>
+              <a href=\"{{ path('pendientesDeAsignar') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes sin asignar</a>
+              <a href=\"{{ path('despachadas') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes despachadas</a>
+              <a href=\"{{ path('anuladas') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes anuladas</a>
+              <a href=\"{{ path('suspendidas') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes suspendidas</a>
+              <a href=\"{{ path('prioritarias') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes prioritarias</a>
+              <a href=\"{{ path('seleccionaSolicitudes') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes por fecha</a>
+              <a href=\"{{ path('solicitudesTrabajadorGestion') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Solicitudes por trabajador</a>
+              <a href=\"{{ path('solicitudesUnidadDestino') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Por destino solicitante</a>
+              <a href=\"{{ path('partes') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Todos los partes</a>
+              <a href=\"{{ path('seleccionaPartes') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Partes por fecha</a>
+              <a href=\"{{ path('nuevoTrabajador') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Nuevo trabajador</a>
+              <a href=\"{{ path('desactivarTrabajador') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Desactivar Trabajador</a>
+              <a href=\"{{ path('reactivarTrabajador') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Reactivar Trabajador</a>
+              <a href=\"{{ path('estadisticas') }}\" class=\"list-group-item\" style=\" color: grey;font-family: Saira Extra Condensed\">Estadísticas</a>
               {% endif %}
             </div>
           </div>
@@ -840,23 +877,15 @@ class __TwigTemplate_89ab5a594d3964930928ba415becf8ab933d9bca4f53cce30bc07dcb529
           <div class=\"col-lg-9 mb-4\">
             <img src=\"{{asset('img/mantenimiento.jpg')}}\" class=\"img-fluid\" alt=\"Responsive image\">
             <img src=\"{{asset('img/upm.png')}}\" class=\"img-fluid\" alt=\"Responsive image\">
+            <div class=\"col text-center\">
+              <h8 style=\"font-family: Helvetica; font-size:13px\"><br /><br /><br /><br /><br />Universidad Politécnica de Madrid ©2020</h8>
+            </div>
           </div>
         </div>
-
       </div>
-      <!-- /.row -->
     </div>
 
-
     {% endblock %}
-
-    <!-- Footer -->
-    <footer class=\"page-footer  bg-danger\">
-      <div class=\"footer-copyright text-center py-3\">
-        <img src=\"{{asset('img/upm.png')}}\" style=\"margin-bottom: 0\" height=\"100\" alt=\"\">
-      </div>
-    </footer>
-    <!-- Footer -->
 
     <!-- Bootstrap core JavaScript -->
     <script src=\"{{asset('js/exportacion.js')}}\"></script>

@@ -11,6 +11,7 @@ use App\Entity\Parte;
 use App\Entity\Trabajador;
 use App\Entity\Instruccion;
 use App\Entity\Especialidad;
+use App\Entity\Valoracion;
 use App\Form\ParteType;
 use App\Form\SolicitudType;
 use App\Form\UsuarioType;
@@ -100,8 +101,7 @@ class GestionController extends AbstractController
             $form = $this->createForm(ParteType::class, $parte, array('estancia' => $estancia));
             $form->handleRequest($request);
             $evento = new Evento();
-            $cadena = (string) $id;
-            $parametro = $encrypt->encrypt($cadena,$key);
+            $idcrypt = $solicitud->getIdcrypt();
             if ($form->isSubmitted() && $form->isValid()) {
             $parte = $form->getData();
           //  $trabajador = $parte->getTrabajador();
@@ -109,6 +109,7 @@ class GestionController extends AbstractController
             $email = $solicitud->getEmail();
             //$emailcrypt = $encrypt->encrypt($email,$key);
             $evento->setTipo('Fin');
+            $evento->setImagen('img/crono6.jpg');
             $evento->setFecha();
             $evento->setSolicitud($solicitud);
             $solicitud->addEvento($evento);
@@ -128,13 +129,13 @@ class GestionController extends AbstractController
 
 
             $valorada = $solicitud->getValorada();//valorado=1 significa que la solicitud ha sido valorada por el solicitante. Si valorada=0 la solicitud no ha sido valorada.
-            if($valorada==0){//si no ha sido valorada
+            if($valorada==0){//si no ha sido valorada. Esto se controla por si el parte ha sido borrado para modificarse, pero los trabajos realizados ya se valoraron.
             $message = (new \Swift_Message('Grado de satisfacción con el servicio recibido'))
               ->setFrom('gestion.partes.etsidi@upm.es')
-              //->setTo($email)
-              ->setTo('mariabelen.sanz@upm.es')
+              ->setTo($email)
+              //->setTo('mariabelen.sanz@upm.es')
               ->setBody(
-                  $this->renderView('Emails/NotificacionParte.html.twig', ['parte'=>$parte, 'parametro'=>$parametro, 'email'=>$email]),'text/html');
+                  $this->renderView('Emails/NotificacionParte.html.twig', ['parte'=>$parte, 'idcrypt'=>$idcrypt, 'email'=>$email]),'text/html');
             $mailer->send($message);
           }
             return $this->redirectToRoute('asignarEspecialidad',array('parteId' => $parteId ));
@@ -162,7 +163,7 @@ class GestionController extends AbstractController
             $em->flush();
             return $this->redirectToRoute('partes');
          }
-            return $this->render('gestionMantenimiento/nuevoParte.html.twig',array("form" => $form->createView(),"parte"=>$parte));
+            return $this->render('gestionMantenimiento/nuevoParte.html.twig',array("form" => $form->createView(),"solicitud"=>$solicitud,"parte"=>$parte));
 
           }
 
@@ -228,16 +229,6 @@ class GestionController extends AbstractController
                return $this->render('gestionMantenimiento/pendientes.html.twig',array("solicitudes" => $solicitudes));
               }
 
-          /**
-           * @Route("/cronogramaGestion/{id}", name="cronogramaGestion")
-           */
-          public function cronogramaGestionAction(Request $request, $id)
-          {
-            $repository = $this->getDoctrine()->getRepository(Solicitud::class);
-            $solicitud = $repository->find($id);
-            $eventos = $solicitud->getEventos();
-            return $this->render('frontal/timeline.html.twig', array('eventos' => $eventos, 'id'=>$id));
-          }
 
         /**
          * @Route("/anularSolicitud/{id}", name="anularSolicitud")
@@ -247,7 +238,7 @@ class GestionController extends AbstractController
              $data = array('Causa' => 'causa');
              $form = $this->createFormBuilder($data)
                ->add('Causa', ChoiceType::class, ['choices'  => ['Solicitud errónea' => 'Solicitud errónea', 'Trabajos inviables' => 'Trabajos inviables',],], array('label' => 'Causa de la anulación'))
-               ->add('Anular', SubmitType::class, array('label' => 'Anular solicitud'))
+               ->add('Anular', SubmitType::class, array('label' => 'Anular'))
                ->getForm();
              $form->handleRequest($request);
              $data = $form->getData();
@@ -264,6 +255,7 @@ class GestionController extends AbstractController
              $solicitud->setEstado('3');//estado 3: solicitud anulada
              $evento->setCausa($causaAnulacion);
              $evento->setTipo('Anulación');
+             $evento->setImagen('img/crono7.jpg');
              $evento->setFecha();
              $evento->setSolicitud($solicitud);
              $solicitud->addEvento($evento);
@@ -288,8 +280,8 @@ class GestionController extends AbstractController
 
              $message = (new \Swift_Message('Anulación de su solicitud al servicio de Mantenimiento ETSIDI'))
                ->setFrom('gestion.partes.etsidi@upm.es')
-               //->setTo($email)
-               ->setTo('mariabelen.sanz@upm.es')
+               ->setTo($email)
+               //->setTo('mariabelen.sanz@upm.es')
                ->setBody(
                     $this->renderView('Emails/NotificacionAnulacionSolicitud.html.twig', ['solicitud'=>$solicitud, 'evento'=>$evento,]),'text/html');
              $mailer->send($message);
@@ -325,6 +317,7 @@ class GestionController extends AbstractController
                $solicitud->setEstado('4');//estado 4: solicitud suspendida
                $evento->setCausa($causaSuspension);
                $evento->setTipo('Suspensión');
+               $evento->setImagen('img/crono8.jpg');
                $evento->setFecha();
                $evento->setCausa($causaSuspension);
                $evento->setSolicitud($solicitud);
@@ -338,8 +331,8 @@ class GestionController extends AbstractController
 
                $message = (new \Swift_Message('Suspensión de su solicitud al servicio de Mantenimiento ETSIDI'))
                  ->setFrom('gestion.partes.etsidi@upm.es')
-                 //->setTo($email)
-                 ->setTo('mariabelen.sanz@upm.es')
+                 ->setTo($email)
+                 //->setTo('mariabelen.sanz@upm.es')
                  ->setBody(
                       $this->renderView('Emails/NotificacionSuspensionSolicitud.html.twig', ['solicitud'=>$solicitud, 'evento'=>$evento]),'text/html');
                $mailer->send($message);
@@ -370,6 +363,7 @@ class GestionController extends AbstractController
                      $solicitud->setEstado('1');//estado 1: solicitud asignada
                    }
                   $evento->setTipo('Reactivación');
+                  $evento->setImagen('img/crono3.jpg');
                   $evento->setFecha();
                   $evento->setSolicitud($solicitud);
                   $solicitud->addEvento($evento);
@@ -390,8 +384,8 @@ class GestionController extends AbstractController
 
                   $message = (new \Swift_Message('Reactivación de su solicitud al servicio de Mantenimiento ETSIDI'))
                     ->setFrom('gestion.partes.etsidi@upm.es')
-                    //->setTo($email)
-                    ->setTo('mariabelen.sanz@upm.es')
+                    ->setTo($email)
+                    //->setTo('mariabelen.sanz@upm.es')
                     ->setBody(
                         $this->renderView('Emails/NotificacionReactivacionSolicitud.html.twig', ['solicitud'=>$solicitud]),'text/html');
                         $mailer->send($message);
@@ -412,6 +406,7 @@ class GestionController extends AbstractController
                  $solicitud->setEstado('0');//estado 0: solicitud sin asignar
                  $solicitudes = $solicitudRepository->findAll();
                  $evento->setTipo('Reactivación');
+                 $evento->setImagen('img/crono3.jpg');
                  $evento->setFecha();
                  $evento->setSolicitud($solicitud);
                  $solicitud->addEvento($evento);
@@ -423,8 +418,8 @@ class GestionController extends AbstractController
 
                  $message = (new \Swift_Message('Reactivación de su solicitud al servicio de Mantenimiento ETSIDI'))
                    ->setFrom('gestion.partes.etsidi@upm.es')
-                   //->setTo($email)
-                   ->setTo('mariabelen.sanz@upm.es')
+                   ->setTo($email)
+                  // ->setTo('mariabelen.sanz@upm.es')
                    ->setBody(
                         $this->renderView('Emails/NotificacionReactivacionAnulada.html.twig', ['solicitud'=>$solicitud]),'text/html');
                         $mailer->send($message);
@@ -488,13 +483,13 @@ class GestionController extends AbstractController
 
               $message = (new \Swift_Message('Le ha sido asignada una solicitud para el servicio de Mantenimiento ETSIDI'))
                 ->setFrom('gestion.partes.etsidi@upm.es')
-                //->setTo($emailTrabajador)
-                ->setTo('mariabelen.sanz@upm.es')
+                ->setTo($emailTrabajador)
+                //->setTo('mariabelen.sanz@upm.es')
                 ->setBody(
                      $this->renderView('Emails/NotificacionTrabajador.html.twig', ['solicitud'=>$solicitud,'ordenes'=>$ordenes]),'text/html');
               $mailer->send($message);
 
-                  return $this->redirectToRoute('solicitudes');
+              return $this->render('gestionMantenimiento/asignarSolicitud.html.twig',array("form" => $form->createView(),"solicitud" => $solicitud));
                 }
             }
               return $this->render('gestionMantenimiento/asignarSolicitud.html.twig',array("form" => $form->createView(),"solicitud" => $solicitud));
@@ -522,7 +517,8 @@ class GestionController extends AbstractController
                $solicitud = new Solicitud();
                $solicitudRepository = $this->getDoctrine()->getRepository(Solicitud::class);
                $solicitud = $solicitudRepository->find($idSolicitud);
-
+               $trabajador = $instruccion->getTrabajador();
+               $email = $trabajador->getEmail();
                if ($form->isSubmitted() && $form->isValid()) {
                 $trabajador = new Trabajador();
                 $ordenes = $data['descripcionInstruccion'];
@@ -535,8 +531,8 @@ class GestionController extends AbstractController
 
                 $message = (new \Swift_Message('Cambio de órdenes desde el servicio de Mantenimiento ETSIDI'))
                   ->setFrom('gestion.partes.etsidi@upm.es')
-                  //->setTo($email)
-                  ->setTo('mariabelen.sanz@upm.es')
+                  ->setTo($email)
+                  //->setTo('mariabelen.sanz@upm.es')
                   ->setBody(
                        $this->renderView('Emails/NotificacionTrabajador.html.twig', ['solicitud'=>$solicitud,'ordenes'=>$ordenes]),'text/html');
                        $mailer->send($message);
@@ -729,21 +725,6 @@ class GestionController extends AbstractController
           }
 
 
-          /**
-         * @Route("/solicitud/{id}", name="solicitud")
-         */
-        public function solicitudAction(Request $request,$id=null)
-        {
-          if($id!=null){
-            //Capturar el repositorio de la Tabla contra la DB
-            $solicitudRepository = $this->getDoctrine()->getRepository(Solicitud::class);
-            $solicitudes = $solicitudRepository->findAll();
-            $solicitud = $solicitudRepository->find($id);
-            return $this->render('gestionMantenimiento/solicitud.html.twig',array("solicitud"=>$solicitud));
-          }else{
-            return $this->redirectToRoute('solicitudes');
-          }
-          }
 
           /**
          * @Route("/priorizarSolicitud/{id}", name="priorizarSolicitud")
@@ -756,6 +737,7 @@ class GestionController extends AbstractController
             $solicitud = $solicitudRepository->find($id);
             $solicitud->setPrioritaria('1');// solicitud prioritaria
             $evento->setTipo('Priorización');
+            $evento->setImagen('img/crono4.jpg');
             $evento->setFecha();
             $evento->setSolicitud($solicitud);
             $solicitud->addEvento($evento);
@@ -778,6 +760,7 @@ class GestionController extends AbstractController
             $solicitud = $solicitudRepository->find($id);
             $solicitud->setPrioritaria('0');// solicitud prioritaria
             $evento->setTipo('DesPriorización');
+            $evento->setImagen('img/crono5.jpg');
             $evento->setFecha();
             $evento->setSolicitud($solicitud);
             $solicitud->addEvento($evento);
@@ -811,8 +794,8 @@ class GestionController extends AbstractController
            $solicitud->removeInstruccion($instruccion);
            $message = (new \Swift_Message('Revocación de asignación de Solicitud - Mantenimiento ETSIDI'))
              ->setFrom('gestion.partes.etsidi@upm.es')
-             //->setTo($emailTrabajador)
-             ->setTo('mariabelen.sanz@upm.es')
+             ->setTo($emailTrabajador)
+             //->setTo('mariabelen.sanz@upm.es')
              ->setBody(
                   $this->renderView('Emails/NotificacionRevocacion.html.twig', ['solicitud'=>$solicitud]),'text/html');
            $mailer->send($message);
@@ -849,6 +832,7 @@ class GestionController extends AbstractController
         $parte = $parterepository->find($id);
         $solicitud = $parte->getSolicitud();
         $solicitud->setEstado('1');
+
         $eventos = $solicitud->getEventos();
         $especialidades = $parte->getEspecialidades();
         //Borrado

@@ -1,74 +1,107 @@
-{# Plantilla de nuestra aplicación#}
-{%extends 'frontal/baseautenticacion.html.twig'%}
-{% form_theme form 'form/baseForm.html.twig' %}
+<!DOCTYPE html>
 
-{#TITULO#}
-{% block titulo %}Mantenimiento ETSIDI{% endblock %}
-{#Contenido#}
+<html>
 
-{% block contenido %}
-<!-- Page Content -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block titulo %}CAU MANTENIMIENTO ETSIDI{% endblock %}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('css/coming-soon.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/all.css')}}" rel="stylesheet">
+    <link href="{{ asset('scss/coming-soon.scss')}}" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/google-fonts.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/google-fonts2.css')}}" rel="stylesheet" type="text/css">
 
-
-<div class="container">
-
-  <!-- Page Heading/Breadcrumbs -->
-  <div style="margin-top:75px;margin-bottom:23px">
-    <h1 class=" mt-4 mb-3">Mantenimiento ETSIDI
-
-    </h1>
-
-  </div>
-
-
-  <!-- Intro Content -->
-  <div style="margin-bottom:75px">
-    <div class="row">
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('css/coming-soon.min.css')}}" rel="stylesheet">
 
 
-      <div class="col-lg-6">
+  </head>
 
-        {{ form_start(form) }}
-        <table>
-          <tr>
-            <td>
-              <h6 style="color: black">Usuario</h6>
-            </td>
-          </tr>
-          <tr>
-            <td style="width:300px">
-              {{ form_widget(form.Usuario)}}</td>
-            <td>
-              <h6 style="font-style:italic;color: black"> &nbsp@upm.es</h6>
-            </td>
-          </tr>
-          <tr>
-          <tr>
-            <td><br /></td>
-          </tr>
-          <td>
-            <h6 style="color: black">Contraseña</h6>
-          </td>
-          </tr>
-          <tr>
-            <td>
-              {{ form_widget(form.Password) }}</td>
-          </tr>
-          <tr>
-            <td><br /></td>
-          </tr>
-          <tr>
-            <td>
-              {{ form_widget(form.Aceptar) }}</td>
-          </tr>
-        </table>
-        {{ form_end(form) }}
 
+  <body style="background-image: url('img/portada.jpg');">
+    <div class="masthead">
+      <div class="masthead-bg  bg-danger"></div>
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-12 my-auto">
+            <div class="masthead-content text-white py-5 py-md-0">
+              <h1 class="mb-3">
+                <br />CAU<br />Servicio de Mantenimiento
+              </h1>
+              <img src="{{asset('img/logo_etsidi_mini_negro.png')}}" class="rounded float-right" height="80" alt="Responsive image">
+              <p class="mb-5" style="display: inline">Bienvenido al Centro para la Atención de Usuarios de Mantenimiento
+                <strong> ETSIDI</strong>. Introduzca sus datos de usuario para acceder.</p>
+              <h1>
+
+              </h1>
+              <table>
+
+                {% form_theme form 'form/baseForm.html.twig' %}
+                {{ form_start(form) }}
+                <tr>
+                  <td style="width:200px">
+                    {{ form_widget(form.Usuario, {'attr': {'placeholder': 'Usuario...'}})}}</td>
+                  <td>
+                    <h6 style="color: white">@upm.es</h6>
+                  </td>
+                </tr>
+                <tr>
+                  <td><br /></td>
+                </tr>
+                <tr>
+                  <td>
+                    {{ form_widget(form.Password, {'attr': {'placeholder': 'Contraseña'}}) }}<br /></td>
+                </tr>
+                <tr>
+                  </td><br /></td>
+                </tr>
+                <tr>
+                  <td>
+                    {{ form_widget(form.Aceptar, {'attr': {'style': 'background-color:blue;', 'label': 'ACEPTAR'}}) }}
+                    <br /></td>
+                  <td><br /></td>
+                </tr>
+              </table>
+              {{ form_end(form) }}
+            </div>
+
+            <div class="container-fluid" style="margin-top: 50px">
+              <img src="{{asset('img/upm.png')}}" class=" align-bottom rounded float-center" style="margin-bottom: 0" height="100" alt="Responsive image">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-  </div>
-</div>
 
-<!-- /.row -->
-{% endblock %}
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{asset('js/exportacion.js')}}"></script>
+    <script src="{{asset('js/genPDF.js')}}"></script>
+    <script src="{{asset('js/downloadCanvas.js')}}"></script>
+    <script src="{{asset('js/html2canvas.js')}}"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/jspdf.min.js')}}"></script>
+    <link href="{{ asset('js/bootstrap-datepicker.min.js')}}" rel="stylesheet">
+    <link href="{{ asset('js/bootstrap-datepicker.es.min.js')}}" rel="stylesheet">
+    <script src="{{asset('js/coming-soon.min.js')}}"></script>
+    <script src="{{ asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
+    {% block javascripts %}
+    {% endblock %}
+  </body>
+
+</html>

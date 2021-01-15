@@ -125,26 +125,19 @@ class __TwigTemplate_3e97f22edd0170593b21b547f74a958dbd6651c6292fb238c340afd123e
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["parte"]) || array_key_exists("parte", $context) ? $context["parte"] : (function () { throw new RuntimeError('Variable "parte" does not exist.', 29, $this->source); })()), "descripcion", [], "any", false, false, false, 29), "html", null, true);
         echo "</small></h4>
 
-
         </div>
         <h4 class=\"my-3\">Si desea valorar los trabajos realizados puede hacerlo en el siguiente enlace: </h4>
         <a href=\"https://localhost:8000/rellenarSatisfaccion/";
-        // line 34
-        echo twig_escape_filter($this->env, (isset($context["parametro"]) || array_key_exists("parametro", $context) ? $context["parametro"] : (function () { throw new RuntimeError('Variable "parametro" does not exist.', 34, $this->source); })()), "html", null, true);
+        // line 33
+        echo twig_escape_filter($this->env, (isset($context["idcrypt"]) || array_key_exists("idcrypt", $context) ? $context["idcrypt"] : (function () { throw new RuntimeError('Variable "idcrypt" does not exist.', 33, $this->source); })()), "html", null, true);
         echo "/";
-        echo twig_escape_filter($this->env, (isset($context["email"]) || array_key_exists("email", $context) ? $context["email"] : (function () { throw new RuntimeError('Variable "email" does not exist.', 34, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["email"]) || array_key_exists("email", $context) ? $context["email"] : (function () { throw new RuntimeError('Variable "email" does not exist.', 33, $this->source); })()), "html", null, true);
         echo "\">Rellenar formulario de satisfacción</a>
-        <hr color=\"green\" size=1>
-        <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
-
-
-
-        <!-- /.row -->
-
+        <hr style=\"height:1px;border-width:0;color:#70AD47;background-color:#70AD47\">
+        <h4 class=\"my-3\" style=\"color: red;\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
       </div>
     </div>
   </div>
-
 </div>
 
 ";
@@ -163,7 +156,7 @@ class __TwigTemplate_3e97f22edd0170593b21b547f74a958dbd6651c6292fb238c340afd123e
 
     public function getDebugInfo()
     {
-        return array (  133 => 34,  124 => 29,  115 => 27,  111 => 26,  106 => 24,  102 => 23,  98 => 22,  91 => 18,  87 => 17,  83 => 16,  79 => 15,  75 => 14,  63 => 4,  44 => 3,);
+        return array (  132 => 33,  124 => 29,  115 => 27,  111 => 26,  106 => 24,  102 => 23,  98 => 22,  91 => 18,  87 => 17,  83 => 16,  79 => 15,  75 => 14,  63 => 4,  44 => 3,);
     }
 
     public function getSourceContext()
@@ -198,21 +191,14 @@ class __TwigTemplate_3e97f22edd0170593b21b547f74a958dbd6651c6292fb238c340afd123e
           {% endfor %}
           <h4 class=\"my-3\">Trabajos realizados: <small>{{parte.descripcion}}</small></h4>
 
-
         </div>
         <h4 class=\"my-3\">Si desea valorar los trabajos realizados puede hacerlo en el siguiente enlace: </h4>
-        <a href=\"https://localhost:8000/rellenarSatisfaccion/{{parametro}}/{{email}}\">Rellenar formulario de satisfacción</a>
-        <hr color=\"green\" size=1>
-        <h4 class=\"my-3\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
-
-
-
-        <!-- /.row -->
-
+        <a href=\"https://localhost:8000/rellenarSatisfaccion/{{idcrypt}}/{{email}}\">Rellenar formulario de satisfacción</a>
+        <hr style=\"height:1px;border-width:0;color:#70AD47;background-color:#70AD47\">
+        <h4 class=\"my-3\" style=\"color: red;\"><small>Por favor, no responda a este mensaje. La dirección desde la que se envía no es atendida.</small></h4>
       </div>
     </div>
   </div>
-
 </div>
 
 {% endblock %}", "Emails/NotificacionParte.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\Emails\\NotificacionParte.html.twig");

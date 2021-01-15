@@ -124,5 +124,6 @@
 {% set label = name|humanize %}
 {%- endif -%}
 {%- endif -%}
-<button style="border-bottom-color:#8D8E8E;border-top-color:#9EA0A0;border-left-color:#9EA0A0;border-right-color:#8D8E8E;background:  -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4A4B4B), color-stop(100%,#676868 )); " type="{{ type|default('button') }}" class="btn btn-primary" {{ block('button_attributes') }}>{{label}}</button>
+<button style="background-color:#2D2D3B;border: none;font-size: 12.8px; font-family: 'Source Sans Pro'; font-height: 30px; font-weight: 650; letter-spacing: 0.1em" type="{{ type|default('button') }}" class="btn btn-secondary"
+  {{ block('button_attributes') }}>{{label}}</button>
 {%- endblock button_widget -%}

@@ -88,7 +88,7 @@ class __TwigTemplate_fdc6359399e55b21c8fc5e4c139272d7025ef5a3a1fe3bfe40fb749c42e
         // line 4
         echo "<div id=\"imagen\">
   <div id=\"content\">
-    <div class=\"container-fluid\">
+    <div class=\"container-fluid\" style=\"font-family: Saira Extra Condensed\">
       <div style=\"margin-top:50px\">
         <h1 class=\" mt-4 mb-3\">Partes de Trabajo</<h1>
       </div>
@@ -314,7 +314,7 @@ class __TwigTemplate_fdc6359399e55b21c8fc5e4c139272d7025ef5a3a1fe3bfe40fb749c42e
 {% block contenido %}
 <div id=\"imagen\">
   <div id=\"content\">
-    <div class=\"container-fluid\">
+    <div class=\"container-fluid\" style=\"font-family: Saira Extra Condensed\">
       <div style=\"margin-top:50px\">
         <h1 class=\" mt-4 mb-3\">Partes de Trabajo</<h1>
       </div>
@@ -424,6 +424,7 @@ class __TwigTemplate_fdc6359399e55b21c8fc5e4c139272d7025ef5a3a1fe3bfe40fb749c42e
 <script src=\"{{asset('js/sweetalert.min.js')}}\"></script>
 <script src=\"{{asset('js/controlBorrado.js')}}\"></script>
 
-{% endblock %}", "gestionMantenimiento/partes.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\partes.html.twig");
+{% endblock %}
+", "gestionMantenimiento/partes.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\partes.html.twig");
     }
 }

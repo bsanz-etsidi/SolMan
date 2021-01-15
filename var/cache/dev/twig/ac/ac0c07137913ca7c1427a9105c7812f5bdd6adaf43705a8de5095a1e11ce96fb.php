@@ -89,7 +89,7 @@ class __TwigTemplate_733617e0b0dc150a090185b7e052072d4a8400575d2663c6e472c81bb6d
 
         // line 10
         echo "<!-- Page Content -->
-<div class=\"container\">
+<div class=\"container\" style=\"font-family: Saira Extra Condensed\">
   <div style=\"margin-top:75px\">
 
     <!-- Page Heading/Breadcrumbs -->
@@ -191,7 +191,7 @@ class __TwigTemplate_733617e0b0dc150a090185b7e052072d4a8400575d2663c6e472c81bb6d
     </div>
     <div id=\"editor\" style=\"margin-top:20px\"></div>
 
-    <button id=\"cmd\">Generar PDF</button>
+    <button id=\"cmd\" style=\"background-color:#2D2D3B;border: none;font-size: 12.8px; font-family: 'Source Sans Pro'; font-height: 30px; font-weight: 650; color: white; letter-spacing: 0.1em\">Generar PDF</button>
 
 
   </div>
@@ -279,7 +279,7 @@ Parte
 {#Contenido#}
 {% block contenido %}
 <!-- Page Content -->
-<div class=\"container\">
+<div class=\"container\" style=\"font-family: Saira Extra Condensed\">
   <div style=\"margin-top:75px\">
 
     <!-- Page Heading/Breadcrumbs -->
@@ -321,7 +321,7 @@ Parte
     </div>
     <div id=\"editor\" style=\"margin-top:20px\"></div>
 
-    <button id=\"cmd\">Generar PDF</button>
+    <button id=\"cmd\" style=\"background-color:#2D2D3B;border: none;font-size: 12.8px; font-family: 'Source Sans Pro'; font-height: 30px; font-weight: 650; color: white; letter-spacing: 0.1em\">Generar PDF</button>
 
 
   </div>
@@ -355,6 +355,7 @@ Parte
 
 
 
-{% endblock %}", "gestionMantenimiento/parte.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\parte.html.twig");
+{% endblock %}
+", "gestionMantenimiento/parte.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\parte.html.twig");
     }
 }

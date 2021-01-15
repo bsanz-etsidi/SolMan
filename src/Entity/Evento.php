@@ -50,6 +50,20 @@ class Evento
      */
     private $causa;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Rapidez", type="string", length=255,  nullable=true)
+     */
+    private $rapidez;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Imagen", type="string", length=255,  nullable=true)
+     */
+    private $imagen;
+
 
     /**
      * Get id
@@ -132,6 +146,54 @@ class Evento
     public function getCausa()
     {
         return $this->causa;
+    }
+
+    /**
+     * Set rapidez
+     *
+     * @param string $rapidez
+     *
+     * @return Evento
+     */
+    public function setRapidez($rapidez)
+    {
+        $this->rapidez = $rapidez;
+
+        return $this;
+    }
+
+    /**
+     * Get rapidez
+     *
+     * @return string
+     */
+    public function getRapidez()
+    {
+        return $this->rapidez;
+    }
+
+    /**
+     * Set imagen
+     *
+     * @param string $imagen
+     *
+     * @return Evento
+     */
+    public function setImagen($imagen)
+    {
+        $this->imagen = $imagen;
+
+        return $this;
+    }
+
+    /**
+     * Get imagen
+     *
+     * @return string
+     */
+    public function getImagen()
+    {
+        return $this->imagen;
     }
 
     /**

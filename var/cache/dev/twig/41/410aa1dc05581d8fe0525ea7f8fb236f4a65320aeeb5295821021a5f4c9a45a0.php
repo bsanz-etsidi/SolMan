@@ -526,12 +526,14 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
             }
         }
         // line 127
-        echo "<button style=\"border-bottom-color:#8D8E8E;border-top-color:#9EA0A0;border-left-color:#9EA0A0;border-right-color:#8D8E8E;background:  -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4A4B4B), color-stop(100%,#676868 )); \" type=\"";
+        echo "<button style=\"background-color:#2D2D3B;border: none;font-size: 12.8px; font-family: 'Source Sans Pro'; font-height: 30px; font-weight: 650; letter-spacing: 0.1em\" type=\"";
         echo twig_escape_filter($this->env, (((isset($context["type"]) || array_key_exists("type", $context))) ? (_twig_default_filter((isset($context["type"]) || array_key_exists("type", $context) ? $context["type"] : (function () { throw new RuntimeError('Variable "type" does not exist.', 127, $this->source); })()), "button")) : ("button")), "html", null, true);
-        echo "\" class=\"btn btn-primary\" ";
+        echo "\" class=\"btn btn-secondary\"
+  ";
+        // line 128
         $this->displayBlock("button_attributes", $context, $blocks);
         echo ">";
-        echo twig_escape_filter($this->env, (isset($context["label"]) || array_key_exists("label", $context) ? $context["label"] : (function () { throw new RuntimeError('Variable "label" does not exist.', 127, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["label"]) || array_key_exists("label", $context) ? $context["label"] : (function () { throw new RuntimeError('Variable "label" does not exist.', 128, $this->source); })()), "html", null, true);
         echo "</button>";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -548,7 +550,7 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
 
     public function getDebugInfo()
     {
-        return array (  529 => 127,  525 => 124,  522 => 122,  520 => 121,  518 => 119,  517 => 118,  516 => 117,  514 => 116,  512 => 115,  502 => 114,  491 => 108,  481 => 107,  476 => 106,  474 => 105,  471 => 103,  469 => 102,  459 => 101,  448 => 97,  446 => 95,  445 => 94,  444 => 93,  443 => 92,  439 => 91,  436 => 89,  434 => 88,  424 => 87,  413 => 83,  411 => 82,  409 => 81,  407 => 80,  405 => 79,  401 => 78,  398 => 76,  396 => 75,  386 => 74,  362 => 69,  342 => 68,  339 => 66,  337 => 65,  335 => 64,  330 => 63,  328 => 62,  311 => 61,  301 => 60,  291 => 57,  289 => 56,  287 => 55,  281 => 52,  279 => 51,  277 => 50,  275 => 49,  273 => 48,  264 => 46,  262 => 45,  255 => 44,  252 => 42,  250 => 41,  240 => 40,  230 => 37,  224 => 35,  222 => 34,  218 => 33,  214 => 32,  204 => 31,  193 => 27,  190 => 25,  188 => 24,  176 => 23,  162 => 20,  152 => 19,  141 => 15,  139 => 14,  127 => 13,  125 => 12,  115 => 11,  104 => 7,  102 => 6,  100 => 5,  98 => 4,  95 => 2,  85 => 1,  75 => 114,  73 => 101,  71 => 87,  69 => 74,  67 => 60,  65 => 40,  63 => 31,  60 => 23,  58 => 19,  56 => 11,  54 => 1,);
+        return array (  534 => 128,  529 => 127,  525 => 124,  522 => 122,  520 => 121,  518 => 119,  517 => 118,  516 => 117,  514 => 116,  512 => 115,  502 => 114,  491 => 108,  481 => 107,  476 => 106,  474 => 105,  471 => 103,  469 => 102,  459 => 101,  448 => 97,  446 => 95,  445 => 94,  444 => 93,  443 => 92,  439 => 91,  436 => 89,  434 => 88,  424 => 87,  413 => 83,  411 => 82,  409 => 81,  407 => 80,  405 => 79,  401 => 78,  398 => 76,  396 => 75,  386 => 74,  362 => 69,  342 => 68,  339 => 66,  337 => 65,  335 => 64,  330 => 63,  328 => 62,  311 => 61,  301 => 60,  291 => 57,  289 => 56,  287 => 55,  281 => 52,  279 => 51,  277 => 50,  275 => 49,  273 => 48,  264 => 46,  262 => 45,  255 => 44,  252 => 42,  250 => 41,  240 => 40,  230 => 37,  224 => 35,  222 => 34,  218 => 33,  214 => 32,  204 => 31,  193 => 27,  190 => 25,  188 => 24,  176 => 23,  162 => 20,  152 => 19,  141 => 15,  139 => 14,  127 => 13,  125 => 12,  115 => 11,  104 => 7,  102 => 6,  100 => 5,  98 => 4,  95 => 2,  85 => 1,  75 => 114,  73 => 101,  71 => 87,  69 => 74,  67 => 60,  65 => 40,  63 => 31,  60 => 23,  58 => 19,  56 => 11,  54 => 1,);
     }
 
     public function getSourceContext()
@@ -679,7 +681,8 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
 {% set label = name|humanize %}
 {%- endif -%}
 {%- endif -%}
-<button style=\"border-bottom-color:#8D8E8E;border-top-color:#9EA0A0;border-left-color:#9EA0A0;border-right-color:#8D8E8E;background:  -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4A4B4B), color-stop(100%,#676868 )); \" type=\"{{ type|default('button') }}\" class=\"btn btn-primary\" {{ block('button_attributes') }}>{{label}}</button>
+<button style=\"background-color:#2D2D3B;border: none;font-size: 12.8px; font-family: 'Source Sans Pro'; font-height: 30px; font-weight: 650; letter-spacing: 0.1em\" type=\"{{ type|default('button') }}\" class=\"btn btn-secondary\"
+  {{ block('button_attributes') }}>{{label}}</button>
 {%- endblock button_widget -%}
 ", "form/baseForm.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\form\\baseForm.html.twig");
     }

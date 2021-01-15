@@ -85,9 +85,9 @@ class __TwigTemplate_f0bf54293970248976ee723139ba6daa128df1cbb243c771a2f06c82c0a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenido"));
 
         // line 4
-        echo "<div class=\"container-fluid\">
+        echo "<div class=\"container-fluid\" style=\"font-family: Saira Extra Condensed\">
   <div style=\"margin-top:50px\">
-    <h1 class=\" mt-4 mb-3\">Solicitudes</<h1>
+    <h1 class=\" mt-4 mb-3\">Trabajos parciales completados</<h1>
   </div>
   <div class=\"row\">
     <div class=\"col-lg-12\">
@@ -106,6 +106,9 @@ class __TwigTemplate_f0bf54293970248976ee723139ba6daa128df1cbb243c771a2f06c82c0a
               <th scope=\"col\">
                 <h6>Descripcion</h6>
               </th>
+              <th scope=\"col\">
+                <h6>Trabajador</h6>
+              </th>
             </tr>
           </thead>
 
@@ -113,36 +116,43 @@ class __TwigTemplate_f0bf54293970248976ee723139ba6daa128df1cbb243c771a2f06c82c0a
 
 
             ";
-        // line 31
+        // line 34
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_sort_filter((isset($context["instrucciones"]) || array_key_exists("instrucciones", $context) ? $context["instrucciones"] : (function () { throw new RuntimeError('Variable "instrucciones" does not exist.', 31, $this->source); })()), function ($__a__, $__b__) use ($context, $macros) { $context["a"] = $__a__; $context["b"] = $__b__; return (twig_get_attribute($this->env, $this->source, (isset($context["b"]) || array_key_exists("b", $context) ? $context["b"] : (function () { throw new RuntimeError('Variable "b" does not exist.', 31, $this->source); })()), "fechaFinalizacion", [], "any", false, false, false, 31) <=> twig_get_attribute($this->env, $this->source, (isset($context["a"]) || array_key_exists("a", $context) ? $context["a"] : (function () { throw new RuntimeError('Variable "a" does not exist.', 31, $this->source); })()), "fechaFinalizacion", [], "any", false, false, false, 31)); }));
+        $context['_seq'] = twig_ensure_traversable(twig_sort_filter((isset($context["instrucciones"]) || array_key_exists("instrucciones", $context) ? $context["instrucciones"] : (function () { throw new RuntimeError('Variable "instrucciones" does not exist.', 34, $this->source); })()), function ($__a__, $__b__) use ($context, $macros) { $context["a"] = $__a__; $context["b"] = $__b__; return (twig_get_attribute($this->env, $this->source, (isset($context["b"]) || array_key_exists("b", $context) ? $context["b"] : (function () { throw new RuntimeError('Variable "b" does not exist.', 34, $this->source); })()), "fechaFinalizacion", [], "any", false, false, false, 34) <=> twig_get_attribute($this->env, $this->source, (isset($context["a"]) || array_key_exists("a", $context) ? $context["a"] : (function () { throw new RuntimeError('Variable "a" does not exist.', 34, $this->source); })()), "fechaFinalizacion", [], "any", false, false, false, 34)); }));
         foreach ($context['_seq'] as $context["_key"] => $context["instruccion"]) {
-            // line 32
+            // line 35
             echo "            <tr>
 
 
               <td>
                 <h6><small>";
-            // line 36
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["instruccion"], "fechaFinalizacion", [], "any", false, false, false, 36), "d/m/Y"), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["instruccion"], "fechaFinalizacion", [], "any", false, false, false, 39), "d/m/Y"), "html", null, true);
             echo "</small></h6>
               </td>
 
 
               <td>
                 <h5><a href=\"";
-            // line 41
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["instruccion"], "solicitud", [], "any", false, false, false, 41), "id", [], "any", false, false, false, 41)]), "html", null, true);
+            // line 44
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["idcrypt" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["instruccion"], "solicitud", [], "any", false, false, false, 44), "idcrypt", [], "any", false, false, false, 44), "id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["instruccion"], "solicitud", [], "any", false, false, false, 44), "id", [], "any", false, false, false, 44)]), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["instruccion"], "solicitud", [], "any", false, false, false, 41), "id", [], "any", false, false, false, 41), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["instruccion"], "solicitud", [], "any", false, false, false, 44), "id", [], "any", false, false, false, 44), "html", null, true);
             echo "</a></h5>
               </td>
 
 
               <td>
                 <h6><small>";
-            // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["instruccion"], "descripcionInstruccion", [], "any", false, false, false, 46), "html", null, true);
+            // line 49
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["instruccion"], "descripcionInstruccion", [], "any", false, false, false, 49), "html", null, true);
+            echo "</small></h6>
+              </td>
+
+              <td>
+                <h6><small>";
+            // line 53
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["instruccion"], "trabajador", [], "any", false, false, false, 53), "nombre", [], "any", false, false, false, 53), "html", null, true);
             echo "</small></h6>
               </td>
 
@@ -152,7 +162,7 @@ class __TwigTemplate_f0bf54293970248976ee723139ba6daa128df1cbb243c771a2f06c82c0a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['instruccion'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 51
+        // line 58
         echo "
           </tbody>
         </table>
@@ -185,7 +195,7 @@ class __TwigTemplate_f0bf54293970248976ee723139ba6daa128df1cbb243c771a2f06c82c0a
 
     public function getDebugInfo()
     {
-        return array (  156 => 51,  145 => 46,  135 => 41,  127 => 36,  121 => 32,  117 => 31,  88 => 4,  78 => 3,  59 => 2,  36 => 1,);
+        return array (  166 => 58,  155 => 53,  148 => 49,  138 => 44,  130 => 39,  124 => 35,  120 => 34,  88 => 4,  78 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -193,9 +203,9 @@ class __TwigTemplate_f0bf54293970248976ee723139ba6daa128df1cbb243c771a2f06c82c0a
         return new Source("{% extends 'frontal/base.html.twig' %}
 {% block titulo %}Solicitudes{% endblock %}
 {% block contenido %}
-<div class=\"container-fluid\">
+<div class=\"container-fluid\" style=\"font-family: Saira Extra Condensed\">
   <div style=\"margin-top:50px\">
-    <h1 class=\" mt-4 mb-3\">Solicitudes</<h1>
+    <h1 class=\" mt-4 mb-3\">Trabajos parciales completados</<h1>
   </div>
   <div class=\"row\">
     <div class=\"col-lg-12\">
@@ -214,6 +224,9 @@ class __TwigTemplate_f0bf54293970248976ee723139ba6daa128df1cbb243c771a2f06c82c0a
               <th scope=\"col\">
                 <h6>Descripcion</h6>
               </th>
+              <th scope=\"col\">
+                <h6>Trabajador</h6>
+              </th>
             </tr>
           </thead>
 
@@ -230,12 +243,16 @@ class __TwigTemplate_f0bf54293970248976ee723139ba6daa128df1cbb243c771a2f06c82c0a
 
 
               <td>
-                <h5><a href=\"{{path('solicitud',{'id':instruccion.solicitud.id})}}\">{{instruccion.solicitud.id}}</a></h5>
+                <h5><a href=\"{{path('solicitud',{'idcrypt':instruccion.solicitud.idcrypt, 'id':instruccion.solicitud.id})}}\">{{instruccion.solicitud.id}}</a></h5>
               </td>
 
 
               <td>
                 <h6><small>{{instruccion.descripcionInstruccion}}</small></h6>
+              </td>
+
+              <td>
+                <h6><small>{{instruccion.trabajador.nombre}}</small></h6>
               </td>
 
             </tr>

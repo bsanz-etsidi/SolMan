@@ -85,150 +85,146 @@ class __TwigTemplate_172038e70b3eb302adbac1cb6be1b30c423899817be3fd03a984e97374f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenido"));
 
         // line 4
-        echo "<div class=\"container\">
+        echo "<div class=\"container-fluid\" style=\"font-family: Saira Extra Condensed\">
   <div style=\"margin-top:50px\">
     <h1 class=\" mt-4 mb-3\">Solicitudes</<h1>
   </div>
-
   <div class=\"row\">
-
-
-    <div class=\"col-md-12\">
-
-      <table class=\"table\">
-        <thead class=\"thead-dark\">
-          <tr>
-
-            <th scope=\"col\">
-              <h6>Id</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Fecha</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Estancia</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Solicitante</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Destino</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Extensión</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Incidencia</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Motivo de <br /> suspensión</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Motivo de <br /> Reactivar</h6>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-
-          ";
-        // line 49
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["solicitudes"]) || array_key_exists("solicitudes", $context) ? $context["solicitudes"] : (function () { throw new RuntimeError('Variable "solicitudes" does not exist.', 49, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["solicitud"]) {
-            // line 50
-            echo "
-          <tr>
-
-            <td>
-              <h5><a href=\"";
-            // line 54
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 54)]), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 54), "html", null, true);
-            echo "
-                </a></h5>
-            </td>
-
-
-            <td>
-              <h6><small>";
-            // line 60
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "fecha", [], "any", false, false, false, 60), "d/m/Y"), "html", null, true);
-            echo "</small></h6>
-            </td>
-
-
-            <td>
-              <h6>
-                <small>";
-            // line 66
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "estancia", [], "any", false, false, false, 66), "html", null, true);
-            echo "</small>
-              </h6>
-            </td>
-
-
-            <td>
-              <h6><small>";
-            // line 72
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "solicitante", [], "any", false, false, false, 72), "html", null, true);
-            echo "</small></h6>
-            </td>
-
-            <td>
-              <h6><small>";
-            // line 76
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "destino", [], "any", false, false, false, 76), "html", null, true);
-            echo "</small></h6>
-            </td>
-
-            <td>
-              <h6><small>";
-            // line 80
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "extension", [], "any", false, false, false, 80), "html", null, true);
-            echo "</small></h6>
-            </td>
-
-            <td>
-              <h6><small>";
-            // line 84
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "descripcionIncidencia", [], "any", false, false, false, 84), "html", null, true);
-            echo "</small></h6>
-            </td>
-
-            <td>
-              <h6><small>";
-            // line 88
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "causaAnulacion", [], "any", false, false, false, 88), "html", null, true);
-            echo "</small></h6>
-            </td>
-
-            <td>
-              <h7><a href=\"";
-            // line 92
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reactivarSolicitudSuspendida", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 92)]), "html", null, true);
-            echo "\"><small>Reactivar</small></a></h7>
-            </td>
-
-
-
+    <div class=\"col-lg-12\">
+      <div class=\"table-responsive-lg\">
+        <table class=\"table\">
+          <thead class=\"thead-dark\">
+            <tr>
+              <th scope=\"col\">
+                <h6>Id</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Fecha</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Estancia</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Solicitante</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Destino</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Extensión</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Incidencia</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Motivo de <br /> suspensión</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Motivo de <br /> Reactivar</h6>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
 
             ";
+        // line 45
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["solicitudes"]) || array_key_exists("solicitudes", $context) ? $context["solicitudes"] : (function () { throw new RuntimeError('Variable "solicitudes" does not exist.', 45, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["solicitud"]) {
+            // line 46
+            echo "
+            <tr>
+
+              <td>
+                <h5><a href=\"";
+            // line 50
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solicitud", ["idcrypt" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "idcrypt", [], "any", false, false, false, 50), "id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 50)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 50), "html", null, true);
+            echo "
+                  </a></h5>
+              </td>
+
+
+              <td>
+                <h6><small>";
+            // line 56
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "fecha", [], "any", false, false, false, 56), "d/m/Y"), "html", null, true);
+            echo "</small></h6>
+              </td>
+
+
+              <td>
+                <h6>
+                  <small>";
+            // line 62
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "estancia", [], "any", false, false, false, 62), "html", null, true);
+            echo "</small>
+                </h6>
+              </td>
+
+
+              <td>
+                <h6><small>";
+            // line 68
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "solicitante", [], "any", false, false, false, 68), "html", null, true);
+            echo "</small></h6>
+              </td>
+
+              <td>
+                <h6><small>";
+            // line 72
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "destino", [], "any", false, false, false, 72), "html", null, true);
+            echo "</small></h6>
+              </td>
+
+              <td>
+                <h6><small>";
+            // line 76
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "extension", [], "any", false, false, false, 76), "html", null, true);
+            echo "</small></h6>
+              </td>
+
+              <td>
+                <h6><small>";
+            // line 80
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "descripcionIncidencia", [], "any", false, false, false, 80), "html", null, true);
+            echo "</small></h6>
+              </td>
+
+              <td>
+                <h6><small>";
+            // line 84
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["solicitud"], "causaAnulacion", [], "any", false, false, false, 84), "html", null, true);
+            echo "</small></h6>
+              </td>
+
+              <td>
+                <h7><a href=\"";
+            // line 88
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reactivarSolicitudSuspendida", ["id" => twig_get_attribute($this->env, $this->source, $context["solicitud"], "id", [], "any", false, false, false, 88)]), "html", null, true);
+            echo "\"><small>Reactivar</small></a></h7>
+              </td>
+
+
+
+
+              ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['solicitud'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 99
+        // line 95
         echo "
-        </tbody>
-      </table>
-    </div>
-    <div class=\"col-md-2\">
+          </tbody>
+        </table>
+      </div>
+      <div class=\"col-md-2\">
+      </div>
     </div>
   </div>
-</div>
-<div style=\"margin-bottom:200px\">
-</div>
+  <div style=\"margin-bottom:200px\">
+  </div>
 </div>
 ";
         
@@ -251,7 +247,7 @@ class __TwigTemplate_172038e70b3eb302adbac1cb6be1b30c423899817be3fd03a984e97374f
 
     public function getDebugInfo()
     {
-        return array (  222 => 99,  209 => 92,  202 => 88,  195 => 84,  188 => 80,  181 => 76,  174 => 72,  165 => 66,  156 => 60,  145 => 54,  139 => 50,  135 => 49,  88 => 4,  78 => 3,  59 => 2,  36 => 1,);
+        return array (  218 => 95,  205 => 88,  198 => 84,  191 => 80,  184 => 76,  177 => 72,  170 => 68,  161 => 62,  152 => 56,  141 => 50,  135 => 46,  131 => 45,  88 => 4,  78 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -259,111 +255,107 @@ class __TwigTemplate_172038e70b3eb302adbac1cb6be1b30c423899817be3fd03a984e97374f
         return new Source("{% extends 'frontal/base.html.twig' %}
 {% block titulo %}Solicitudes{% endblock %}
 {% block contenido %}
-<div class=\"container\">
+<div class=\"container-fluid\" style=\"font-family: Saira Extra Condensed\">
   <div style=\"margin-top:50px\">
     <h1 class=\" mt-4 mb-3\">Solicitudes</<h1>
   </div>
-
   <div class=\"row\">
+    <div class=\"col-lg-12\">
+      <div class=\"table-responsive-lg\">
+        <table class=\"table\">
+          <thead class=\"thead-dark\">
+            <tr>
+              <th scope=\"col\">
+                <h6>Id</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Fecha</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Estancia</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Solicitante</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Destino</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Extensión</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Incidencia</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Motivo de <br /> suspensión</h6>
+              </th>
+              <th scope=\"col\">
+                <h6>Motivo de <br /> Reactivar</h6>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+
+            {% for solicitud in solicitudes %}
+
+            <tr>
+
+              <td>
+                <h5><a href=\"{{path('solicitud',{'idcrypt':solicitud.idcrypt, 'id':solicitud.id})}}\">{{solicitud.id}}
+                  </a></h5>
+              </td>
 
 
-    <div class=\"col-md-12\">
-
-      <table class=\"table\">
-        <thead class=\"thead-dark\">
-          <tr>
-
-            <th scope=\"col\">
-              <h6>Id</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Fecha</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Estancia</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Solicitante</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Destino</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Extensión</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Incidencia</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Motivo de <br /> suspensión</h6>
-            </th>
-            <th scope=\"col\">
-              <h6>Motivo de <br /> Reactivar</h6>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-
-          {% for solicitud in solicitudes %}
-
-          <tr>
-
-            <td>
-              <h5><a href=\"{{path('solicitud',{'id':solicitud.id})}}\">{{solicitud.id}}
-                </a></h5>
-            </td>
+              <td>
+                <h6><small>{{solicitud.fecha|date('d/m/Y')}}</small></h6>
+              </td>
 
 
-            <td>
-              <h6><small>{{solicitud.fecha|date('d/m/Y')}}</small></h6>
-            </td>
+              <td>
+                <h6>
+                  <small>{{solicitud.estancia}}</small>
+                </h6>
+              </td>
 
 
-            <td>
-              <h6>
-                <small>{{solicitud.estancia}}</small>
-              </h6>
-            </td>
+              <td>
+                <h6><small>{{solicitud.solicitante}}</small></h6>
+              </td>
 
+              <td>
+                <h6><small>{{solicitud.destino}}</small></h6>
+              </td>
 
-            <td>
-              <h6><small>{{solicitud.solicitante}}</small></h6>
-            </td>
+              <td>
+                <h6><small>{{solicitud.extension}}</small></h6>
+              </td>
 
-            <td>
-              <h6><small>{{solicitud.destino}}</small></h6>
-            </td>
+              <td>
+                <h6><small>{{solicitud.descripcionIncidencia}}</small></h6>
+              </td>
 
-            <td>
-              <h6><small>{{solicitud.extension}}</small></h6>
-            </td>
+              <td>
+                <h6><small>{{solicitud.causaAnulacion}}</small></h6>
+              </td>
 
-            <td>
-              <h6><small>{{solicitud.descripcionIncidencia}}</small></h6>
-            </td>
-
-            <td>
-              <h6><small>{{solicitud.causaAnulacion}}</small></h6>
-            </td>
-
-            <td>
-              <h7><a href=\"{{path('reactivarSolicitudSuspendida',{'id':solicitud.id})}}\"><small>Reactivar</small></a></h7>
-            </td>
+              <td>
+                <h7><a href=\"{{path('reactivarSolicitudSuspendida',{'id':solicitud.id})}}\"><small>Reactivar</small></a></h7>
+              </td>
 
 
 
 
-            {% endfor %}
+              {% endfor %}
 
-        </tbody>
-      </table>
-    </div>
-    <div class=\"col-md-2\">
+          </tbody>
+        </table>
+      </div>
+      <div class=\"col-md-2\">
+      </div>
     </div>
   </div>
-</div>
-<div style=\"margin-bottom:200px\">
-</div>
+  <div style=\"margin-bottom:200px\">
+  </div>
 </div>
 {% endblock %}
 ", "gestionMantenimiento/suspendidas.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\suspendidas.html.twig");

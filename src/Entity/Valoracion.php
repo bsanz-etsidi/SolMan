@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\PersistentCollection;
 
+
 /**
  * Valoracion
  *
@@ -25,12 +26,11 @@ class Valoracion
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="Solicitud")
-     * @ORM\JoinColumn(name="solicitud_id", referencedColumnName="id")
+     * @ORM\OneToOne(targetEntity="Solicitud", mappedBy="valoracion")
      */
      private $solicitud;
 
-    /**
+     /**
      * @var string
      *
      * @ORM\Column(name="satisfaccion", type="string", length=255)

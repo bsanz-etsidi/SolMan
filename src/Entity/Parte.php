@@ -239,6 +239,28 @@ class Parte
         return $this->especialidades;
       }
 
+    public function addEspecialidade(Especialidad $especialidade): self
+    {
+        if (!$this->especialidades->contains($especialidade)) {
+            $this->especialidades[] = $especialidade;
+            $especialidade->setParte($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEspecialidade(Especialidad $especialidade): self
+    {
+        if ($this->especialidades->contains($especialidade)) {
+            $this->especialidades->removeElement($especialidade);
+            // set the owning side to null (unless already changed)
+            if ($especialidade->getParte() === $this) {
+                $especialidade->setParte(null);
+            }
+        }
+
+        return $this;
+    }
 
 
 }

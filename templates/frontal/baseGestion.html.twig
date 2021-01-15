@@ -9,6 +9,12 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/modern-business.css')}}" rel="stylesheet">
     <link href="{{ asset('css/all.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/google-fonts.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/google-fonts2.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/google-fonts3.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/google-fonts4.css')}}" rel="stylesheet">
+    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+
     <!--load all styles -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
   </head>
@@ -17,97 +23,104 @@
     <!--MENÚ DE NAVEGACIÓN-->
 
     <nav class="navbar navbar-dark bg-danger  fixed-top navbar-expand-lg fixed-top">
-      <div class="container">
-        <a class="navbar-brand"><img src="{{asset('img/Logo.png')}}" height="60" alt=""></a>
+      <div class="container" style="font-family: Saira Extra Condensed">
+        <a class="navbar-brand"><img src="{{asset('img/logo_etsidi_mini_negro.png')}}" height="60" alt=""></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" style="color:white" ; data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav ml-auto">
-
+            {% if is_granted('ROLE_USER') %}
+            <li class="nav-item">
+              <pre>         </pre>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" <a href="{{path('solicitudesTrabajador')}}" style="font-family: Saira Extra Condensed;">SOLICITUDES<br />ASIGNADAS</a>
+            </li>
+            {% endif %}
             {% if is_granted('ROLE_ADMIN') %}
             <li class="nav-item">
-              <pre>               </pre>
+              <pre>           </pre>
             </li>
             <li class="nav-item">
-              <h5><a class="nav-link text-white" href="{{ path('base') }}"><small><i class="fas fa-home"></i></small></a></h5>
+              <h5><a class="nav-link text-white" href="{{ path('portadaUsuario',{'emailcrypt': app.user.emailcrypt, 'email': app.user.username}) }}"><small><i class="fas fa-home"></i></small></a></h5>
             </li>
             <li class="nav-item">
-              <pre>  </pre>
+              <pre>      </pre>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="{{ path('instruccionesCompletadas') }}">Trabajos<br />completados</a>
+              <a class="nav-link text-white" href="{{ path('instruccionesCompletadas') }}" style="font-family: Saira Extra Condensed;">TRABAJOS<br />COMPLETADOS</a>
             </li>
             <li class="nav-item">
-              <pre>  </pre>
+              <pre>    </pre>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Solicitudes
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: Saira Extra Condensed;">
+                SOLICITUDES
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item" href="{{ path('nuevaSolicitud',{'email': app.user.username}) }}">Nueva</a>
-                <a class="dropdown-item" href="{{ path('asignadas') }}">Asignadas</a>
-                <a class="dropdown-item" href="{{ path('pendientesDeAsignar') }}">Sin Asignar</a>
-                <a class="dropdown-item" href="{{ path('despachadas') }}">Despachadas</a>
-                <a class="dropdown-item" href="{{ path('solicitudes') }}">Todas</a>
-                <a class="dropdown-item" href="{{ path('anuladas') }}">Anuladas</a>
-                <a class="dropdown-item" href="{{ path('suspendidas') }}">Suspendidas</a>
-                <a class="dropdown-item" href="{{ path('prioritarias') }}">Prioritarias</a>
-                <a class="dropdown-item" href="{{ path('seleccionaSolicitudes') }}">Por fecha</a>
-                <a class="dropdown-item" href="{{ path('solicitudesTrabajadorGestion') }}">Por trabajador</a>
-                <a class="dropdown-item" href="{{ path('solicitudesUnidadDestino') }}">Por destino solicitante</a>
+                <a class="dropdown-item" href="{{ path('nuevaSolicitud',{'emailcrypt': app.user.emailcrypt, 'email': app.user.username}) }}" style="font-family: Saira Extra Condensed;">NUEVA</a>
+                <a class="dropdown-item" href="{{ path('asignadas') }}" style="font-family: Saira Extra Condensed;">ASIGNADAS</a>
+                <a class="dropdown-item" href="{{ path('pendientesDeAsignar') }}" style="font-family: Saira Extra Condensed;">SIN ASIGNAR</a>
+                <a class="dropdown-item" href="{{ path('despachadas') }}" style="font-family: Saira Extra Condensed;">DESPACHADAS</a>
+                <a class="dropdown-item" href="{{ path('solicitudes') }}" style="font-family: Saira Extra Condensed;">TODAS</a>
+                <a class="dropdown-item" href="{{ path('anuladas') }}" style="font-family: Saira Extra Condensed;">ANULADAS</a>
+                <a class="dropdown-item" href="{{ path('suspendidas') }}" style="font-family: Saira Extra Condensed;">SUSPENDIDAS</a>
+                <a class="dropdown-item" href="{{ path('prioritarias') }}" style="font-family: Saira Extra Condensed;">PRIORITARIAS</a>
+                <a class="dropdown-item" href="{{ path('seleccionaSolicitudes') }}" style="font-family: Saira Extra Condensed;">POR FECHA</a>
+                <a class="dropdown-item" href="{{ path('solicitudesTrabajadorGestion') }}" style="font-family: Saira Extra Condensed;">POR TRABAJADOR</a>
+                <a class="dropdown-item" href="{{ path('solicitudesUnidadDestino') }}" style="font-family: Saira Extra Condensed;">POR DESTINO SOLICITANTE</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <pre>     </pre>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: Saira Extra Condensed;">
+                PARTES
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href=""></a>
+                <a class="dropdown-item" href="{{ path('seleccionaPartes') }}" style="font-family: Saira Extra Condensed;">SELECCIÓN POR FECHA</a>
+                <a class="dropdown-item" href="{{ path('partes') }}" style="font-family: Saira Extra Condensed;">TODOS</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <pre>     </pre>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: Saira Extra Condensed;">
+                TRABAJADOR
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="{{ path('nuevoTrabajador') }}" style="font-family: Saira Extra Condensed;">NUEVO TRABAJADOR</a>
+                <a class="dropdown-item" href="{{ path('desactivarTrabajador') }}" style="font-family: Saira Extra Condensed;">DESACTIVAR TRABAJADOR</a>
+                <a class="dropdown-item" href="{{ path('reactivarTrabajador') }}" style="font-family: Saira Extra Condensed;">REACTIVAR TRABAJADOR</a>
               </div>
             </li>
 
             <li class="nav-item">
               <pre>   </pre>
             </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Partes
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item" href=""></a>
-                <a class="dropdown-item" href="{{ path('seleccionaPartes') }}">Selección por fecha</a>
-                <a class="dropdown-item" href="{{ path('partes') }}">Todos</a>
-              </div>
-            </li>
-
-            <li class="nav-item">
-              <pre>    </pre>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Trabajador
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item" href="{{ path('nuevoTrabajador') }}">Nuevo Trabajador</a>
-                <a class="dropdown-item" href="{{ path('desactivarTrabajador') }}">Desactivar Trabajador</a>
-                <a class="dropdown-item" href="{{ path('reactivarTrabajador') }}">Reactivar Trabajador</a>
-              </div>
-            </li>
-
+            {% if is_granted('ROLE_SUPER_ADMIN')%}
             <li class="nav-item">
               <pre>  </pre>
             </li>
-            {% if is_granted('ROLE_SUPER_ADMIN')%}
             <li class="nav-item">
-              <pre></pre>
+              <a class="nav-link text-white" href="{{ path('registro') }}" style="font-family: Saira Extra Condensed;">NUEVO USUARIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="{{ path('registro') }}">Nuevo Usuario</a>
-            </li>
-            <li class="nav-item">
-              <pre></pre>
+              <pre>  </pre>
             </li>
             {% endif %}
 
             <li class="nav-item">
-              <pre>  </pre>
+              <pre>    </pre>
             </li>
 
             <li class="nav-item">
@@ -115,7 +128,7 @@
             </li>
 
             <li class="nav-item">
-              <pre>  </pre>
+              <pre>   </pre>
             </li>
 
 
@@ -126,13 +139,13 @@
 
             <li class="nav-item">
               <a href="{{path('app_logout')}}" class="btn bg-danger"
-                style="border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:lightgrey;height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px"
-                role="button">Salir</a>
+                style="border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:white;height: 25px;width:70px;font-family: Saira Extra Condensed;FONT-SIZE: 11pt;padding:0px 10px"
+                role="button">SALIR</a>
             </li>
 
 
             <li class="nav-item">
-              <pre>      </pre>
+              <pre>       </pre>
             </li>
 
 
@@ -142,7 +155,7 @@
 
 
             <li class="nav-item">
-              <pre>                             </pre>
+              <pre>                            </pre>
             </li>
 
 
@@ -152,8 +165,8 @@
 
               <li class="nav-item">
                 <a href="{{path('app_logout')}}" class="btn bg-danger"
-                  style="border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:lightgrey;height: 25px;width:70px;FONT-SIZE: 11pt;padding:0px 10px"
-                  role="button">Salir</a> </li>
+                  style="border-bottom-color:#F4717C;border-top-color:#DC434F;border-left-color:#DC434F;border-right-color:#DC434F;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F54E5C), color-stop(100%,#DC434F)); margin-top:15px;color:white;height: 25px;width:70px;font-family: Saira Extra Condensed;FONT-SIZE: 11pt;padding:0px 10px"
+                  role="button">SALIR</a> </li>
 
               <li class="nav-item">
               </li>
@@ -167,57 +180,57 @@
     </nav>
     <!--FIN MENÚ DE NAVEGACIÓN-->
     {% block contenido %}
-    <div class="container">
+    <div class="container" style="font-family: Saira Extra Condensed">
       <div style="margin-top:50px">
 
         {% if is_granted('ROLE_USER') %}
-        <h1 class="mt-4 mb-3">Mantenimiento ETSIDI
+        <h1 class="mt-4 mb-3" style="font-family: Saira Extra Condensed;">Mantenimiento ETSIDI
           <small>Trabajadores</small>
         </h1>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item">Consulta de solicitudes</li>
+          <li class="breadcrumb-item" style="font-family: Saira Extra Condensed;">Consulta de solicitudes</li>
         </ol>
         {% endif %}
 
         {% if is_granted('ROLE_ADMIN') %}
-        <h1 class="mt-4 mb-3">Mantenimiento ETSIDI
+        <h1 class="mt-4 mb-3" style="font-family: Saira Extra Condensed;">Mantenimiento ETSIDI
           <small>Gestión</small>
         </h1>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item">Mantenimiento</li>
+          <li class="breadcrumb-item" style="font-family: Saira Extra Condensed;">Mantenimiento</li>
         </ol>
         {% endif %}
 
         <!-- Content Row -->
         <div class="row">
           <!-- Sidebar Column -->
-          <div class="col-lg-3 mb-4 bg-light">
+          <div class="col-lg-3 mb-4" style="background-color: #EBECEE">
             <div class="list-group ">
               {% if is_granted('ROLE_USER') %}
-              <a href="{{ path('solicitudesTrabajador') }}" class="list-group-item" style=" color: grey;">Solicitudes asignadas</a>
-              <a href="{{ path('nuevaSolicitud',{'email':app.user.username}) }}" class="list-group-item" style=" color: grey;">Nueva Solicitud</a>
-              <a href="{{path('app_logout')}}" class="list-group-item" style=" color: grey;">Salir</a>
+              <a href="{{ path('solicitudesTrabajador') }}" class="list-group-item" style=" color: grey;" style="font-family: Saira Extra Condensed;">Solicitudes asignadas</a>
+              <a href="{{ path('nuevaSolicitud',{'emailcrypt':app.user.emailcrypt,'email':app.user.username}) }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Nueva Solicitud</a>
+              <a href="{{path('app_logout')}}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Salir</a>
               {% endif %}
 
               {% if is_granted('ROLE_ADMIN') %}
-              <a href="{{ path('instruccionesCompletadas') }}" class="list-group-item" style=" color: grey;">Trabajos completados</a>
-              <a href="{{ path('nuevaSolicitud',{'email':app.user.username}) }}" class="list-group-item" style=" color: grey;">Nueva Solicitud</a>
-              <a href="{{ path('solicitudes') }}" class="list-group-item" style=" color: grey;">Todas las solicitudes</a>
-              <a href="{{ path('asignadas') }}" class="list-group-item" style=" color: grey;">Solicitudes asignadas</a>
-              <a href="{{ path('pendientesDeAsignar') }}" class="list-group-item" style=" color: grey;">Solicitudes sin asignar</a>
-              <a href="{{ path('despachadas') }}" class="list-group-item" style=" color: grey;">Solicitudes despachadas</a>
-              <a href="{{ path('anuladas') }}" class="list-group-item" style=" color: grey;">Solicitudes anuladas</a>
-              <a href="{{ path('suspendidas') }}" class="list-group-item" style=" color: grey;">Solicitudes suspendidas</a>
-              <a href="{{ path('prioritarias') }}" class="list-group-item" style=" color: grey;">Solicitudes prioritarias</a>
-              <a href="{{ path('seleccionaSolicitudes') }}" class="list-group-item" style=" color: grey;">Solicitudes por fecha</a>
-              <a href="{{ path('solicitudesTrabajadorGestion') }}" class="list-group-item" style=" color: grey;">Solicitudes por trabajador</a>
-              <a href="{{ path('solicitudesUnidadDestino') }}" class="list-group-item" style=" color: grey;">Por destino solicitante</a>
-              <a href="{{ path('partes') }}" class="list-group-item" style=" color: grey;">Todos los partes</a>
-              <a href="{{ path('seleccionaPartes') }}" class="list-group-item" style=" color: grey;">Partes por fecha</a>
-              <a href="{{ path('nuevoTrabajador') }}" class="list-group-item" style=" color: grey;">Nuevo trabajador</a>
-              <a href="{{ path('desactivarTrabajador') }}" class="list-group-item" style=" color: grey;">Desactivar Trabajador</a>
-              <a href="{{ path('reactivarTrabajador') }}" class="list-group-item" style=" color: grey;">Reactivar Trabajador</a>
-              <a href="{{ path('estadisticas') }}" class="list-group-item" style=" color: grey;">Estadísticas</a>
+              <a href="{{ path('instruccionesCompletadas') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Trabajos completados</a>
+              <a href="{{ path('nuevaSolicitud',{'emailcrypt': app.user.emailcrypt, 'email': app.user.username}) }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Nueva Solicitud</a>
+              <a href="{{ path('solicitudes') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Todas las solicitudes</a>
+              <a href="{{ path('asignadas') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Solicitudes asignadas</a>
+              <a href="{{ path('pendientesDeAsignar') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Solicitudes sin asignar</a>
+              <a href="{{ path('despachadas') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Solicitudes despachadas</a>
+              <a href="{{ path('anuladas') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Solicitudes anuladas</a>
+              <a href="{{ path('suspendidas') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Solicitudes suspendidas</a>
+              <a href="{{ path('prioritarias') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Solicitudes prioritarias</a>
+              <a href="{{ path('seleccionaSolicitudes') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Solicitudes por fecha</a>
+              <a href="{{ path('solicitudesTrabajadorGestion') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Solicitudes por trabajador</a>
+              <a href="{{ path('solicitudesUnidadDestino') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Por destino solicitante</a>
+              <a href="{{ path('partes') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Todos los partes</a>
+              <a href="{{ path('seleccionaPartes') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Partes por fecha</a>
+              <a href="{{ path('nuevoTrabajador') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Nuevo trabajador</a>
+              <a href="{{ path('desactivarTrabajador') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Desactivar Trabajador</a>
+              <a href="{{ path('reactivarTrabajador') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Reactivar Trabajador</a>
+              <a href="{{ path('estadisticas') }}" class="list-group-item" style=" color: grey;font-family: Saira Extra Condensed">Estadísticas</a>
               {% endif %}
             </div>
           </div>
@@ -225,23 +238,15 @@
           <div class="col-lg-9 mb-4">
             <img src="{{asset('img/mantenimiento.jpg')}}" class="img-fluid" alt="Responsive image">
             <img src="{{asset('img/upm.png')}}" class="img-fluid" alt="Responsive image">
+            <div class="col text-center">
+              <h8 style="font-family: Helvetica; font-size:13px"><br /><br /><br /><br /><br />Universidad Politécnica de Madrid ©2020</h8>
+            </div>
           </div>
         </div>
-
       </div>
-      <!-- /.row -->
     </div>
 
-
     {% endblock %}
-
-    <!-- Footer -->
-    <footer class="page-footer  bg-danger">
-      <div class="footer-copyright text-center py-3">
-        <img src="{{asset('img/upm.png')}}" style="margin-bottom: 0" height="100" alt="">
-      </div>
-    </footer>
-    <!-- Footer -->
 
     <!-- Bootstrap core JavaScript -->
     <script src="{{asset('js/exportacion.js')}}"></script>

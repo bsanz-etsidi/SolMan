@@ -48,6 +48,11 @@ class Usuario implements UserInterface, \Serializable
     private $email;
 
     /**
+     * @ORM\Column(type="string", length=254, nullable=true)
+     */
+    private $emailcrypt;
+
+    /**
      * @ORM\Column(name="is_active", type="boolean")
      */
     private $isActive;
@@ -83,6 +88,16 @@ class Usuario implements UserInterface, \Serializable
     public function getEmail()
     {
         return $this->email;
+    }
+
+    public function setEmailcrypt($emailcrypt)
+    {
+        return $this->emailcrypt=$emailcrypt;
+    }
+
+    public function getEmailcrypt()
+    {
+        return $this->emailcrypt;
     }
 
     public function getSalt()

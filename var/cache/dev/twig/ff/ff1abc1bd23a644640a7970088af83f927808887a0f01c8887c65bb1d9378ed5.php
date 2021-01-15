@@ -90,8 +90,7 @@ class __TwigTemplate_c6235b65f9c83419e69c8fcc214956cf8492f7678c0da0fa2abce4ecb9a
         // line 9
         echo "<!-- Page Content -->
 
-<div class=\"container\">
-
+<div class=\"container\" style=\"font-family: Saira Extra Condensed\"> 
   <!-- Page Heading/Breadcrumbs -->
   <div style=\"margin-top:75px\">
     <h1 class=\" mt-4 mb-3\"> Mantenimiento
@@ -104,16 +103,16 @@ class __TwigTemplate_c6235b65f9c83419e69c8fcc214956cf8492f7678c0da0fa2abce4ecb9a
     <div class=\"row\">
       <div class=\"col-lg-6\">
         ";
+        // line 23
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), 'form_start');
+        echo "
+        ";
         // line 24
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), 'form_start');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), 'widget');
         echo "
         ";
         // line 25
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), 'widget');
-        echo "
-        ";
-        // line 26
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), 'form_end');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), 'form_end');
         echo "
       </div>
       <div class=\"col-lg-6\">
@@ -145,7 +144,7 @@ class __TwigTemplate_c6235b65f9c83419e69c8fcc214956cf8492f7678c0da0fa2abce4ecb9a
 
     public function getDebugInfo()
     {
-        return array (  116 => 26,  112 => 25,  108 => 24,  91 => 9,  81 => 8,  62 => 6,  51 => 2,  49 => 3,  36 => 2,);
+        return array (  115 => 25,  111 => 24,  107 => 23,  91 => 9,  81 => 8,  62 => 6,  51 => 2,  49 => 3,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -160,8 +159,7 @@ class __TwigTemplate_c6235b65f9c83419e69c8fcc214956cf8492f7678c0da0fa2abce4ecb9a
 {% block contenido %}
 <!-- Page Content -->
 
-<div class=\"container\">
-
+<div class=\"container\" style=\"font-family: Saira Extra Condensed\"> 
   <!-- Page Heading/Breadcrumbs -->
   <div style=\"margin-top:75px\">
     <h1 class=\" mt-4 mb-3\"> Mantenimiento
