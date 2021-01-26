@@ -279,7 +279,7 @@ class __TwigTemplate_8fcc1993444fc477a4e19fbc9dee03bc4dd5ff7d113b24cdbf99de0f2d8
     </nav>
     <!-- Page Content-->
     <div class=\"container-fluid\">
-      <h1 style=\"font-size:60px; font-weight: 700; font-family: Saira Extra Condensed; margin-left:100px; margin-top:30px; padding-top:0px\">
+      <h1 style=\"font-size:60px; font-weight: 700; font-family: Saira Extra Condensed; margin-left:15px; margin-top:30px; padding-top:0px\">
         MANTENIMIENTO
         <span class=\"text-danger\" style=\"font-size:60px; font-weight: 700; font-family: Saira Extra Condensed;\">ETSIDI <img src=\"";
         // line 74
@@ -480,7 +480,7 @@ class __TwigTemplate_8fcc1993444fc477a4e19fbc9dee03bc4dd5ff7d113b24cdbf99de0f2d8
     </nav>
     <!-- Page Content-->
     <div class=\"container-fluid\">
-      <h1 style=\"font-size:60px; font-weight: 700; font-family: Saira Extra Condensed; margin-left:100px; margin-top:30px; padding-top:0px\">
+      <h1 style=\"font-size:60px; font-weight: 700; font-family: Saira Extra Condensed; margin-left:15px; margin-top:30px; padding-top:0px\">
         MANTENIMIENTO
         <span class=\"text-danger\" style=\"font-size:60px; font-weight: 700; font-family: Saira Extra Condensed;\">ETSIDI <img src=\"{{asset('img/logo_upm.png')}}\" class=\"rounded\" height=\"80\" color=\"white\" alt=\"Responsive image\"></span>
       </h1>
@@ -577,6 +577,6 @@ class __TwigTemplate_8fcc1993444fc477a4e19fbc9dee03bc4dd5ff7d113b24cdbf99de0f2d8
 
   </body>
 
-</html>", "gestionMantenimiento/asignarEspecialidad.html.twig", "C:\\symfony4REMOTO\\SolMan\\templates\\gestionMantenimiento\\asignarEspecialidad.html.twig");
+</html>", "gestionMantenimiento/asignarEspecialidad.html.twig", "C:\\SYMFONY\\symfony4SOLMAN\\SolMan\\templates\\gestionMantenimiento\\asignarEspecialidad.html.twig");
     }
 }
