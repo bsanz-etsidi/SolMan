@@ -107,7 +107,7 @@ class DefaultController extends Controller
 
 
   /**
-   * @Route("/nuevaSolicitud/{emailcrypt}/{email}", name="nuevaSolicitud", requirements={"email"=".+"})
+   * @Route("/nuevaSolicitud/{emailcrypt}/{email}", name="nuevaSolicitud", requirements={"emailcrypt"=".+"})
    */
    public function nuevaSolicitudAction(Request $request, $emailcrypt, $email, \Swift_Mailer $mailer)
    {
@@ -170,7 +170,7 @@ class DefaultController extends Controller
   }
 
    /**
-    * @Route("/otroDestino/{emailcrypt}/{email}/{id}", name="otroDestino", requirements={"email"=".+"})
+    * @Route("/otroDestino/{emailcrypt}/{email}/{id}", name="otroDestino", requirements={"emailcrypt"=".+"})
     */
    public function otroDestinoAction(Request $request, $emailcrypt, $email, $id)
    {
@@ -199,7 +199,7 @@ class DefaultController extends Controller
 
 
 /**
-* @Route("/solicitud/{idcrypt}/{id}", name="solicitud")
+* @Route("/solicitud/{idcrypt}/{id}", name="solicitud", requirements={"idcrypt"=".+"})
 */
 public function solicitudAction(Request $request,$idcrypt,$id)
 {
@@ -299,7 +299,7 @@ public function solicitudAction(Request $request,$idcrypt,$id)
          }
 
    /**
-    * @Route("/rellenarSatisfaccion/{idcrypt}/{email}", name="rellenarSatisfaccion", requirements={"id"=".+"})
+    * @Route("/rellenarSatisfaccion/{idcrypt}/{email}", name="rellenarSatisfaccion", requirements={"idcrypt"=".+"})
     */
     public function rellenarSatisfaccionAction(Request $request, AuthenticationUtils $authenticationUtils, $idcrypt, $email)
     {
@@ -355,7 +355,7 @@ public function solicitudAction(Request $request,$idcrypt,$id)
      }
 
      /**
-      * @Route("/solicitudesUsuario/{emailcrypt}/{email}", name="solicitudesUsuario")
+      * @Route("/solicitudesUsuario/{emailcrypt}/{email}", name="solicitudesUsuario", requirements={"emailcrypt"=".+"})
       */
      public function solicitudesUsuarioAction(Request $request, $emailcrypt, $email)
      {
@@ -423,6 +423,7 @@ public function solicitudAction(Request $request,$idcrypt,$id)
              }
              return $this->render('frontal/invalidCredentials.html.twig');
            }
+
 
            /**
             * @Route("/rellenarEventos", name="rellenarEventos")
